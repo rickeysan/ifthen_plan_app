@@ -9,7 +9,7 @@
 <body>
     <h1>マイページ</h1>
     <div class="main-contents-wrap">
-        <p></p>
+        <p>こんにちは！{{ session('name') }}</p>
     </div>
 
 </body>
