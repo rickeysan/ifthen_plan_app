@@ -15,4 +15,6 @@ use App\Http\Middleware\MyOriginalAuth;
 Route::resource('register','RegisterController');
 Route::resource('login','LoginController')
     ->middleware(MyOriginalAuth::class);
-Route::resource('home','HomeController');
+Route::resource('home','HomeController')
+    ->middleware(MyOriginalAuth::class);
+Route::resource('logout','LogoutController');
