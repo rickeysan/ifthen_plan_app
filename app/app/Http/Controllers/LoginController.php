@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
 {
@@ -17,7 +18,7 @@ class LoginController extends Controller
         $param = $request->all();
         // dd($param);
         $user_info = User::where('email',$param['email'])->first();
-        if($user_info !== null && $user_info->password === $param['password']){
+        if($user_info !== null && Hash::check($param['password'],$user_info->password)) {
             logger('適正ユーザーです');
             // ここにセッションを追加する
             $request->session()->put('login_limit',60*60);

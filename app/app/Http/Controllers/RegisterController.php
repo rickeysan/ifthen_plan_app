@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Illuminate\Support\Facades\Hash;
+
 
 class RegisterController extends Controller
 {
@@ -23,6 +25,7 @@ class RegisterController extends Controller
         $this->validate($request,$validata_rule);
         unset($param['_token']);
         unset($param['retype_pass']);
+        $param['password'] = Hash::make($param['password']);
         // dd($param);
         $user = new User;
         $user->fill($param)->save();

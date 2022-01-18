@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\User;
+use Illuminate\Support\Facades\Hash;
 
 class UsersTableSeeders extends Seeder
 {
@@ -16,7 +17,7 @@ class UsersTableSeeders extends Seeder
         $param = [
             'name'=>'sasaki',
             'email'=>'sasaki@gmail.com',
-            'password'=>'sasaki123',
+            'password'=>Hash::make('sasaki123'),
         ];
         $user->fill($param)->save();
 
@@ -24,14 +25,14 @@ class UsersTableSeeders extends Seeder
         $param = [
             'name'=>'tanaka',
             'email'=>'tanaka@gmail.com',
-            'password'=>'tanaka123',
+            'password'=>Hash::make('tanaka123'),
         ];
         $user->fill($param)->save();
         $user = new User;
         $param = [
             'name'=>'suzuki',
-            'email'=>'suzui@gmail.com',
-            'password'=>'suzuki123',
+            'email'=>'suzuki@gmail.com',
+            'password'=>Hash::make('suzuki123'),
         ];
         $user->fill($param)->save();
 
