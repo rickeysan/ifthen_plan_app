@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\MyOriginalAuth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,6 +12,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::resource('register','RegisterController');
+Route::resource('login','LoginController')
+    ->middleware(MyOriginalAuth::class);
+Route::resource('home','HomeController')
+    ->middleware(MyOriginalAuth::class);
+Route::resource('logout','LogoutController');
