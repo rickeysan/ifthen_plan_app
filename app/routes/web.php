@@ -12,4 +12,5 @@
 */
 
 Route::resource('register','RegisterController');
+Route::resource('login','LoginController');
 

@@ -12,18 +12,18 @@
         <form action="/register" method="post">
             @csrf
             <label>メールアドレス</label>
-            <input type="text" name="email" value="{{old('name')}}">
-            @error('name')
+            <input type="text" name="email" value="{{old('email')}}">
+            @error('email')
                 <p>{{$message}}</p>
             @enderror
             <label>ユーザー名</label>
-            <input type="text" name="user_name" value="{{old('user_name')}}">
-            @error('user_name')
+            <input type="text" name="name" value="{{old('name')}}">
+            @error('name')
                 <p>{{$message}}</p>
             @enderror
             <label>パスワード（英数字８文字以上）</label>
-            <input type="text" name="pass" value="{{old('pass')}}">
-            @error('pass')
+            <input type="text" name="password" value="{{old('password')}}">
+            @error('password')
                 <p>{{$message}}</p>
             @enderror
             <label>パスワード（再入力）</label>
