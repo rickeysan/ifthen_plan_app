@@ -17,13 +17,14 @@ class LoginController extends Controller
         $param = $request->all();
         // dd($param);
         $user_info = User::where('email',$param['email'])->first();
-        if($user_info->password === $param['password']){
+        if($user_info !== null && $user_info->password === $param['password']){
             logger('適正ユーザーです');
             // ここにセッションを追加する
             $request->session()->put('login_limit',60*60);
+            $request->session()->put('login_date',time());
             $request->session()->put('name',$user_info->name);
-
-            return view('home');
+            // dd($request->session());
+            return redirect('home');
         }else{
             logger('不適切なユーザーです');
             return view('login');
