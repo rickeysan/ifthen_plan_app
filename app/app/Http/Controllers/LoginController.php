@@ -24,6 +24,7 @@ class LoginController extends Controller
             $request->session()->put('login_limit',60*60);
             $request->session()->put('login_date',time());
             $request->session()->put('name',$user_info->name);
+            $request->session()->put('user_id',$user_info->id);
             // dd($request->session());
             return redirect('home');
         }else{

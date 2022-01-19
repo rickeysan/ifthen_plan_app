@@ -15,14 +15,14 @@ class RegisterController extends Controller
     }
     public function store(Request $request){
         logger('storeメソッドです');
-        $validata_rule = [
+        $validate_rule = [
             'email'=>'required|email',
             'name'=>'required',
             'password'=>'required',
             'retype_pass'=>'required',
         ];
         $param = $request->all();
-        $this->validate($request,$validata_rule);
+        $this->validate($request,$validate_rule);
         unset($param['_token']);
         unset($param['retype_pass']);
         $param['password'] = Hash::make($param['password']);
