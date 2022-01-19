@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>新しい習慣を作ろう!!</h1>
+    <h1>新しい習慣を閲覧</h1>
     <form action="/habit" method="post">
         @csrf
         <label>ジャンルを選んでください</label>

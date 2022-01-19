@@ -30,11 +30,38 @@ class HabitController extends Controller
     }
     public function show(Request $request){
         logger('HabitControllerのshowメソッドです');
-        return ('/habit/show');
+        return view('/habit/show');
         // $habit = Habit::where('id',)
     }
-    public function edit(Request $request){
+    public function edit(Request $request, $id){
         logger('HabitControllerのeditメソッドです');
+        // dd('editです');
+        // dd($request->input(id));
+        // dd($id);
+        // dd($request->session()->get('user_id'));
 
+        $habit = Habit::where('id',$id)->where('user_id',$request->session()->get('user_id'))->get();
+        // $habit = Habit::find($id)->where('user_id',$request->session()->get());
+        // dd($habit);
+        // dd($habit->all());
+        return view('/habit/edit',compact('habit'));
+    }
+    public function update(Request $request, $id) {
+        logger('HabitControllerのupdateメソッドです');
+        $validate_rule = [
+            'purpose'=>'required',
+            'task'=>'required',
+            'start_date'=>'required',
+            'finish_date'=>'required',
+        ];
+        $this->validate($request,$validate_rule);
+        $param = $request->all();
+        unset($param['_method']);
+        unset($param['_token']);
+        // dd($param);
+        $habit = Habit::find($id);
+        // dd($habit);
+        $habit->fill($param)->save();
+        return redirect('home');
     }
 }

@@ -16,10 +16,14 @@
         <a href="/habit/create">新しい習慣を作る</a>
     </div>
     <h2>登録した習慣</h2>
-    <a href="/habit/show?id=1">登録を編集する</a>
+    {{-- <a href="{{ route("habit.edit", 2) }}">登録を編集する</a> --}}
     @foreach ($habits as $habit)
     <ul>
         <li>{{$habit->task}}</li>
+        <li><a href="{{ route("habit.edit", $habit->id) }}">編集する</a></li>
+        <li>
+            <form action=""></form>
+        </li>
     </ul>
     @endforeach
 
