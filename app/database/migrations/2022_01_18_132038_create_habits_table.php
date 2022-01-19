@@ -21,6 +21,7 @@ class CreateHabitsTable extends Migration
             $table->text('task');
             $table->date('start_date');
             $table->date('finish_date');
+            $table->boolean('delete_flg')->default(0);
             // $table->integer('calender_id');
             // $table->integer('ifthen_id');
             $table->timestamps();
