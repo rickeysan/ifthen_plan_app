@@ -8,9 +8,10 @@ use App\Habit;
 
 class HomeController extends Controller
 {
-    public function index(){
+    public function index(Request $request){
         logger('HomeControllerのindexメソッドです');
-        $habits = Habit::all();
+        // dd($request->session());
+        $habits = Habit::where('user_id',$request->session()->get('user_id'))->get();
         // dd($habits);
         return view ('home',compact('habits'));
     }
