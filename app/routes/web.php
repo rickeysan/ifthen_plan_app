@@ -19,3 +19,5 @@ Route::resource('home','HomeController')
     ->middleware(MyOriginalAuth::class);
 Route::resource('logout','LogoutController');
 Route::resource('habit','HabitController');
+
+Route::resource('password/change','Auth\ChangePasswordController');

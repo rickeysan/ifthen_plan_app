@@ -35,5 +35,6 @@
         <p>登録されている習慣はありません</p>
     @endif
     <a href="/logout">ログアウトする</a>
+    <a href="/password/change">パスワードを変更する</a>
 </body>
 </html>
