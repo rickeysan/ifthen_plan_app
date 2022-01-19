@@ -13,9 +13,10 @@
         <p>login_limit {{ session('login_limit') }}</p>
         <p>login_date {{ session('login_date') }}</p>
         <p>user_id {{ session('user_id') }}</p>
-        <a href="/habit">新しい習慣を作る</a>
+        <a href="/habit/create">新しい習慣を作る</a>
     </div>
     <h2>登録した習慣</h2>
+    <a href="/habit/show?id=1">登録を編集する</a>
     @foreach ($habits as $habit)
     <ul>
         <li>{{$habit->task}}</li>

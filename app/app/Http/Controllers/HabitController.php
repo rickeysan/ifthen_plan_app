@@ -7,9 +7,9 @@ use App\Habit;
 
 class HabitController extends Controller
 {
-    public function index(){
-        logger('HabitControllerのindexメソッドです');
-        return view('habit');
+    public function create(){
+        logger('HabitControllerのcreateメソッドです');
+        return view('habit/create');
     }
     public function store(Request $request){
         logger('HabitControllerのcreateメソッドです');
@@ -27,5 +27,14 @@ class HabitController extends Controller
         $habit = new Habit;
         $habit->fill($param)->save();
         return redirect('home');
+    }
+    public function show(Request $request){
+        logger('HabitControllerのshowメソッドです');
+        return ('/habit/show');
+        // $habit = Habit::where('id',)
+    }
+    public function edit(Request $request){
+        logger('HabitControllerのeditメソッドです');
+
     }
 }
