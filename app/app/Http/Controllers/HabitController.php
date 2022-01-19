@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Habit;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class HabitController extends Controller
 {
+    use SoftDeletes;
+
     public function create(){
         logger('HabitControllerのcreateメソッドです');
         return view('habit/create');
@@ -60,8 +63,18 @@ class HabitController extends Controller
         unset($param['_token']);
         // dd($param);
         $habit = Habit::find($id);
+        // dd(get_class($habit));
         // dd($habit);
         $habit->fill($param)->save();
+        return redirect('home');
+    }
+    public function destroy($id) {
+        logger('HabitControllerのdestoryメソッドです');
+        // dd('destoryです');
+        // dd(Habit::find($id));
+
+        Habit::find($id)->delete();
+
         return redirect('home');
     }
 }

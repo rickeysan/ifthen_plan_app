@@ -17,16 +17,23 @@
     </div>
     <h2>登録した習慣</h2>
     {{-- <a href="{{ route("habit.edit", 2) }}">登録を編集する</a> --}}
-    @foreach ($habits as $habit)
-    <ul>
-        <li>{{$habit->task}}</li>
-        <li><a href="{{ route("habit.edit", $habit->id) }}">編集する</a></li>
-        <li>
-            <form action=""></form>
-        </li>
-    </ul>
-    @endforeach
-
+    @if (count($habits) > 0)
+        @foreach ($habits as $habit)
+        <ul>
+            <li>{{$habit->task}}</li>
+            <li><a href="{{ route('habit.edit', $habit->id) }}">編集する</a></li>
+            <li>
+                <form action="{{ route('habit.destroy',$habit->id) }}" method="post">
+                    @csrf
+                    @method('delete')
+                    <input type="submit" value="削除する">
+                </form>
+            </li>
+        </ul>
+        @endforeach
+    @else
+        <p>登録されている習慣はありません</p>
+    @endif
     <a href="/logout">ログアウトする</a>
 </body>
 </html>
