@@ -17,11 +17,28 @@ class LoginController extends Controller
     public function store(Request $request){
         logger('LoginControllerクラスのstoreメソッド');
         logger('適正ユーザーかどうか判定します');
+        $validate_rule = [
+            'email' => 'required | email',
+            'password' => 'required',
+        ];
+        $request->validate($validate_rule);
         $param = $request->all();
-        // dd($param);
+
         $user_info = User::where('email',$param['email'])->first();
+        // パスワードがDBのものと一致しているかチェック
+        $request->validate([
+            'password'=>[
+                function($attribute, $value, $fail){
+                    if(!Hash::check($value, $user_info->password)){
+                        $fail($attribute.'が違います');
+                        logger('不適切なユーザーです');
+                    }else{
+                        logger('適正ユーザーです');
+                    }
+                }
+            ]
+            ]);
         if($user_info !== null && Hash::check($param['password'],$user_info->password)) {
-            logger('適正ユーザーです');
             // ここにセッションを追加する
             $request->session()->put('login_limit',60*60);
             $request->session()->put('login_date',time());
@@ -30,7 +47,7 @@ class LoginController extends Controller
             // dd($request->session());
             return redirect('home');
         }else{
-            logger('不適切なユーザーです');
+            // $msg = 'メールアドレスかパスワードが一致しません';
             return view('login');
         }
         // dd($user_info->password);

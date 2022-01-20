@@ -27,7 +27,7 @@
                 <p>{{$message}}</p>
             @enderror
             <label>パスワード（再入力）</label>
-            <input type="text" name="retype_pass" value="{{old('retype_pass')}}">
+            <input type="text" name="password_confirmation" value="{{old('password_confirmation')}}">
             @error('retype_pass')
                 <p>{{$message}}</p>
             @enderror
