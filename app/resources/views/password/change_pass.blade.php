@@ -15,7 +15,7 @@
         <label>新しいパスワード</label>
         <input type="text" name="new_pass">
         <label>新しいパスワード（再入力）</label>
-        <input type="text" name="retype_new_pass">
+        <input type="text" name="new_pass_confirmation">
         <input type="submit" vame="変更する">
     </form>
 </body>
