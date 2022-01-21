@@ -7,3 +7,133 @@ body {
   letter-spacing: 0.1rem;
 }
 
+a {
+  display: block;
+}
+
+#header {
+  height: 70px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #ebfffa;
+}
+
+#header .inner {
+  display: flex;
+  align-items: center;
+  width: 1200px;
+  justify-content: space-between;
+}
+
+#header .header__nav-list {
+  display: flex;
+}
+
+#header .header__nav-item {
+  padding: 5px;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+.logined-header__nav-item .logined-header__nav-item__img {
+  width: 36px;
+  height: 36px;
+  border-radius: 18px;
+}
+
+#main .main__inner {
+  width: 1200px;
+  margin: 15px auto;
+}
+
+.input-panel__container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.input-panel {
+  width: 480px;
+  padding: 20px 30px;
+}
+
+.input-panel .panel-title {
+  font-size: 30px;
+  text-align: center;
+  padding-bottom: 15px;
+  border-bottom: #757575 1px solid;
+}
+
+.input-panel .form-item {
+  margin-top: 10px;
+}
+
+.input-panel .form-item .form-item__body .form-item__input {
+  display: block;
+  border: 1px solid #BDBDBD;
+  width: 100%;
+  border-radius: 10px;
+  height: 40px;
+  padding-left: 5px;
+}
+
+.input-panel .form-item .form-item__body .form-item__body__error {
+  font-size: 12px;
+  color: #f38181;
+}
+
+.input-panel .input-panel-btn__wrap {
+  padding-top: 15px;
+}
+
+.input-panel .input-panel-btn__wrap .submit-btn {
+  width: 100%;
+  text-align: center;
+  background: #6ef3d6;
+  height: 40px;
+  border-radius: 5px;
+}
+
+.input-panel .input-panel-btn__wrap .submit-btn__link {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.input-panel .input-panel-btn__wrap .submit-btn__link {
+  color: #757575;
+}
+
+.login-panel .submit-btn {
+  margin-bottom: 10px;
+}
+
+.login-panel .login-btn__info {
+  text-align: center;
+}
+
+.login-panel .submit-checkbox {
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+}
+
+.login-panel .login-btn__info-msg {
+  font-size: 14px;
+  vertical-align: bottom;
+}
+
+.dashbord-menu__list-nav {
+  width: 200px;
+  font-size: 18px;
+}
+
+.dashbord-menu__list-nav .dashbord-menu__list-ul .dashbord-menu__list-item {
+  margin-bottom: 15px;
+}
+
+.dashbord-menu__list-nav .dashbord-menu__list-ul .dashbord-menu__list-item .dashbord-menu__list-item-link i {
+  margin-right: 5px;
+}
+

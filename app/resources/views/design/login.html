@@ -27,21 +27,11 @@
             <section class="input-panel__container">
                 <div class="input-panel">
                     <form action="/register" method="post">
-                    <h2 class="panel-title">新規会員登録</h2>
+                    <h2 class="panel-title">ログイン</h2>
 
                         <div class="form-item">
                             <div class="form-item__head">
                                 <p>メールアドレス</p>
-                            </div>
-                            <div class="form-item__body">
-                                <input type="text" name="email" class="form-item__input">
-                                <span class="form-item__body__error">メールアドレスは必ず指定してください</span>
-                            </div>
-                        </div>
-
-                        <div class="form-item">
-                            <div class="form-item__head">
-                                <p>ユーザー名</p>
                             </div>
                             <div class="form-item__body">
                                 <input type="text" name="email" class="form-item__input">
@@ -57,18 +47,13 @@
                                 <span class="form-item__body__error">メールアドレスは必ず指定してください</span>
                             </div>
                         </div>
-                        <div class="form-item">
-                            <div class="form-item__head">
-                                <p>確認用パスワード</p>
+
+                        <div class="input-panel-btn__wrap login-panel">
+                            <button type="submit" class="submit-btn">ログイン</button>
+                            <div class="login-btn__info">
+                                <input type="checkbox" class="submit-checkbox"><span class="login-btn__info-msg">ログインしたままにする</span>
                             </div>
-                            <div class="form-item__body">
-                                <input type="text" name="email" class="form-item__input">
-                                <span class="form-item__body__error">メールアドレスは必ず指定してください</span>
-                            </div>
-                        </div>
-                        <div class="input-panel-btn__wrap">
-                            <button type="submit" class="submit-btn">会員登録する</button>
-                            <a href="" class="submit-btn__link">アカウントをお持ちの方はこちら</a>
+                            <a href="" class="submit-btn__link">パスワードを忘れた方はこちら</a>
                         </div>
 
                     </form>
