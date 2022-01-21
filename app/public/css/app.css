@@ -251,10 +251,29 @@ a {
   margin-bottom: 30px;
 }
 
-.habit-input__section .habit-input__container .habit-input__form-item .habit-input__form-item__body .form-item__select {
+.habit-input__section .habit-input__container .form-item__columns-3 {
+  display: flex;
+}
+
+.habit-input__section .habit-input__container .form-item__columns-3__contents {
+  width: 20%;
+}
+
+.habit-input__section .habit-input__container .form-item {
+  margin-bottom: 15px;
+}
+
+.habit-input__section .habit-input__container .form-item .form-item__body .form-item__select {
   width: 180px;
   border: 1px solid gray;
   border-radius: 5px;
   padding: 0 5px;
+}
+
+.habit-input__section .habit-input__container .form-item .form-item__body .form-item__textarea {
+  width: 100%;
+  padding: 0 5px;
+  height: 60px;
+  border: 1px solid gray;
 }
 

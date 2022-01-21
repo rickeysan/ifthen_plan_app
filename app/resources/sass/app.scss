@@ -318,15 +318,27 @@ a{
         margin-bottom:$space_xxl;
     }
     .habit-input__container{
+        .form-item__columns-3{
+            display: flex;
+        }
+        .form-item__columns-3__contents{
+            width:20%;
+        }
+        .form-item{
+            margin-bottom:$space_l;
 
-        .habit-input__form-item{
-
-            .habit-input__form-item__body{
+            .form-item__body{
                 .form-item__select{
                     width: 180px;
                     border: 1px solid gray;
                     border-radius: 5px;
                     padding: 0 $space_s;
+                }
+                .form-item__textarea{
+                    width: 100%;
+                    padding: 0 5px;
+                    height: 60px;
+                    border: 1px solid gray;
                 }
             }
         }

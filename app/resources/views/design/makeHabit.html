@@ -43,17 +43,52 @@
                 <h2 class="section-title">新しい習慣を始めましょう</h2>
                 <div class="habit-input__container">
                     <form action="">
-                        <div class="habit-input__form-item">
-                            <div class="habit-input__form-item">
-                                <p class="habit-input__form-item__head">ジャンル</p>
+                        <div class="form-item__columns-3">
+                            <div class="form-item form-item__columns-3__contents">
+                                <div class="form-item__head">
+                                    <p class="form-item__head-text">ジャンル</p>
+                                </div>
+                                <div class="form-item__body">
+                                    <select class="form-item__select">
+                                        <option class="form-item__select-item">選択して下さい</option>
+                                        <option class="form-item__select-item">勉強</option>
+                                        <option class="form-item__select-item">運動</option>
+                                        <option class="form-item__select-item">食事</option>
+                                    </select>
+                                </div>
                             </div>
-                            <div class="habit-input__form-item__body">
-                                <select class="form-item__select">
-                                    <option class="form-item__select-item">選択して下さい</option>
-                                    <option class="form-item__select-item">勉強</option>
-                                    <option class="form-item__select-item">運動</option>
-                                    <option class="form-item__select-item">食事</option>
-                                </select>
+                            <div class="form-item form-item__columns-3__contents">
+                                <div class="form-item__head">
+                                    <p class="form-item__head-text">開始日</p>
+                                </div>
+                                <div class="form-item__body">
+                                    <input type="date">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-item form-item__columns-3__contents">
+                            <div class="form-item__head">
+                                <p class="form-item__head-text">終了日</p>
+                            </div>
+                            <div class="form-item__body">
+                                <input type="date">
+                            </div>
+                        </div>
+
+                        <div class="form-item">
+                            <div class="form-item__head">
+                                <p class="form-item__head-text">なんのために習慣化をしますか？</p>
+                            </div>
+                            <div class="form-item__body">
+                                <textarea class="form-item__textarea"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-item">
+                            <div class="form-item__head">
+                                <p class="form-item__head-text">目的達成のために何をしますか？</p>
+                            </div>
+                            <div class="form-item__body">
+                                <textarea class="form-item__textarea"></textarea>
                             </div>
                         </div>
                     </form>
