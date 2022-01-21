@@ -30,7 +30,7 @@ return [
         'array'   => ':attributeは、:min個から:max個の間で指定してください。',
     ],
     'boolean'              => ':attributeは、trueかfalseを指定してください。',
-    'confirmed'            => ':attributeと、確認フィールドとが、一致していません。',
+    'confirmed'            => ':attributeとパスワード（再入力）が、一致していません。',
     'date'                 => ':attributeには有効な日付を指定してください。',
     'date_equals'          => ':attributeには、:dateと同じ日付けを指定してください。',
     'date_format'          => ':attributeは:format形式で指定してください。',
@@ -149,7 +149,10 @@ return [
         'name' => '名前',
         'email' => 'メールアドレス',
         'password' => 'パスワード',
-        'password_confirmation' => 'パスワード（確認用）'
+        'password_confirmation' => 'パスワード（確認用）',
+        'current_pass'=>'現在のパスワード',
+        'new_pass'=>'新しいパスワード',
+        'new_pass_confirmation' =>'新しいパスワード（再入力）'
     ],
 
 ];

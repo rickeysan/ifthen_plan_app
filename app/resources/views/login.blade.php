@@ -21,7 +21,9 @@
             @error('password')
                 <p>{{$message}}</p>
             @enderror
-
+            @if (!empty($msg))
+                <p>{{ $msg }}</p>
+            @endif
             <div class="submit-btn-wrap">
                 <input type="submit" value="ログインする">
             </div>
