@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LogoutController extends Controller
 {
     public function index(Request $request){
         logger('LogoutControllerのindexメソッドです');
-        $request->session()->flush();
-        return redirect('login');
+        Auth::logout();
+        return redirect()->route('login.index');
     }
 }
