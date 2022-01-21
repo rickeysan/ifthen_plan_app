@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Middleware\MyOriginalAuth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,10 +12,8 @@ use App\Http\Middleware\MyOriginalAuth;
 */
 
 Route::resource('register','RegisterController');
-Route::resource('login','LoginController')
-    ->middleware(MyOriginalAuth::class);
-Route::resource('home','HomeController')
-    ->middleware(MyOriginalAuth::class);
+Route::resource('login','LoginController');
+Route::resource('home','HomeController');
 Route::resource('logout','LogoutController');
 Route::resource('habit','HabitController');
 

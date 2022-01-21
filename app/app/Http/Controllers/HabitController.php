@@ -9,7 +9,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class HabitController extends Controller
 {
     use SoftDeletes;
-
+    public function __construct(){
+        $this->middleware('auth');
+    }
     public function create(){
         logger('HabitControllerのcreateメソッドです');
         return view('habit/create');
