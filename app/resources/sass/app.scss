@@ -1,1 +1,66 @@
-//
+
+// ============================
+// 変数
+// ============================
+
+$first-color: #ebfffa;
+$second-color: #c6fce5;
+$third-color: #6ef3d6;
+$fourth-color: #0dceda;
+$primary-text-color: #212121;
+$secondary-text-color: #757575;
+$divider-color: #BDBDBD;
+$icon-color: #000000;
+
+$site-width:980px;
+
+$font-size_s:12px;
+$font-size_m:14px;
+$font-size_default:16px;
+$font-size_l:18px;
+$font-size_xl:24px;
+$font-size_xxl:30px;
+$font-size_3l:38px;
+
+$space_s:5px;
+$space_m:10px;
+$space_l:15px;
+$space_xl:20px;
+$space_xxl:30px;
+$space_3l:40px;
+
+
+$breakpoints: (
+    'sm' : 'screen and (max-width:414px)',
+    'md' : 'screen and (max-width:768px)',
+    'lg' : 'screen and (max-width:1000px)',
+    'xl' : 'screen and (max-width:1200px)',
+) !default;
+
+
+// ============================
+// mixin
+// ============================
+@mixin mq($breakpoints: sm){
+    @media #{map-get($breakpoints, $breakpoint)}{
+        @content;
+    }
+}
+
+// ============================
+// base
+// ============================
+html, body{
+    width:100%;
+    color:$primary-text-color;
+    font-size: $font-size_default;
+    line-height: 1.6;
+    letter-spacing: 0.1rem;
+}
+
+
+
+
+
+
+
