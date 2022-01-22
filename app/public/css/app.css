@@ -1,0 +1,279 @@
+html,
+body {
+  width: 100%;
+  color: #212121;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.1rem;
+}
+
+a {
+  display: block;
+}
+
+#header {
+  height: 70px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #ebfffa;
+}
+
+#header .inner {
+  display: flex;
+  align-items: center;
+  width: 1200px;
+  justify-content: space-between;
+}
+
+#header .header__nav-list {
+  display: flex;
+}
+
+#header .header__nav-item {
+  padding: 5px;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+.logined-header__nav-item .logined-header__nav-item__img {
+  width: 36px;
+  height: 36px;
+  border-radius: 18px;
+}
+
+#main .main__inner {
+  width: 1200px;
+  margin: 15px auto;
+}
+
+#main .columns-2 {
+  display: flex;
+}
+
+.input-panel__container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.input-panel {
+  width: 480px;
+  padding: 20px 30px;
+}
+
+.input-panel .panel-title {
+  font-size: 30px;
+  text-align: center;
+  padding-bottom: 15px;
+  border-bottom: #757575 1px solid;
+}
+
+.input-panel .form-item {
+  margin-top: 10px;
+}
+
+.input-panel .form-item .form-item__body .form-item__input {
+  display: block;
+  border: 1px solid #BDBDBD;
+  width: 100%;
+  border-radius: 10px;
+  height: 40px;
+  padding-left: 5px;
+}
+
+.input-panel .form-item .form-item__body .form-item__body__error {
+  font-size: 12px;
+  color: #f38181;
+}
+
+.input-panel .input-panel-btn__wrap {
+  padding-top: 15px;
+}
+
+.input-panel .input-panel-btn__wrap .submit-btn {
+  width: 100%;
+  text-align: center;
+  background: #6ef3d6;
+  height: 40px;
+  border-radius: 5px;
+}
+
+.input-panel .input-panel-btn__wrap .submit-btn__link {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.input-panel .input-panel-btn__wrap .submit-btn__link {
+  color: #757575;
+}
+
+.login-panel .submit-btn {
+  margin-bottom: 10px;
+}
+
+.login-panel .login-btn__info {
+  text-align: center;
+}
+
+.login-panel .submit-checkbox {
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+}
+
+.login-panel .login-btn__info-msg {
+  font-size: 14px;
+  vertical-align: bottom;
+}
+
+.dashbord-menu__list-nav {
+  width: 200px;
+  font-size: 18px;
+}
+
+.dashbord-menu__list-nav .dashbord-menu__list-ul .dashbord-menu__list-item {
+  margin-bottom: 15px;
+}
+
+.dashbord-menu__list-nav .dashbord-menu__list-ul .dashbord-menu__list-item .dashbord-menu__list-item-link i {
+  margin-right: 10px;
+}
+
+.my-habits__section {
+  width: 100%;
+  padding: 15px 50px;
+}
+
+.my-habits__section .section-title {
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.my-habits__section .my-habits__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.my-habits__section .my-habits__container .my-habits__card {
+  width: 440px;
+  height: 160px;
+  padding: 15px;
+  border: 1px solid #BDBDBD;
+  margin-bottom: 30px;
+  border-radius: 12px;
+}
+
+.my-habits__section .my-habits__container .my-habits__card .my-habits__card-body {
+  height: 80px;
+  overflow: hidden;
+}
+
+.my-habits__section .my-habits__container .my-habits__card .my-habits__card-foot {
+  display: flex;
+  justify-content: space-around;
+}
+
+.my-habits__section .my-habits__container .my-habits__card .my-habits__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  height: 30px;
+  background-color: #e8a48b;
+  box-sizing: border-box;
+  color: #fff;
+  font-size: 16px;
+  letter-spacing: 0.1em;
+  line-height: 2;
+  text-decoration: none;
+  transition-duration: 0.3s;
+  position: relative;
+}
+
+.my-habits__section .my-habits__container .my-habits__card .my-habits__button:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 30px 40px 0 0;
+  border-color: #ffffff transparent transparent transparent;
+}
+
+.my-habits__section .my-habits__container .my-habits__card .my-habits__button:after {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: 5px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 40px 30px;
+  border-color: transparent transparent #efefef transparent;
+  box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.15);
+  transform: rotate(16deg);
+}
+
+.my-habits__section .my-habits__container .my-habits__card .my-habits__button span {
+  position: relative;
+  padding-left: 16px;
+  letter-spacing: 0.05em;
+}
+
+.my-habits__section .my-habits__container .my-habits__card .my-habits__button span:before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border: 0;
+  border-top: solid 2px #fff;
+  border-right: solid 2px #fff;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin-top: -4px;
+}
+
+.habit-input__section {
+  width: 100%;
+  padding: 15px 50px;
+}
+
+.habit-input__section .section-title {
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.habit-input__section .habit-input__container .form-item__columns-3 {
+  display: flex;
+}
+
+.habit-input__section .habit-input__container .form-item__columns-3__contents {
+  width: 20%;
+}
+
+.habit-input__section .habit-input__container .form-item {
+  margin-bottom: 15px;
+}
+
+.habit-input__section .habit-input__container .form-item .form-item__body .form-item__select {
+  width: 180px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 0 5px;
+}
+
+.habit-input__section .habit-input__container .form-item .form-item__body .form-item__textarea {
+  width: 100%;
+  padding: 0 5px;
+  height: 60px;
+  border: 1px solid gray;
+}
+

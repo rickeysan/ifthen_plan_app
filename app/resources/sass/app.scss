@@ -1,1 +1,347 @@
-//
+
+// ============================
+// 変数
+// ============================
+
+$first-color: #ebfffa;
+$second-color: #c6fce5;
+$third-color: #6ef3d6;
+$fourth-color: #0dceda;
+$primary-text-color: #212121;
+$secondary-text-color: #757575;
+$divider-color: #BDBDBD;
+$icon-color: #000000;
+$msg-color:#f38181;
+
+$site-width:1200px;
+
+$font-size_s:12px;
+$font-size_m:14px;
+$font-size_default:16px;
+$font-size_l:18px;
+$font-size_xl:24px;
+$font-size_xxl:30px;
+$font-size_3l:38px;
+
+$space_s:5px;
+$space_m:10px;
+$space_l:15px;
+$space_xl:20px;
+$space_xxl:30px;
+$space_3l:40px;
+$space_4l:50px;
+
+$breakpoints: (
+    'sm' : 'screen and (max-width:414px)',
+    'md' : 'screen and (max-width:768px)',
+    'lg' : 'screen and (max-width:1000px)',
+    'xl' : 'screen and (max-width:1200px)',
+) !default;
+
+
+// ============================
+// mixin
+// ============================
+@mixin mq($breakpoints: sm){
+    @media #{map-get($breakpoints, $breakpoint)}{
+        @content;
+    }
+}
+
+// ============================
+// base
+// ============================
+html, body{
+    width:100%;
+    color:$primary-text-color;
+    font-size: $font-size_default;
+    line-height: 1.6;
+    letter-spacing: 0.1rem;
+}
+
+a{
+    display: block;
+}
+
+// ============================
+// header
+// ============================
+#header{
+    height:70px;
+    width:100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background:$first-color;
+    .inner{
+        display: flex;
+        align-items: center;
+        width:$site-width;
+        justify-content: space-between;
+    }
+    .header__nav-list{
+        display: flex;
+
+    }
+    .header__nav-item{
+        padding:$space_s;
+        border-radius:5px;
+        margin-left:$space_m;
+    }
+
+
+}
+
+// ============================
+// logined-header
+// ============================
+.logined-header__nav-item{
+    .logined-header__nav-item__img{
+        width:36px;
+        height:36px;
+        border-radius: 18px;
+    }
+}
+
+
+// ============================
+// main
+// ============================
+#main{
+
+    .main__inner{
+        width:$site-width;
+        margin:$space_l auto;
+    }
+    .columns-2{
+        display: flex;
+    }
+}
+
+
+// ============================
+// input-panel
+// ============================
+.input-panel__container{
+    display: flex;
+    justify-content: space-around;
+}
+.input-panel{
+    width:480px;
+    padding:$space_xl $space_xxl;
+    .panel-title{
+        font-size:$font-size_xxl;
+        text-align: center;
+        padding-bottom: 15px;
+        border-bottom: $secondary-text-color 1px solid;
+    }
+    .form-item{
+        margin-top:$space_m;
+        .form-item__body{
+            .form-item__input{
+                display: block;
+                border: 1px solid $divider-color;
+                width: 100%;
+                border-radius: $space_m;
+                height: $space_3l;
+                padding-left: 5px;
+            }
+            .form-item__body__error{
+                font-size: $font-size_s;
+                color:$msg-color;
+            }
+        }
+    }
+    .input-panel-btn__wrap{
+        padding-top:$space_l;
+        .submit-btn{
+            width:100%;
+            text-align: center;
+            background: $third-color;
+            height: $space_3l;
+            border-radius: 5px;
+        }
+        .submit-btn__link{
+            margin-top:$space_xl;
+            text-align: center;
+            font-size: $font-size_m;
+        }
+        .submit-btn__link{
+            color: #757575;
+        }
+    }
+}
+
+// ============================
+// login-panel
+// ============================
+
+.login-panel{
+    .submit-btn{
+        margin-bottom:$space_m;
+    }
+    .login-btn__info{
+        text-align: center;
+    }
+    .submit-checkbox{
+        width:$space_l;
+        height: $space_l;
+        margin-right:$space_s;
+    }
+    .login-btn__info-msg{
+        font-size: $font-size_m;
+        vertical-align: bottom;
+    }
+
+}
+
+// ============================
+// dashbord-menu
+// ============================
+.dashbord-menu__list-nav{
+    width:200px;
+    font-size:$font-size_l;
+    .dashbord-menu__list-ul{
+        .dashbord-menu__list-item{
+            margin-bottom:$space_l;
+            .dashbord-menu__list-item-link{
+                i{
+                    margin-right: $space_m;
+                }
+            }
+        }
+    }
+}
+
+// ============================
+// my-habits__section
+// ============================
+.my-habits__section{
+    width:100%;
+    padding:$space_l $space_4l;
+    .section-title{
+        font-size:$font-size_l;
+        text-align: center;
+        margin-bottom:$space_xxl;
+    }
+    .my-habits__container{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .my-habits__card{
+            width:440px;
+            height:160px;
+            padding:$space_l;
+            border:1px solid $divider-color;
+            margin-bottom:$space_xxl;
+            border-radius: 12px;
+            .my-habits__card-body{
+                height: 80px;
+                overflow: hidden;
+            }
+            .my-habits__card-foot{
+                display: flex;
+                justify-content: space-around;
+            }
+            .my-habits__button{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 30%;
+                height: 30px;
+                background-color: #e8a48b;
+                box-sizing: border-box;
+                color: #fff;
+                font-size: 16px;
+                letter-spacing: 0.1em;
+                line-height: 2.0;
+                text-decoration: none;
+                transition-duration: 0.3s;
+                position: relative;
+                &:before{
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 30px 40px 0 0;
+                    border-color: #ffffff transparent transparent transparent;
+                }
+                &:after{
+                    content: "";
+                    position: absolute;
+                    top: -6px;
+                    left: 5px;
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 0 0 40px 30px;
+                    border-color: transparent transparent #efefef transparent;
+                    box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.15);
+                    transform: rotate(16deg);
+                }
+                span{
+                    position: relative;
+                    padding-left: 16px;
+                    letter-spacing: 0.05em;
+                    &:before{
+                        content: '';
+                        width: 6px;
+                        height: 6px;
+                        border: 0;
+                        border-top: solid 2px #fff;
+                        border-right: solid 2px #fff;
+                        transform: rotate(45deg);
+                        position: absolute;
+                        top: 50%;
+                        left: 0;
+                        margin-top: -4px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// ============================
+// habit-input
+// ============================
+.habit-input__section{
+    width:100%;
+    padding:$space_l $space_4l;
+    .section-title{
+        font-size:$font-size_l;
+        text-align: center;
+        margin-bottom:$space_xxl;
+    }
+    .habit-input__container{
+        .form-item__columns-3{
+            display: flex;
+        }
+        .form-item__columns-3__contents{
+            width:20%;
+        }
+        .form-item{
+            margin-bottom:$space_l;
+
+            .form-item__body{
+                .form-item__select{
+                    width: 180px;
+                    border: 1px solid gray;
+                    border-radius: 5px;
+                    padding: 0 $space_s;
+                }
+                .form-item__textarea{
+                    width: 100%;
+                    padding: 0 5px;
+                    height: 60px;
+                    border: 1px solid gray;
+                }
+            }
+        }
+    }
+
+}
