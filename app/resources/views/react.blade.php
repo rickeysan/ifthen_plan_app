@@ -20,6 +20,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
+    <h1>Reactの練習ページ</h1>
     <div id="app"></div>
 </body>
 </html>

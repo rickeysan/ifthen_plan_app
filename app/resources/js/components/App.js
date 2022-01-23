@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Habit } from './Habit';
 
-function App() {
-    return <h1>Hello React!</h1>;
+export const App = () => {
+    return <Habit />
 }
 
 if (document.getElementById('app')) {

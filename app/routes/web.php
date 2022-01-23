@@ -19,6 +19,14 @@ Route::resource('habit','HabitController');
 
 Route::resource('password/change','Auth\ChangePasswordController');
 
-Route::get('react',function(){
+Route::get('/react',function(){
     return view('react');
+});
+Route::get('/habit',function(Request $request){
+    logger('react-habitルーティング');
+    $habits = App\Habit::all();
+    logger($habits);
+    // dd($habits);
+    // dd(response()->json(['habits'=>$habits]));
+    return response()->json(['habits'=>$habits]);
 });
