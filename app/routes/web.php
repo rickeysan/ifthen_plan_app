@@ -18,3 +18,7 @@ Route::resource('logout','LogoutController');
 Route::resource('habit','HabitController');
 
 Route::resource('password/change','Auth\ChangePasswordController');
+
+Route::get('react',function(){
+    return view('react');
+});
