@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Habit } from './Habit';
+import { LeftCardContainer } from './LeftCardContainer';
 
 export const App = () => {
-    return <Habit />
+    return <LeftCardContainer />
 }
 
 if (document.getElementById('app')) {

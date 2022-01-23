@@ -66650,12 +66650,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _Habit__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Habit */ "./resources/js/components/Habit.js");
+/* harmony import */ var _LeftCardContainer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./LeftCardContainer */ "./resources/js/components/LeftCardContainer.jsx");
 
 
 
 var App = function App() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Habit__WEBPACK_IMPORTED_MODULE_2__["Habit"], null);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_LeftCardContainer__WEBPACK_IMPORTED_MODULE_2__["LeftCardContainer"], null);
 };
 
 if (document.getElementById('app')) {
@@ -66664,22 +66664,45 @@ if (document.getElementById('app')) {
 
 /***/ }),
 
-/***/ "./resources/js/components/Habit.js":
-/*!******************************************!*\
-  !*** ./resources/js/components/Habit.js ***!
-  \******************************************/
-/*! exports provided: Habit */
+/***/ "./resources/js/components/LeftCard.jsx":
+/*!**********************************************!*\
+  !*** ./resources/js/components/LeftCard.jsx ***!
+  \**********************************************/
+/*! exports provided: LeftCard */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Habit", function() { return Habit; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LeftCard", function() { return LeftCard; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+
+
+var LeftCard = function LeftCard(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "LeftCard\u3067\u3059"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, props.sample));
+};
+
+/***/ }),
+
+/***/ "./resources/js/components/LeftCardContainer.jsx":
+/*!*******************************************************!*\
+  !*** ./resources/js/components/LeftCardContainer.jsx ***!
+  \*******************************************************/
+/*! exports provided: LeftCardContainer */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LeftCardContainer", function() { return LeftCardContainer; });
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _LeftCard__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./LeftCard */ "./resources/js/components/LeftCard.jsx");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -66700,31 +66723,41 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-var Habit = function Habit() {
+
+var LeftCardContainer = function LeftCardContainer() {
+  console.log('LeftCardContainerです');
+
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])([]),
       _useState2 = _slicedToArray(_useState, 2),
-      habits = _useState2[0],
-      setHabits = _useState2[1];
+      cards = _useState2[0],
+      setCards = _useState2[1];
 
   Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
-    getHabits(), [];
-  });
+    getCards();
+  }, []);
 
-  var getHabits = /*#__PURE__*/function () {
+  var getCards = /*#__PURE__*/function () {
     var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
       var response;
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
-              _context.next = 2;
-              return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('/habit');
+              console.log('getCardsメソッドです');
+              _context.next = 3;
+              return axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('/leftcard');
 
-            case 2:
+            case 3:
               response = _context.sent;
-              setHabits(response.data.habits);
+              console.log(response.data);
+              console.log(response.data.leftcards);
+              console.log(response.data.leftcards[0].id);
+              console.log(response.data.leftcards[1].id);
+              console.log(response.data.leftcards[2].id); // const leftcards = response.data.leftcards;
 
-            case 4:
+              setCards(response.data.leftcards);
+
+            case 10:
             case "end":
               return _context.stop();
           }
@@ -66732,16 +66765,18 @@ var Habit = function Habit() {
       }, _callee);
     }));
 
-    return function getHabits() {
+    return function getCards() {
       return _ref.apply(this, arguments);
     };
   }();
 
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", null, "Habit\u30DA\u30FC\u30B8"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", null, habits.map(function (habit) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
-      key: habit.id
-    }, habit.task);
-  })));
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h2", null, "LeftCardCotainer\u3067\u3059"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", null, cards.map(function (card, index) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_LeftCard__WEBPACK_IMPORTED_MODULE_3__["LeftCard"], {
+      key: index,
+      sample: card.body
+    });
+  } // <li key={card.id}>{card.body}</li>
+  )));
 };
 
 /***/ }),
