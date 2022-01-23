@@ -34253,6 +34253,8 @@ module.exports = function(module) {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+
 __webpack_require__(/*! ./calendar */ "./resources/js/calendar.js");
 
 /***/ }),
@@ -34304,16 +34306,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+console.log('calendar.jsです');
 var calendarEl = document.getElementById("calendar");
 var calendar = new _fullcalendar_core__WEBPACK_IMPORTED_MODULE_0__["Calendar"](calendarEl, {
-  locale: 'ja',
   plugins: [_fullcalendar_interaction__WEBPACK_IMPORTED_MODULE_1__["default"], _fullcalendar_daygrid__WEBPACK_IMPORTED_MODULE_2__["default"]],
   initialView: "dayGridMonth",
   headerToolbar: {
     left: "prev,next today",
     center: "title",
-    right: ""
+    right: "dayGridMonth"
   },
+  locale: "ja",
   // 日付をクリック、または範囲を選択したイベント
   selectable: true,
   select: function select(info) {
@@ -34322,14 +34325,38 @@ var calendar = new _fullcalendar_core__WEBPACK_IMPORTED_MODULE_0__["Calendar"](c
     var eventName = prompt("イベントを入力してください");
 
     if (eventName) {
-      // イベントの追加
-      calendar.addEvent({
-        title: eventName,
-        start: info.start,
-        end: info.end,
-        allDay: true
+      console.log('登録します'); // Laravelの登録処理の呼び出し
+
+      axios.post("/schedule-add", {
+        start_date: info.start.valueOf(),
+        end_date: info.end.valueOf(),
+        event_name: eventName
+      }).then(function () {
+        // イベントの追加
+        calendar.addEvent({
+          title: eventName,
+          start: info.start,
+          end: info.end,
+          allDay: true
+        });
+      })["catch"](function () {
+        // バリデーションエラーなど
+        alert("登録に失敗しました");
       });
     }
+  },
+  events: function events(info, successCallback, failureCallback) {
+    console.log('取得します'); // Laravelのスケジュール取得処理の呼び出し
+
+    axios.post("/schedule-get", {
+      start_date: info.start.valueOf(),
+      end_date: info.end.valueOf()
+    }).then(function (response) {
+      successCallback(response.data);
+    })["catch"](function () {
+      // バリデーションエラーなど
+      alert("登録に失敗しました");
+    });
   }
 });
 calendar.render();

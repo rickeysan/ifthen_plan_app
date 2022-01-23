@@ -10,6 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\Http\Controllers\ScheduleController;
+
+
 
 Route::resource('register','RegisterController');
 Route::resource('login','LoginController');
@@ -21,6 +24,10 @@ Route::resource('password/change','Auth\ChangePasswordController');
 
 
 
-Route::get('/calendar', function () {
-    return view('calendar');
+Route::get('/schedule', function () {
+    return view('schedule');
 });
+// スケジュール登録処理
+Route::post('/schedule-add', [ScheduleController::class, 'scheduleAdd'])->name('schedule-add');
+// スケジュール取得処理
+Route::post('/schedule-get', [ScheduleController::class, 'scheduleGet'])->name('schedule-get');

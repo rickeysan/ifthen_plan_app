@@ -14,5 +14,6 @@
 </div>
 
     <script src="{{ mix('js/app.js') }}"></script>
+    <script>console.log('hello.blade.phpです')</script>
 </body>
 </html>
