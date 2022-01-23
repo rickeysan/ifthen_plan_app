@@ -22,13 +22,14 @@
         <div class="calendar-info-wrap">
             <p class="calendar-info-title">記録の追加・編集フォーム</p>
             <form action="" class="calendar-input-form" style="display: none;">
-                <p>新規作成</p>
-                <p><input type="date" name="start_date" class="input-date"></p>
-                <p><input type="text" name="title" class="input-text" placeholder="タイトル入力"></p>
+                <p class="calendar-input-title"></p>
+                <p><input type="date" name="start_date" class="calendar-input-date"></p>
+                <p><input type="text" name="title" class="calendar-input-text" placeholder="タイトル入力"></p>
             </form>
-            <button id="bt2">登録</button>
+            <button id="btn-store" style="display: none;">登録</button>
+            <button id="btn-edit" style="display: none;">編集</button>
             {{-- <p class="calendar-info-body">日付</p> --}}
-        </div>
+        </div>  
     </div>
 
 </div>

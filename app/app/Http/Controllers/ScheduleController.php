@@ -68,4 +68,41 @@ class ScheduleController extends Controller
             ->where('start_date', '<', $end_date)
             ->get();
     }
+
+    // 該当日のスケジュールの記録があるか判定
+    public function scheduleJudge(Request $request)
+    {
+        logger('scheduleJudgeです');
+        logger($request);
+        // バリデーション
+        $request->validate([
+            'start_date' => 'required|date',
+        ]);
+        logger('バリデーションOKです');
+        logger($request['start_date']);
+        $record = Schedule::where('start_date',$request['start_date'])->first();
+        logger('recordの中身');
+        logger($record);
+        // 中身があるか判定する
+        if(is_null($record)){
+            logger('データはありません');
+            return ['flg'=>false,'text'=>'','start_date'=>$request['start_date']];
+        }else{
+            logger('データはあります');
+            return ['flg'=>true,'text'=>$record['event_name'],'start_date'=>$request['start_date']];
+            return 'OK';
+        }
+        // // 登録処理
+        // return Schedule::query()
+        //     ->select(
+        //         // FullCalendarの形式に合わせる
+        //         'start_date as start',
+        //         'end_date as end',
+        //         'event_name as title'
+        //     )
+        //     // FullCalendarの表示範囲のみ表示
+        //     ->where('end_date', '>', $start_date)
+        //     ->where('start_date', '<', $end_date)
+        //     ->get();
+    }
 }

@@ -33,3 +33,5 @@ Route::post('/schedule-add', [ScheduleController::class, 'scheduleAdd'])->name('
 Route::post('/schedule-get', [ScheduleController::class, 'scheduleGet'])->name('schedule-get');
 // スケジュール編集処理
 Route::post('/schedule-edit', [ScheduleController::class, 'scheduleEdit'])->name('schedule-edit');
+// スケジュール判定処理
+Route::post('/schedule-judge', [ScheduleController::class, 'scheduleJudge'])->name('schedule-judge');

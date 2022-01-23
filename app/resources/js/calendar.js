@@ -19,18 +19,50 @@ let calendar = new Calendar(calendarEl, {
     // 日付をクリック、または範囲を選択したイベント
     selectable: true,
     select: function (info) {
+
+
         console.log('日付がクリックされました');
+        console.log('日付データをajaxで送る');
         $('.calendar-input-form').show();
-        $('.input-date').val(info.startStr);
         // $('.calendar-info-title').attr('display','block');
-        console.log(info);
         // console.log(info.start);
         // console.log(info.startStr);
 
         // 入力ダイアログ
         // const eventName = prompt("イベントを入力してください");
-
-
+        // var $date = $('.input-date').val();
+        var $date = info.startStr;
+        console.log('$dateの中身');
+        console.log($date);
+        axios
+            .post('/schedule-judge',{
+                start_date:$date,
+            })
+            .then((response) => {
+                console.log('scheduleJudgeからの返り値');
+                // console.log(response);
+                console.log(response.data);
+                if(response.data.flg){
+                    console.log('データはあります');
+                    console.log('編集フォームを表示します');
+                    $('.calendar-input-title').text('編集');
+                    $('.calendar-input-date').val(response.data.start_date);
+                    $('.calendar-input-text').val(response.data.text);
+                    $('#btn-edit').show();
+                    $('#btn-store').hide();
+                }else{
+                    console.log('データはありません');``
+                    console.log('新規登録フォームを表示します');
+                    $('.calendar-input-title').text('新規作成');
+                    $('.calendar-input-date').val(response.data.start_date);
+                    $('.calendar-input-text').val('');
+                    $('#btn-edit').hide();
+                    $('#btn-store').show();                }
+            })
+            .catch(() => {
+                // バリデーションエラーなど
+                console.log("ajaxの通信に失敗しました");
+            });
 
     },
 
@@ -43,11 +75,6 @@ let calendar = new Calendar(calendarEl, {
 
     },
 
-    // マウスオーバーした時の動作
-    eventMouseEnter: function(info) {
-        console.log('マウスオーバーされました');
-
-    },
 
 
     events: function (info, successCallback, failureCallback) {
@@ -59,6 +86,8 @@ let calendar = new Calendar(calendarEl, {
                 end_date: info.end.valueOf(),
             })
             .then((response) => {
+                console.log('responseの中身');
+                console.log(response);
                 successCallback(response.data);
             })
             .catch(() => {

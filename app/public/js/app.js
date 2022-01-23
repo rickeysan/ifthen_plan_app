@@ -34321,22 +34321,51 @@ var calendar = new _fullcalendar_core__WEBPACK_IMPORTED_MODULE_0__["Calendar"](c
   selectable: true,
   select: function select(info) {
     console.log('日付がクリックされました');
-    $('.calendar-input-form').show();
-    $('.input-date').val(info.startStr); // $('.calendar-info-title').attr('display','block');
-
-    console.log(info); // console.log(info.start);
+    console.log('日付データをajaxで送る');
+    $('.calendar-input-form').show(); // $('.calendar-info-title').attr('display','block');
+    // console.log(info.start);
     // console.log(info.startStr);
     // 入力ダイアログ
     // const eventName = prompt("イベントを入力してください");
+    // var $date = $('.input-date').val();
+
+    var $date = info.startStr;
+    console.log('$dateの中身');
+    console.log($date);
+    axios.post('/schedule-judge', {
+      start_date: $date
+    }).then(function (response) {
+      console.log('scheduleJudgeからの返り値'); // console.log(response);
+
+      console.log(response.data);
+
+      if (response.data.flg) {
+        console.log('データはあります');
+        console.log('編集フォームを表示します');
+        $('.calendar-input-title').text('編集');
+        $('.calendar-input-date').val(response.data.start_date);
+        $('.calendar-input-text').val(response.data.text);
+        $('#btn-edit').show();
+        $('#btn-store').hide();
+      } else {
+        console.log('データはありません');
+        "";
+        console.log('新規登録フォームを表示します');
+        $('.calendar-input-title').text('新規作成');
+        $('.calendar-input-date').val(response.data.start_date);
+        $('.calendar-input-text').val('');
+        $('#btn-edit').hide();
+        $('#btn-store').show();
+      }
+    })["catch"](function () {
+      // バリデーションエラーなど
+      console.log("ajaxの通信に失敗しました");
+    });
   },
   // イベントをクリックした時の動作
   eventClick: function eventClick(info) {
     console.log('クリックされました');
     alert('Event: ' + info.event.title);
-  },
-  // マウスオーバーした時の動作
-  eventMouseEnter: function eventMouseEnter(info) {
-    console.log('マウスオーバーされました');
   },
   events: function events(info, successCallback, failureCallback) {
     console.log('取得します'); // Laravelのスケジュール取得処理の呼び出し
@@ -34345,6 +34374,8 @@ var calendar = new _fullcalendar_core__WEBPACK_IMPORTED_MODULE_0__["Calendar"](c
       start_date: info.start.valueOf(),
       end_date: info.end.valueOf()
     }).then(function (response) {
+      console.log('responseの中身');
+      console.log(response);
       successCallback(response.data);
     })["catch"](function () {
       // バリデーションエラーなど
