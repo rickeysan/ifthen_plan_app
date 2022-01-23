@@ -16,18 +16,21 @@ class ScheduleController extends Controller
     public function scheduleAdd(Request $request)
     {
         logger('scheduleAddです');
+        logger('バリデーションを行います');
         // バリデーション
         $request->validate([
-            'start_date' => 'required|integer',
-            'end_date' => 'required|integer',
+            'start_date' => 'required|date',
+            'end_date' => 'required|date',
             'event_name' => 'required|max:32',
         ]);
-
+        logger('バリデーションOKです');
         // 登録処理
         $schedule = new Schedule;
         // 日付に変換。JavaScriptのタイムスタンプはミリ秒なので秒に変換
-        $schedule->start_date = date('Y-m-d', $request->input('start_date') / 1000);
-        $schedule->end_date = date('Y-m-d', $request->input('end_date') / 1000);
+        // $schedule->start_date = date('Y-m-d', $request->input('start_date') / 1000);
+        // $schedule->end_date = date('Y-m-d', $request->input('end_date') / 1000);
+        $schedule->start_date = $request->input('start_date');
+        $schedule->end_date = $request->input('end_date');
         $schedule->event_name = $request->input('event_name');
         $schedule->save();
 

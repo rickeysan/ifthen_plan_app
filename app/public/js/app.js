@@ -34320,30 +34320,23 @@ var calendar = new _fullcalendar_core__WEBPACK_IMPORTED_MODULE_0__["Calendar"](c
   // 日付をクリック、または範囲を選択したイベント
   selectable: true,
   select: function select(info) {
-    //alert("selected " + info.startStr + " to " + info.endStr);
+    console.log('日付がクリックされました');
+    $('.calendar-input-form').show();
+    $('.input-date').val(info.startStr); // $('.calendar-info-title').attr('display','block');
+
+    console.log(info); // console.log(info.start);
+    // console.log(info.startStr);
     // 入力ダイアログ
-    var eventName = prompt("イベントを入力してください");
-
-    if (eventName) {
-      console.log('登録します'); // Laravelの登録処理の呼び出し
-
-      axios.post("/schedule-add", {
-        start_date: info.start.valueOf(),
-        end_date: info.end.valueOf(),
-        event_name: eventName
-      }).then(function () {
-        // イベントの追加
-        calendar.addEvent({
-          title: eventName,
-          start: info.start,
-          end: info.end,
-          allDay: true
-        });
-      })["catch"](function () {
-        // バリデーションエラーなど
-        alert("登録に失敗しました");
-      });
-    }
+    // const eventName = prompt("イベントを入力してください");
+  },
+  // イベントをクリックした時の動作
+  eventClick: function eventClick(info) {
+    console.log('クリックされました');
+    alert('Event: ' + info.event.title);
+  },
+  // マウスオーバーした時の動作
+  eventMouseEnter: function eventMouseEnter(info) {
+    console.log('マウスオーバーされました');
   },
   events: function events(info, successCallback, failureCallback) {
     console.log('取得します'); // Laravelのスケジュール取得処理の呼び出し
@@ -34359,7 +34352,38 @@ var calendar = new _fullcalendar_core__WEBPACK_IMPORTED_MODULE_0__["Calendar"](c
     });
   }
 });
-calendar.render();
+calendar.render(); // $('.calendar-info-title').css('color','red');
+
+$('#bt2').click(function () {
+  console.log('新規登録画面が押されました');
+  console.log('登録処理を開始します'); // var formData = $('.calendar-input-form').serialize();
+  // console.log(formData);
+
+  var $date = $('.input-date').val();
+  console.log($date);
+  var $text = $('.input-text').val();
+  console.log($text); // Laravelの登録処理の呼び出し
+
+  axios.post("/schedule-add", {
+    start_date: $date,
+    end_date: $date,
+    event_name: $text
+  }).then(function () {
+    console.log("登録に成功しました"); // イベントの追加
+
+    calendar.addEvent({
+      title: $text,
+      start: $date,
+      end: $date,
+      allDay: true
+    }); // calendar.render();
+
+    console.log('全ての処理が終了しました');
+  })["catch"](function () {
+    // バリデーションエラーなど
+    console.log("登録に失敗しました");
+  });
+});
 
 /***/ }),
 
