@@ -92,17 +92,33 @@ class ScheduleController extends Controller
             return ['flg'=>true,'text'=>$record['event_name'],'start_date'=>$request['start_date']];
             return 'OK';
         }
-        // // 登録処理
-        // return Schedule::query()
-        //     ->select(
-        //         // FullCalendarの形式に合わせる
-        //         'start_date as start',
-        //         'end_date as end',
-        //         'event_name as title'
-        //     )
-        //     // FullCalendarの表示範囲のみ表示
-        //     ->where('end_date', '>', $start_date)
-        //     ->where('start_date', '<', $end_date)
-        //     ->get();
+
     }
+    /**
+     * スケジュールを編集
+     *
+     * @param  Request  $request
+     */
+    public function scheduleEdit(Request $request)
+    {
+        logger('scheduleEditです');
+        logger($request);
+        logger('バリデーションを行います');
+        // バリデーション
+        $request->validate([
+            'start_date' => 'required|date',
+            'event_name' => 'required|max:32',
+        ]);
+        logger('バリデーションOKです');
+        // 登録処理
+        $schedule = Schedule::where('start_date',$request['start_date'])->first();
+        logger($schedule);
+        $schedule->start_date = $request->input('start_date');
+        $schedule->end_date = $request->input('end_date');
+        $schedule->event_name = $request->input('event_name');
+        $schedule->save();
+
+        return;
+    }
+
 }

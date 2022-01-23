@@ -34383,16 +34383,14 @@ var calendar = new _fullcalendar_core__WEBPACK_IMPORTED_MODULE_0__["Calendar"](c
     });
   }
 });
-calendar.render(); // $('.calendar-info-title').css('color','red');
+calendar.render(); // 新規登録の処理
 
-$('#bt2').click(function () {
+$('#btn-store').click(function () {
   console.log('新規登録画面が押されました');
-  console.log('登録処理を開始します'); // var formData = $('.calendar-input-form').serialize();
-  // console.log(formData);
-
-  var $date = $('.input-date').val();
+  console.log('登録処理を開始します');
+  var $date = $('.calendar-input-date').val();
   console.log($date);
-  var $text = $('.input-text').val();
+  var $text = $('.calendar-input-text').val();
   console.log($text); // Laravelの登録処理の呼び出し
 
   axios.post("/schedule-add", {
@@ -34413,6 +34411,34 @@ $('#bt2').click(function () {
   })["catch"](function () {
     // バリデーションエラーなど
     console.log("登録に失敗しました");
+  });
+}); // 編集の処理
+
+$('#btn-edit').click(function () {
+  console.log('編集処理を開始します');
+  var $date = $('.calendar-input-date').val();
+  console.log($date);
+  var $text = $('.calendar-input-text').val();
+  console.log($text); // Laravelの登録処理の呼び出し
+
+  axios.post("/schedule-edit", {
+    start_date: $date,
+    end_date: $date,
+    event_name: $text
+  }).then(function () {
+    console.log("編集に成功しました"); // イベントの更新
+
+    calendar.addEvent({
+      title: $text,
+      start: $date,
+      end: $date,
+      allDay: true
+    }); // calendar.render();
+
+    console.log('全ての処理が終了しました');
+  })["catch"](function () {
+    // バリデーションエラーなど
+    console.log("編集に失敗しました");
   });
 });
 

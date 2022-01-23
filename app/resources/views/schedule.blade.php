@@ -28,8 +28,7 @@
             </form>
             <button id="btn-store" style="display: none;">登録</button>
             <button id="btn-edit" style="display: none;">編集</button>
-            {{-- <p class="calendar-info-body">日付</p> --}}
-        </div>  
+        </div>
     </div>
 
 </div>
