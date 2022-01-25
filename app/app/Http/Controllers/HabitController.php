@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class HabitController extends Controller
 {
-    use SoftDeletes;
     public function __construct(){
         $this->middleware('auth');
     }

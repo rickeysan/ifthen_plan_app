@@ -17,6 +17,7 @@ class UsersTableSeeders extends Seeder
         $param = [
             'name'=>'sasaki',
             'email'=>'sasaki@gmail.com',
+            'introduction'=>'海外留学を目指しています',
             'password'=>Hash::make('sasaki123'),
         ];
         $user->fill($param)->save();

@@ -36,5 +36,6 @@
     @endif
     <a href="/logout">ログアウトする</a>
     <a href="/password/change">パスワードを変更する</a>
+    <a href="/profile">マイページ編集</a>
 </body>
 </html>
