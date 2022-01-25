@@ -14,9 +14,10 @@ class HomeController extends Controller
     }
     public function index(Request $request){
         logger('HomeControllerのindexメソッドです');
-        dd(Auth::user());
+        // dd(Auth::id());
         // dd($request->session());
-        $habits = Habit::where('user_id',$request->session()->get('user_id'))->get();
+        // dd($request->session()->get('user_id'));
+        $habits = Habit::where('user_id',Auth::id())->get();
         // dd($habits);
         return view ('home',compact('habits'));
     }

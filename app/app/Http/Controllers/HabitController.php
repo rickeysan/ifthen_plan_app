@@ -35,8 +35,7 @@ class HabitController extends Controller
     public function show(Request $request){
         logger('HabitControllerのshowメソッドです');
         return view('/habit/show');
-        // $habit = Habit::where('id',)
-    }
+        }
     public function edit(Request $request, $id){
         logger('HabitControllerのeditメソッドです');
         // dd('editです');
@@ -44,7 +43,7 @@ class HabitController extends Controller
         // dd($id);
         // dd($request->session()->get('user_id'));
 
-        $habit = Habit::where('id',$id)->where('user_id',$request->session()->get('user_id'))->get();
+        $habit = Habit::where('id',$id)->where('user_id',Auth::id())->get();
         // $habit = Habit::find($id)->where('user_id',$request->session()->get());
         // dd($habit);
         // dd($habit->all());

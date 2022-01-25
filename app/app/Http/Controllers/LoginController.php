@@ -24,8 +24,8 @@ class LoginController extends Controller
         $param = $request->all();
 
         if(Auth::attempt(['email'=>$param['email'],'password'=>$param['password']])){
-            $request->session()->put('login_limit',60*60);
-            $request->session()->put('login_date',time());
+            // $request->session()->put('login_limit',60*60);
+            // $request->session()->put('login_date',time());
 
             return redirect('home');
         }else{

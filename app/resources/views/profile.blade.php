@@ -9,11 +9,18 @@
 <body>
     <h1>プロフィール編集</h1>
     <div class="main-contents-wrap">
-        <form action="">
-            
+        <form action="/profile/{{  $user_info[0]['id'] }}" method="post">
+            @csrf
+            @method('PUT')
+            <label>名前</label>
+            <input type="text" name="name" value="{{  $user_info[0]['name'] }}">
+            <label>メールアドレス</label>
+            <input type="text" name="email" value="{{  $user_info[0]['email'] }}">
+            <label>自己紹介</label>任意
+            <textarea name="introduction" cols="80" rows="5">{{ $user_info[0]['introduction'] }}</textarea>
+            <input type="submit" value="変更する">
         </form>
     </div>
-    <h2>登録した習慣</h2>
     <a href="/logout">ログアウトする</a>
     <a href="/password/change">パスワードを変更する</a>
 </body>
