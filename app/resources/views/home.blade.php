@@ -39,5 +39,6 @@
     <a href="/profile">マイページ編集</a>
     <a href="/withdraw">退会する</a>
     <a href="{{ route('post.show','1') }}">他人の投稿</a>
+    <a href="{{ route('search.index') }}">検索画面へ</a>
 </body>
 </html>

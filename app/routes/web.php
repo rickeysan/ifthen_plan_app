@@ -23,3 +23,4 @@ Route::resource('profile','ProfileController');
 
 Route::resource('withdraw','WithdrawController',['only'=>['index','destroy']]);
 Route::resource('post', 'PostController');
+Route::resource('search', 'SearchController');
