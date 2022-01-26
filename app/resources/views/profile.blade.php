@@ -45,11 +45,11 @@
         <form action="/profile/{{  $user_info[0]['id'] }}" method="post" enctype="multipart/form-data">
             @csrf
             @method('PUT')
-            <label>名前</label>
+            <label>名前</label>必須
             <input type="text" name="name" value="{{  $user_info[0]['name'] }}">
-            <label>メールアドレス</label>
+            <label>メールアドレス</label>必須
             <input type="text" name="email" value="{{  $user_info[0]['email'] }}">
-            <label>プロフィール画像</label>
+            <label>プロフィール画像</label>任意
             <div class="change-image-wrap">
                 <input type="file" name="image" accept="image/png, image/jpeg" class="input-image js-droparea">
                 <img src="" class="drop-image js-show-image" alt="jsから来た画像">
