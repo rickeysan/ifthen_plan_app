@@ -38,5 +38,6 @@
     <a href="/password/change">パスワードを変更する</a>
     <a href="/profile">マイページ編集</a>
     <a href="/withdraw">退会する</a>
+    <a href="{{ route('post.show','1') }}">他人の投稿</a>
 </body>
 </html>

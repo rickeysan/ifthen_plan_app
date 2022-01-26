@@ -22,3 +22,4 @@ Route::resource('password/change','Auth\ChangePasswordController');
 Route::resource('profile','ProfileController');
 
 Route::resource('withdraw','WithdrawController',['only'=>['index','destroy']]);
+Route::resource('post', 'PostController');
