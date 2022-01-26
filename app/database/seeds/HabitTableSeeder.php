@@ -45,5 +45,6 @@ class HabitTableSeeder extends Seeder
         ];
         $habit->fill($param)->save();
 
+        factory(Habit::class, 50)->create();
     }
 }
