@@ -33,11 +33,9 @@ class ProfileController extends Controller
         // dd($param);
         unset($param['_method']);
         unset($param['_token']);
-        $upload_image = $param['image'];
-
-        // dd($user);
         
-        if($upload_image) {
+        if(!empty($param['image'])) {
+            $upload_image = $param['image'];
             logger('画像がアップロードされました');
 			//アップロードされた画像を保存する
 			$path = $upload_image->store('uploads',"public");
