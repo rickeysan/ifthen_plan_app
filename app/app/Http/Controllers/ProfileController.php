@@ -24,15 +24,35 @@ class ProfileController extends Controller
         $validate_rule = [
             'name'=>'required',
             'email'=>'required | email',
+            'image' => 'file|image|mimes:png,jpeg',
             'introduction'=>'max:256',
         ];
         $this->validate($request,$validate_rule);
         $param = $request->all();
+        // dd($upload_image);
+        // dd($param);
         unset($param['_method']);
         unset($param['_token']);
-        $user = User::find(Auth::id());
+        $upload_image = $param['image'];
+
         // dd($user);
+        
+        if($upload_image) {
+            logger('画像がアップロードされました');
+			//アップロードされた画像を保存する
+			$path = $upload_image->store('uploads',"public");
+			//画像の保存に成功したらDBに記録する
+			if($path){
+                logger('画像の保存に成功しました');
+                logger($path);
+                $param['file_name'] = $upload_image->getClientOriginalName();
+                $param['file_path'] = $path;
+			}
+		}
+        $user = User::find(Auth::id());
         $user->fill($param)->save();
+
+
         return redirect('home');
     }
 
