@@ -17,8 +17,6 @@ class ChangePasswordController extends Controller
 
     public function index(){
         logger('ChangePasswordControllerのindexメソッド');
-        dd(Auth::check());
-        // dd(Auth::user()->password);
         return view('password/change_pass');
     }
     public function store(ChangePasswordRequest $request){
