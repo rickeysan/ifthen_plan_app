@@ -22,12 +22,17 @@
     <form action=" {{ route('search.store') }}" method="post">
         @csrf
         <label>キーワード</label>
-        <input type="text" name="key_word">
+        <input type="text" name="key_word" value={{ $key_word }}>
         <label>カテゴリ</label>
         <select name="category_id" id="">
-            <option value="1">No.1</option>
-            <option value="2">No.2</option>
-            <option value="3">No.3</option>
+                <option value="0">選択してください</option>
+            @foreach ($categories as $category)
+                @if($category['id'] == $category_id)
+                    <option value="{{ $category['id'] }}" selected>{{ $category['name'] }}</option>
+                @else
+                    <option value="{{ $category['id'] }}">{{ $category['name'] }}</option>
+                @endif
+            @endforeach
         </select>
         <button tupe="submit">検索する</button>
     </form>
