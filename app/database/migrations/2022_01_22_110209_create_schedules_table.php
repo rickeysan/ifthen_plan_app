@@ -18,6 +18,7 @@ class CreateSchedulesTable extends Migration
             $table->date('start_date')->comment('開始日');
             $table->date('end_date')->comment('終了日');
             $table->string('event_name')->comment('イベント名');
+            $table->boolean('achivement_flg');
             $table->timestamps();
         });
     }

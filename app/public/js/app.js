@@ -34317,18 +34317,13 @@ var calendar = new _fullcalendar_core__WEBPACK_IMPORTED_MODULE_0__["Calendar"](c
     right: "dayGridMonth"
   },
   locale: "ja",
+  editable: true,
   // 日付をクリック、または範囲を選択したイベント
   selectable: true,
   select: function select(info) {
     console.log('日付がクリックされました');
     console.log('日付データをajaxで送る');
-    $('.calendar-input-form').show(); // $('.calendar-info-title').attr('display','block');
-    // console.log(info.start);
-    // console.log(info.startStr);
-    // 入力ダイアログ
-    // const eventName = prompt("イベントを入力してください");
-    // var $date = $('.input-date').val();
-
+    $('.calendar-input-form').show();
     var $date = info.startStr;
     console.log('$dateの中身');
     console.log($date);
@@ -34347,6 +34342,14 @@ var calendar = new _fullcalendar_core__WEBPACK_IMPORTED_MODULE_0__["Calendar"](c
         $('.calendar-input-text').val(response.data.text);
         $('#btn-edit').show();
         $('#btn-store').hide();
+
+        if (response.data.achivement_flg == 0) {
+          console.log('達成');
+          $('#rd0').prop('checked', true);
+        } else {
+          console.log('例外日');
+          $('#rd1').prop('checked', true);
+        }
       } else {
         console.log('データはありません');
         "";
@@ -34358,7 +34361,6 @@ var calendar = new _fullcalendar_core__WEBPACK_IMPORTED_MODULE_0__["Calendar"](c
         $('#btn-store').show();
       }
     })["catch"](function () {
-      // バリデーションエラーなど
       console.log("ajaxの通信に失敗しました");
     });
   },
@@ -34379,7 +34381,7 @@ var calendar = new _fullcalendar_core__WEBPACK_IMPORTED_MODULE_0__["Calendar"](c
       successCallback(response.data);
     })["catch"](function () {
       // バリデーションエラーなど
-      alert("登録に失敗しました");
+      alert("取得に失敗しました");
     });
   }
 });
@@ -34391,12 +34393,15 @@ $('#btn-store').click(function () {
   var $date = $('.calendar-input-date').val();
   console.log($date);
   var $text = $('.calendar-input-text').val();
-  console.log($text); // Laravelの登録処理の呼び出し
+  console.log($text);
+  var $achivement_flg = $("input[name='achivement_flg']:checked").val();
+  console.log($achivement_flg); // Laravelの登録処理の呼び出し
 
   axios.post("/schedule-add", {
     start_date: $date,
     end_date: $date,
-    event_name: $text
+    event_name: $text,
+    achivement_flg: $achivement_flg
   }).then(function () {
     console.log("登録に成功しました"); // イベントの追加
 
@@ -34419,12 +34424,14 @@ $('#btn-edit').click(function () {
   var $date = $('.calendar-input-date').val();
   console.log($date);
   var $text = $('.calendar-input-text').val();
-  console.log($text); // Laravelの登録処理の呼び出し
+  console.log($text);
+  var $achivement_flg = $("input[name='achivement_flg']:checked").val(); // Laravelの編集処理の呼び出し
 
   axios.post("/schedule-edit", {
     start_date: $date,
     end_date: $date,
-    event_name: $text
+    event_name: $text,
+    achivement_flg: $achivement_flg
   }).then(function () {
     console.log("編集に成功しました"); // イベントの更新
 

@@ -15,22 +15,16 @@ let calendar = new Calendar(calendarEl, {
         right: "dayGridMonth",
     },
     locale: "ja",
+    editable:true,
 
     // 日付をクリック、または範囲を選択したイベント
     selectable: true,
     select: function (info) {
 
-
         console.log('日付がクリックされました');
         console.log('日付データをajaxで送る');
         $('.calendar-input-form').show();
-        // $('.calendar-info-title').attr('display','block');
-        // console.log(info.start);
-        // console.log(info.startStr);
 
-        // 入力ダイアログ
-        // const eventName = prompt("イベントを入力してください");
-        // var $date = $('.input-date').val();
         var $date = info.startStr;
         console.log('$dateの中身');
         console.log($date);
@@ -50,6 +44,13 @@ let calendar = new Calendar(calendarEl, {
                     $('.calendar-input-text').val(response.data.text);
                     $('#btn-edit').show();
                     $('#btn-store').hide();
+                    if(response.data.achivement_flg==0){
+                        console.log('達成');
+                        $('#rd0').prop('checked', true);
+                    }else{
+                        console.log('例外日');
+                        $('#rd1').prop('checked', true);
+                    }
                 }else{
                     console.log('データはありません');``
                     console.log('新規登録フォームを表示します');
@@ -60,7 +61,6 @@ let calendar = new Calendar(calendarEl, {
                     $('#btn-store').show();                }
             })
             .catch(() => {
-                // バリデーションエラーなど
                 console.log("ajaxの通信に失敗しました");
             });
 
@@ -92,7 +92,7 @@ let calendar = new Calendar(calendarEl, {
             })
             .catch(() => {
                 // バリデーションエラーなど
-                alert("登録に失敗しました");
+                alert("取得に失敗しました");
             });
     },
 });
@@ -106,6 +106,8 @@ $('#btn-store').click(function(){
     console.log($date);
     var $text = $('.calendar-input-text').val();
     console.log($text);
+    var $achivement_flg = $("input[name='achivement_flg']:checked").val();
+    console.log($achivement_flg);
 
     // Laravelの登録処理の呼び出し
     axios
@@ -113,6 +115,7 @@ $('#btn-store').click(function(){
             start_date: $date,
             end_date: $date,
             event_name: $text,
+            achivement_flg: $achivement_flg,
         })
         .then(() => {
             console.log("登録に成功しました");
@@ -139,13 +142,15 @@ $('#btn-edit').click(function(){
     console.log($date);
     var $text = $('.calendar-input-text').val();
     console.log($text);
+    var $achivement_flg = $("input[name='achivement_flg']:checked").val();
 
-    // Laravelの登録処理の呼び出し
+    // Laravelの編集処理の呼び出し
     axios
         .post("/schedule-edit", {
             start_date: $date,
             end_date: $date,
             event_name: $text,
+            achivement_flg: $achivement_flg,
         })
         .then(() => {
             console.log("編集に成功しました");

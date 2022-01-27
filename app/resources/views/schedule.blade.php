@@ -11,6 +11,12 @@
         .calendar-info-wrap{
             margin-left:40px;
         }
+        .ok_class{
+            background: red !important;
+        }
+        .ng_class{
+            background: blue !important;
+        }
     </style>
 </head>
 <body>
@@ -25,6 +31,8 @@
                 <p class="calendar-input-title"></p>
                 <p><input type="date" name="start_date" class="calendar-input-date"></p>
                 <p><input type="text" name="title" class="calendar-input-text" placeholder="タイトル入力"></p>
+                <input type="radio" id="rd0" name="achivement_flg" value="0">達成
+                <input type="radio" id="rd1" name="achivement_flg" value="1">例外日
             </form>
             <button id="btn-store" style="display: none;">登録</button>
             <button id="btn-edit" style="display: none;">編集</button>
