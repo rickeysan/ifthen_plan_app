@@ -4,28 +4,101 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ asset('css/reset.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     <title>Document</title>
 </head>
 <body>
-    <h1>新しい習慣を作ろう!!</h1>
-    <form action="/habit" method="post">
-        @csrf
-        
-        <label>ジャンルを選んでください</label>
-        <select name="category_id" id="">
-            <option value="0">選択してください</option>
-        @foreach ($categories as $category)
-            <option value="{{ $category['id'] }}">{{ $category['name'] }}</option>
-        @endforeach
-        </select>
-        <label>なんのために習慣化しますか？</label>
-        <textarea name="purpose" id="" cols="120" rows="4">{{ old('purpose')}}</textarea>
-        <label>そのために何をしますか？</label>
-        <textarea name="task" id="" cols="120" rows="4">{{ old('task')}}</textarea>
-        <label>いつから、いつまでに習慣化しますか？</label>
-        <span>開始日</span><input type="date" name="start_date">
-        <span>終了日</span><input type="date" name="finish_date">
-        <input type="submit" value="習慣化を開始する">
-    </form>
+    <header id="header">
+        <div class="inner">
+            <h1 class="logo">
+                <a href=""><img src="{{ asset('img/top_banner.png')}} " alt=""></a>
+            </h1>
+            <nav>
+                <ul class="header__nav-list">
+                    <li class="logined-header__nav-item">
+                        <a href="">
+                        <img class="logined-header__nav-item__img" src="/app/public/img/top_banner.png" alt="">
+                        </a>
+                    </li>
+                    <li><a href="">マイページ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main">
+        <div class="main__inner columns-2">
+            <nav class="dashbord-menu__list-nav">
+                <ul class="dashbord-menu__list-ul">
+                    <li class="dashbord-menu__list-item"><a class="dashbord-menu__list-item-link" href=""><i class="fas fa-home"></i>HOME</a></li>
+                    <li class="dashbord-menu__list-item"><a class="dashbord-menu__list-item-link" href=""><i class="far fa-calendar-plus"></i>新しい習慣</a></li>
+                    <li class="dashbord-menu__list-item"><a class="dashbord-menu__list-item-link" href=""><i class="fas fa-search"></i>習慣を検索</a></li>
+                    <li class="dashbord-menu__list-item"><a class="dashbord-menu__list-item-link" href=""><i class="far fa-id-card"></i>プロフィール</a></li>
+                    <li class="dashbord-menu__list-item"><a class="dashbord-menu__list-item-link" href=""><i class="far fa-heart"></i>フォローリスト</a></li>
+                </ul>
+            </nav>
+
+            <section class="habit-input__section">
+                <h2 class="section-title">新しい習慣を始めましょう</h2>
+                <div class="habit-input__container">
+                    <form action="{{ route('habit.store') }}" methdo="post">
+                        @csrf
+                        <div class="form-item__columns-3">
+                            <div class="form-item form-item__columns-3__contents">
+                                <div class="form-item__head">
+                                    <p class="form-item__head-text">ジャンル</p>
+                                </div>
+                                <div class="form-item__body">
+                                    <select class="form-item__select">
+                                        <option class="form-item__select-item">選択して下さい</option>
+                                        @foreach ($categories as $category)
+                                            <option value="{{ $category['id'] }}">{{ $category['name'] }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-item form-item__columns-3__contents">
+                                <div class="form-item__head">
+                                    <p class="form-item__head-text">開始日</p>
+                                </div>
+                                <div class="form-item__body">
+                                    <input type="date" name="start_date">
+                                </div>
+                            </div>
+                            <div class="form-item form-item__columns-3__contents">
+                                <div class="form-item__head">
+                                    <p class="form-item__head-text">終了日</p>
+                                </div>
+                            <div class="form-item__body">
+                                <input type="date" name="finish_date">
+                            </div>
+                        </div>
+                    </div>
+
+                        <div class="form-item">
+                            <div class="form-item__head">
+                                <p class="form-item__head-text">なんのために習慣化をしますか？</p>
+                            </div>
+                            <div class="form-item__body">
+                                <textarea class="form-item__textarea" name="purpose">{{ old('purpose') }}</textarea>
+                            </div>
+                        </div>
+                        <div class="form-item">
+                            <div class="form-item__head">
+                                <p class="form-item__head-text">目的達成のために何をしますか？</p>
+                            </div>
+                            <div class="form-item__body">
+                                <textarea class="form-item__textarea" name="tast">{{ old('task') }}</textarea>
+                            </div>
+                        </div>
+                    </form>
+
+            </div>
+            </section>
+        </div>
+    </main>
+
 </body>
 </html>
