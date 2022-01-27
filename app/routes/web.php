@@ -15,7 +15,7 @@ use App\Http\Controllers\ScheduleController;
 
 
 Route::resource('register','RegisterController');
-Route::resource('login','LoginController');
+Route::resource('login','LoginController',['only'=>['index','store']]);
 Route::resource('home','HomeController');
 Route::resource('logout','LogoutController');
 Route::resource('habit','HabitController');

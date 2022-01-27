@@ -19,13 +19,14 @@ class RegisterController extends Controller
         $validate_rule = [
             'email'=>'required|email',
             'name'=>'required',
-            'password'=>'required',
-            'retype_pass'=>'required',
+            'password'=>'required|min:8|confirmed',
+            'password_confirmation'=>'required',
         ];
+        
         $param = $request->all();
         $this->validate($request,$validate_rule);
         unset($param['_token']);
-        unset($param['retype_pass']);
+        unset($param['passowrd_confirmation']);
         $param['password'] = Hash::make($param['password']);
         // dd($param);
         $user = new User;
