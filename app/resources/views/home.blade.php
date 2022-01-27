@@ -9,15 +9,10 @@
 <body>
     <h1>マイページ</h1>
     <div class="main-contents-wrap">
-        <p>こんにちは！{{ session('name') }}</p>
-        <p>login_limit {{ session('login_limit') }}</p>
-        <p>login_date {{ session('login_date') }}</p>
-        <p>user_id {{ session('user_id') }}</p>
         <a href="/habit/create">新しい習慣を作る</a>
     </div>
     <h2>登録した習慣</h2>
-    {{-- <a href="{{ route("habit.edit", 2) }}">登録を編集する</a> --}}
-    @if (count($habits) > 0)
+    @if (isset($habits))
         @foreach ($habits as $habit)
         <ul>
             <li>{{$habit->task}}</li>
