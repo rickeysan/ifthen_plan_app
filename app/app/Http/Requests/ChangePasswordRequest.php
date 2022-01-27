@@ -5,6 +5,8 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Validator;
 // use Illuminate\Contracts\Validation\Validator;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 class ChangePasswordRequest extends FormRequest
 {
@@ -26,8 +28,14 @@ class ChangePasswordRequest extends FormRequest
     public function rules()
     {
         return [
-            'current_pass'=>'required | min:8',
-            'new_pass'=>'required | min:8 | confirmed',
+            'new_pass' => 'required | min:8 | confirmed',
+            'new_pass_confirmation' => 'required',
+            'current_pass' => ['required',
+            function($attribute, $value, $fail){
+                if(!Hash::check($value, Auth::user()->password)){
+                    logger('パスワードが違います');
+                    $fail('現在のパスワードが違います');
+                }}],
         ];
     }
 

@@ -14,19 +14,20 @@ use App\Http\Controllers\ScheduleController;
 
 
 
-Route::resource('register','RegisterController');
+Route::resource('register','RegisterController',['only'=>['index','store']]);
 Route::resource('login','LoginController',['only'=>['index','store']]);
 Route::resource('home','HomeController');
-Route::resource('logout','LogoutController');
-Route::resource('habit','HabitController');
+Route::resource('logout','LogoutController',['only'=>['index']]);
+Route::resource('habit','HabitController',['only'=>['create','store','show','edit','update','destroy']]);
 
-Route::resource('password/change','Auth\ChangePasswordController');
+Route::resource('password/change','Auth\ChangePasswordController',['only'=>['index','store']]);
 
-Route::resource('profile','ProfileController');
+Route::resource('profile','ProfileController',['only'=>['index','store']]);
 
 Route::resource('withdraw','WithdrawController',['only'=>['index','destroy']]);
 Route::resource('post', 'PostController');
 Route::resource('search', 'SearchController');
+
 // スケジュール用のコントローラー（コンフリクト解決のために追記)
 
 Route::get('/schedule', function () {

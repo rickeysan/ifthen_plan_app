@@ -20,9 +20,8 @@ class RegisterController extends Controller
         unset($param['_token']);
         unset($param['passowrd_confirmation']);
         $param['password'] = Hash::make($param['password']);
-        // dd($param);
         $user = new User;
         $user->fill($param)->save();
-        return view('home');
+        return redirect('home');
     }
 }

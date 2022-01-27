@@ -42,9 +42,8 @@
 <body>
     <h1>プロフィール編集</h1>
     <div class="main-contents-wrap">
-        <form action="/profile/{{  $user_info[0]['id'] }}" method="post" enctype="multipart/form-data">
+        <form action="{{ route('profile.store') }}" method="post" enctype="multipart/form-data">
             @csrf
-            @method('PUT')
             <label>名前</label>必須
             <input type="text" name="name" value="{{  $user_info[0]['name'] }}">
             <label>メールアドレス</label>必須
@@ -74,7 +73,7 @@
         var $dropArea = $('.js-droparea');
         //prev画面のドム
         var $inputFile = $('.js-show-image');
-        
+
         $dropArea.on('dragover', function(e) {
             // console.log('ドラッグオーバーされました');
             //余計なイベントをキャンセルする
@@ -87,7 +86,7 @@
             e.preventDefault();
             $(this).css('border', 'none');
         });
-        
+
         //画像情報が入って(changeしたら)きたら
         $dropArea.on('change', function(e) {
             $(this).css('border', 'none');
@@ -96,7 +95,7 @@
             var file = this.files[0],
             //　ファイルを読み込むFileReaderオブジェクトを変数に
             fileReader = new FileReader();
-            
+
             //　読み込みが完了した際のイベントハンドラ。imgのsrcにデータをセット
             //　fileReaderの読み込みが完了した時のイベント
             fileReader.onload = function(event) {
@@ -105,10 +104,10 @@
                 $inputFile.attr('src', event.target.result).show();
                 $inputFile.css('opacity',1);
             };
-            
+
             //  画像ファイル自体をデータURLとして読み込んでいる（画像のsrcへ挿入）
             fileReader.readAsDataURL(file);
-            
+
         });
     })
     </script>

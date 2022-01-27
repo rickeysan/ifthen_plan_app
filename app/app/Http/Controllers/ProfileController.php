@@ -19,8 +19,8 @@ class ProfileController extends Controller
         return view('/profile',compact('user_info'));
     }
 
-    public function update(Request $request, $id) {
-        logger('PrifileControllerのupdateメソッドです');
+    public function store(Request $request) {
+        logger('PrifileControllerのstoreメソッドです');
         $validate_rule = [
             'name'=>'required',
             'email'=>'required | email',
@@ -33,7 +33,7 @@ class ProfileController extends Controller
         // dd($param);
         unset($param['_method']);
         unset($param['_token']);
-        
+
         if(!empty($param['image'])) {
             $upload_image = $param['image'];
             logger('画像がアップロードされました');
