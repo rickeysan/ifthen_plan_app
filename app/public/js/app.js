@@ -34322,7 +34322,6 @@ var calendar = new _fullcalendar_core__WEBPACK_IMPORTED_MODULE_0__["Calendar"](c
   selectable: true,
   select: function select(info) {
     console.log('日付がクリックされました');
-    console.log('日付データをajaxで送る');
     $('.calendar-input-form').show();
     var $date = info.startStr;
     console.log('$dateの中身');

@@ -22,7 +22,6 @@ let calendar = new Calendar(calendarEl, {
     select: function (info) {
 
         console.log('日付がクリックされました');
-        console.log('日付データをajaxで送る');
         $('.calendar-input-form').show();
 
         var $date = info.startStr;
