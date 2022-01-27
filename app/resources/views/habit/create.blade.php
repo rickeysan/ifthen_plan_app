@@ -13,24 +13,10 @@
         
         <label>ジャンルを選んでください</label>
         <select name="category_id" id="">
-            @if (old('category_id') == 1)
-                <option value="1"  selected>勉強</option>
-            @else
-                <option value="1">勉強</option>
-            @endif
-
-            @if (old('category_id') == 2)
-                <option value="2"  selected>運動</option>
-            @else
-                <option value="2">運動</option>
-            @endif
-
-            @if (old('category_id') == 3)
-                <option value="3"  selected>食事</option>
-            @else
-                <option value="3">食事</option>
-            @endif
-
+            <option value="0">選択してください</option>
+        @foreach ($categories as $category)
+            <option value="{{ $category['id'] }}">{{ $category['name'] }}</option>
+        @endforeach
         </select>
         <label>なんのために習慣化しますか？</label>
         <textarea name="purpose" id="" cols="120" rows="4">{{ old('purpose')}}</textarea>

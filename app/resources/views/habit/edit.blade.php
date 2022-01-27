@@ -13,9 +13,14 @@
         @method('PUT')
         <label>ジャンルを選んでください</label>
         <select name="category_id" id="">
-            <option value="1">勉強</option>
-            <option value="2">運動</option>
-            <option value="3">食事</option>
+            <option value="0">選択してください</option>
+        @foreach ($categories as $category)
+            @if($category['id'] == $habit[0]['category_id'])
+                <option value="{{ $category['id'] }}" selected>{{ $category['name'] }}</option>
+            @else
+                <option value="{{ $category['id'] }}">{{ $category['name'] }}</option>
+            @endif
+        @endforeach
         </select>
         <label>なんのために習慣化しますか？</label>
         <textarea name="purpose" id="" cols="120" rows="4">{{ $habit[0]['purpose'] }}</textarea>

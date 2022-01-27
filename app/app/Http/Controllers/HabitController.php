@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Habit;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Category;
 
 class HabitController extends Controller
 {
@@ -13,7 +14,8 @@ class HabitController extends Controller
     }
     public function create(){
         logger('HabitControllerのcreateメソッドです');
-        return view('habit/create');
+        $categories = Category::all();
+        return view('habit/create',compact('categories'));
     }
     public function store(Request $request){
         logger('HabitControllerのcreateメソッドです');
@@ -38,16 +40,9 @@ class HabitController extends Controller
         }
     public function edit(Request $request, $id){
         logger('HabitControllerのeditメソッドです');
-        // dd('editです');
-        // dd($request->input(id));
-        // dd($id);
-        // dd($request->session()->get('user_id'));
-
-        $habit = Habit::where('id',$id)->where('user_id',Auth::id())->get();
-        // $habit = Habit::find($id)->where('user_id',$request->session()->get());
-        // dd($habit);
-        // dd($habit->all());
-        return view('/habit/edit',compact('habit'));
+        $habit = Habit::where('id',$id)->where('user_id',\Auth::id())->get();
+        $categories = Category::all();
+        return view('/habit/edit',compact('habit','categories'));
     }
     public function update(Request $request, $id) {
         logger('HabitControllerのupdateメソッドです');
