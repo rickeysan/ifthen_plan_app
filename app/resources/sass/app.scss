@@ -408,4 +408,36 @@ a{
         }
     }
 }
+// ============================
+// search-menu
+// ============================
+.search-menu__list-nav{
+    .search-menu__item-head{
+        .search-menu__item-head__text{
 
+        }
+    }
+    .search-menu__item-foot{
+        margin-bottom:$space_xl;
+        .search-menu__item-foot__input{
+            border: 1px solid $divider-color;
+            height: $space_3l;
+            width:100%;
+            padding: $space_s;
+        }
+        .search-menu__item-foot__select{
+            border: 1px solid $divider-color;
+            height: $space_3l;
+            width:100%;
+            padding: 0 $space_s;
+        }
+    }
+    .search-menu__item-btn__wrap{
+        .search-menu__item-btn{
+            border:1px solid $divider-color;
+            padding:$space_s $space_m;
+        }
+    }
+
+
+}

@@ -351,3 +351,26 @@ a {
   border: 1px solid #757575;
 }
 
+.search-menu__list-nav .search-menu__item-foot {
+  margin-bottom: 20px;
+}
+
+.search-menu__list-nav .search-menu__item-foot .search-menu__item-foot__input {
+  border: 1px solid #BDBDBD;
+  height: 40px;
+  width: 100%;
+  padding: 5px;
+}
+
+.search-menu__list-nav .search-menu__item-foot .search-menu__item-foot__select {
+  border: 1px solid #BDBDBD;
+  height: 40px;
+  width: 100%;
+  padding: 0 5px;
+}
+
+.search-menu__list-nav .search-menu__item-btn__wrap .search-menu__item-btn {
+  border: 1px solid #BDBDBD;
+  padding: 5px 10px;
+}
+
