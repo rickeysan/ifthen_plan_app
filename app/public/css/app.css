@@ -417,7 +417,6 @@ a {
   display: flex;
   flex-wrap: wrap;
   gap: 20px 10px;
-  justify-content: space-between;
 }
 
 .search__section .search-section__habits-container .habits-list__card {
@@ -607,5 +606,15 @@ a {
 
 .profile__section .my-profile__container .my-profile__contents {
   margin-left: 15px;
+}
+
+.pagination-wrap {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.pagination-wrap li {
+  padding: 10px;
+  display: inline-block;
 }
 

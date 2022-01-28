@@ -425,11 +425,7 @@ a{
 // ============================
 .search-menu__list-nav{
     width:200px;
-    .search-menu__item-head{
-        .search-menu__item-head__text{
 
-        }
-    }
     .search-menu__item-foot{
         margin-bottom:$space_xl;
         .search-menu__item-foot__input{
@@ -476,7 +472,7 @@ a{
         display: flex;
         flex-wrap: wrap;
         gap:20px 10px;
-        justify-content: space-between;
+        // justify-content: space-between;
         .habits-list__card{
             width: 280px;
             border: 1px solid gray;
@@ -644,5 +640,18 @@ a{
         .my-profile__contents{
             margin-left:$space_l;
         }
+    }
+}
+
+
+// ============================
+// pagination
+// ============================
+.pagination-wrap{
+    margin-top:$space_xxl;
+    text-align: center;
+    li{
+        padding:$space_m;
+        display: inline-block;
     }
 }
