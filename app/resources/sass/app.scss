@@ -513,3 +513,117 @@ a{
     }
 }
 }
+// ============================
+// profile-edit-seciton
+// ============================
+.profile-edit__section{
+    width: 1000px;
+    padding: 0 200px;
+    .section-title{
+        font-size:$font-size_l;
+        text-align: center  ;
+        margin-bottom:$space_xl;
+    }
+    .form-item__title__batch{
+        margin-left:$space_m;
+        padding:$space_s;
+        font-size:$font-size_s;
+        border:1px solid $divider-color;
+    }
+    .batch-must{
+        background: $msg-color;
+    }
+    .batch-option{
+        background: $third-color;
+    }
+    .form-item{
+        display: flex;
+        height: 60px;
+        align-items: top;
+        .form-item__input-area{
+            margin-left:auto;
+            width:400px;
+            .form-item__input{
+                width:100%;
+                padding:0 $space_s;
+                border:1px solid $divider-color;
+            }
+            .form-item__input-area__msg{
+                display: block;
+            }
+        }
+    }
+    .form-item__image{
+        // height: 220px;
+        display: flex;
+        align-items: top;
+        .form-item__image-container{
+
+            margin-left:auto;
+            .form-item__image-wrap{
+            width:200px;
+            position: relative;
+            border: 3px dotted black;
+            line-height: 200px;
+            text-align: center;
+            height: 200px;
+            .input-image,
+            .drop-image,
+            .show-db-image{
+                position: absolute;
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
+            .input-image{
+                z-index: 3;
+                opacity: 0;
+            }
+            .drop-image{
+                z-index: 1;
+                opacity: 0;
+
+            }
+            .show-db-image{
+                z-index: 0;
+            }
+        }
+        .form-item__input-area__msg-image{
+            display: block;
+        }
+    }
+    }
+    .form-item__textarea{
+        height: 120px;
+        display: flex;
+        align-items: center;
+        margin-bottom:$space_xxl;
+        .form-item__input-area{
+            margin-left:auto;
+
+            .form-item__textarea__input{
+                height: 100px;
+                padding:0 $space_s;
+                width:400px;
+                border:1px solid $divider-color;
+            }
+            .form-item__input-area__msg{
+                display: block;
+            }
+        }
+    }
+    .form-item__btn-wrap{
+        height: 40px;
+        text-align: center;
+        .form-item__btn{
+            height: 40px;
+            width:80px;
+            border:1px solid $divider-color;
+
+        }
+    }
+    .err-msg{
+        font-size: $font-size_m;
+        color:$msg-color;
+    }
+}
