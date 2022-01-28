@@ -211,6 +211,18 @@ a{
             }
         }
     }
+    .profile-card{
+        padding:$space_s $space_m;
+        border:1px solid $divider-color;
+        .profile-card__img{
+            width: 28px;
+            height: 28px;
+            border-radius: 14px;
+        }
+        .profile-card__name{
+            font-size:$font-size_m;
+        }
+    }
 }
 
 // ============================
@@ -218,7 +230,7 @@ a{
 // ============================
 .my-habits__section{
     width:100%;
-    padding:$space_l $space_4l;
+    padding:0 $space_4l;
     .section-title{
         font-size:$font-size_l;
         text-align: center;
@@ -412,6 +424,7 @@ a{
 // search-menu
 // ============================
 .search-menu__list-nav{
+    width:200px;
     .search-menu__item-head{
         .search-menu__item-head__text{
 
@@ -440,4 +453,63 @@ a{
     }
 
 
+}
+// ============================
+// search-seciton
+// ============================
+.search__section{
+    width:100%;
+    padding:0 $space_4l;
+    .section-title{
+        font-size: $font-size_l;
+        text-align: center;
+        margin-bottom:$space_xxl;
+    }
+    .section-info{
+        display: flex;
+        margin-bottom: $space_l;
+        .section-info__page{
+            margin-left: auto;
+        }
+    }
+    .search-section__habits-container{
+        display: flex;
+        flex-wrap: wrap;
+        gap:20px 10px;
+        justify-content: space-between;
+        .habits-list__card{
+            width: 280px;
+            border: 1px solid gray;
+            height: 280px;
+            padding: $space_l;
+            .habits-list__card-title{
+                height:80px;
+            }
+            .habits-list__card-plan{
+                font-size:$font-size_m;
+                height:80px;
+            }
+            .habits-list__card-profile{
+                height: 50px;
+                display: flex;
+                align-items: center;
+                .habits-list__card-img{
+                    width: 32px;
+                    height: 32px;
+                    border-radius: 16px;
+                }
+                .habits-list__card-name{
+                    font-size:$font-size_m;
+                    margin-left:$space_m;
+                }
+            }
+        .habits-list__card-info{
+            display: flex;
+            font-size:$font-size_m;
+            .habits-list__card-list__mark{
+                margin-left: auto;
+            }
+        }
+    }
+}
 }
