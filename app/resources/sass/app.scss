@@ -627,3 +627,22 @@ a{
         color:$msg-color;
     }
 }
+// ============================
+// profile-edit-seciton
+// ============================
+.profile__section{
+    .my-profile__container{
+        display: flex;
+        align-items: center;
+        height: 120px;
+        margin-bottom:$space_3l;
+        .my-profile__img{
+            width:80px;
+            height: 80px;
+            border-radius: 40px;
+        }
+        .my-profile__contents{
+            margin-left:$space_l;
+        }
+    }
+}

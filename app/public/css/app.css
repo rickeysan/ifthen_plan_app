@@ -592,3 +592,20 @@ a {
   color: #f38181;
 }
 
+.profile__section .my-profile__container {
+  display: flex;
+  align-items: center;
+  height: 120px;
+  margin-bottom: 40px;
+}
+
+.profile__section .my-profile__container .my-profile__img {
+  width: 80px;
+  height: 80px;
+  border-radius: 40px;
+}
+
+.profile__section .my-profile__container .my-profile__contents {
+  margin-left: 15px;
+}
+
