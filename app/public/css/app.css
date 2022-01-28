@@ -240,40 +240,102 @@ a {
   margin-top: -4px;
 }
 
-.habit-input__section {
+.main-sections__container {
   width: 100%;
   padding: 15px 50px;
 }
 
-.habit-input__section .section-title {
+.main-sections__container .section-title {
   font-size: 18px;
   text-align: center;
   margin-bottom: 30px;
 }
 
-.habit-input__section .habit-input__container .form-item__columns-3 {
+.main-sections__container .habit-input__container .form-item__columns-3 {
   display: flex;
 }
 
-.habit-input__section .habit-input__container .form-item__columns-3__contents {
+.main-sections__container .habit-input__container .form-item__columns-3__contents {
   width: 20%;
 }
 
-.habit-input__section .habit-input__container .form-item {
+.main-sections__container .habit-input__container .form-item {
   margin-bottom: 15px;
 }
 
-.habit-input__section .habit-input__container .form-item .form-item__body .form-item__select {
+.main-sections__container .habit-input__container .form-item .form-item__body .form-item__select {
   width: 180px;
   border: 1px solid gray;
   border-radius: 5px;
   padding: 0 5px;
 }
 
-.habit-input__section .habit-input__container .form-item .form-item__body .form-item__textarea {
+.main-sections__container .habit-input__container .form-item .form-item__body .form-item__textarea {
   width: 100%;
   padding: 0 5px;
   height: 60px;
   border: 1px solid gray;
+}
+
+.main-sections__container .btn-wrap {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.main-sections__container .form-input_btn {
+  padding: 5px;
+  border: 1px solid #757575;
+  border-radius: 10px;
+  background: #ebfffa;
+}
+
+.calendar-section {
+  display: flex;
+}
+
+.calendar-section #calendar {
+  width: 630px;
+  padding-top: 15px;
+}
+
+.calendar-section .calender-info__container {
+  width: 300px;
+  padding: 15px;
+}
+
+.calendar-section .fc-view-harness {
+  font-size: 14px !important;
+}
+
+.calendar-section .fc-toolbar-title {
+  font-size: 18px !important;
+}
+
+.calendar-section .calendar-input__textarea {
+  margin-top: 10px;
+  padding: 5px;
+  height: 160px;
+  border: 1px solid black;
+  display: block;
+  width: 100%;
+}
+
+.calendar-section .calendar-input__radio-wrap {
+  margin-top: 10px;
+}
+
+.calendar-section .calendar-input__radio-wrap .calendaer-input__radio {
+  vertical-align: -1px;
+  margin-right: 5px;
+}
+
+.calendar-section .calendar-input__btn-wrap {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.calendar-section .calendar-input__btn-wrap .calendar-input__btn {
+  padding: 5px 10px;
+  border: 1px solid #757575;
 }
 

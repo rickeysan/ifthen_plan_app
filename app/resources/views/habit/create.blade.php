@@ -40,65 +40,73 @@
                 </ul>
             </nav>
 
-            <section class="habit-input__section">
-                <h2 class="section-title">新しい習慣を始めましょう</h2>
-                <div class="habit-input__container">
-                    <form action="{{ route('habit.store') }}" methdo="post">
-                        @csrf
-                        <div class="form-item__columns-3">
-                            <div class="form-item form-item__columns-3__contents">
-                                <div class="form-item__head">
-                                    <p class="form-item__head-text">ジャンル</p>
-                                </div>
-                                <div class="form-item__body">
-                                    <select class="form-item__select">
-                                        <option class="form-item__select-item">選択して下さい</option>
-                                        @foreach ($categories as $category)
-                                            <option value="{{ $category['id'] }}">{{ $category['name'] }}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-item form-item__columns-3__contents">
-                                <div class="form-item__head">
-                                    <p class="form-item__head-text">開始日</p>
-                                </div>
-                                <div class="form-item__body">
-                                    <input type="date" name="start_date">
-                                </div>
-                            </div>
-                            <div class="form-item form-item__columns-3__contents">
-                                <div class="form-item__head">
-                                    <p class="form-item__head-text">終了日</p>
-                                </div>
-                            <div class="form-item__body">
-                                <input type="date" name="finish_date">
-                            </div>
-                        </div>
-                    </div>
+            <div class="main-sections__container">
 
-                        <div class="form-item">
-                            <div class="form-item__head">
-                                <p class="form-item__head-text">なんのために習慣化をしますか？</p>
+                <section class="habit-input__section">
+                    <h2 class="section-title">新しい習慣を始めましょう</h2>
+                    <div class="habit-input__container">
+                        <form action="{{ route('habit.store') }}" method="post">
+                            @csrf
+                            <div class="form-item__columns-3">
+                                <div class="form-item form-item__columns-3__contents">
+                                    <div class="form-item__head">
+                                        <p class="form-item__head-text">ジャンル</p>
+                                    </div>
+                                    <div class="form-item__body">
+                                        <select class="form-item__select">
+                                            <option class="form-item__select-item">選択して下さい</option>
+                                            @foreach ($categories as $category)
+                                            <option value="{{ $category['id'] }}">{{ $category['name'] }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-item form-item__columns-3__contents">
+                                    <div class="form-item__head">
+                                        <p class="form-item__head-text">開始日</p>
+                                    </div>
+                                    <div class="form-item__body">
+                                        <input type="date" name="start_date">
+                                    </div>
+                                </div>
+                                <div class="form-item form-item__columns-3__contents">
+                                    <div class="form-item__head">
+                                        <p class="form-item__head-text">終了日</p>
+                                    </div>
+                                    <div class="form-item__body">
+                                        <input type="date" name="finish_date">
+                                    </div>
+                                </div>
                             </div>
-                            <div class="form-item__body">
-                                <textarea class="form-item__textarea" name="purpose">{{ old('purpose') }}</textarea>
+
+                            <div class="form-item">
+                                <div class="form-item__head">
+                                    <p class="form-item__head-text">なんのために習慣化をしますか？</p>
+                                </div>
+                                <div class="form-item__body">
+                                    <textarea class="form-item__textarea" name="purpose">{{ old('purpose') }}</textarea>
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-item">
-                            <div class="form-item__head">
-                                <p class="form-item__head-text">目的達成のために何をしますか？</p>
+                            <div class="form-item">
+                                <div class="form-item__head">
+                                    <p class="form-item__head-text">目的達成のために何をしますか？</p>
+                                </div>
+                                <div class="form-item__body">
+                                    <textarea class="form-item__textarea" name="tast">{{ old('task') }}</textarea>
+                                </div>
                             </div>
-                            <div class="form-item__body">
-                                <textarea class="form-item__textarea" name="tast">{{ old('task') }}</textarea>
+                            <div class="btn-wrap">
+                                <button type="submit" class="form-input_btn">習慣を始める</button>
                             </div>
-                        </div>
-                    </form>
+                        </form>
+
+                    </div>
+                </section>
 
             </div>
-            </section>
         </div>
     </main>
-
-</body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="{{ mix('js/app.js') }}"></script>
+    </body>
 </html>

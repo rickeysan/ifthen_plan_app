@@ -309,7 +309,7 @@ a{
 // ============================
 // habit-input
 // ============================
-.habit-input__section{
+.main-sections__container{
     width:100%;
     padding:$space_l $space_4l;
     .section-title{
@@ -343,5 +343,59 @@ a{
             }
         }
     }
-
+    .btn-wrap{
+        display: flex;
+        justify-content: flex-end;
+    }
+    .form-input_btn{
+        padding:$space_s;
+        border:1px solid $secondary-text-color;
+        border-radius: 10px;
+        background: $first-color;
+    }
 }
+
+// ============================
+// calendar
+// ============================
+.calendar-section{
+    display: flex;
+    #calendar{
+        width:630px;
+        padding-top: $space_l;
+    }
+    .calender-info__container{
+        width:300px;
+        padding:$space_l;
+    }
+    .fc-view-harness{
+        font-size: 14px !important;
+    }
+    .fc-toolbar-title{
+        font-size:18px !important;
+    }
+    .calendar-input__textarea{
+        margin-top:$space_m;
+        padding:$space_s;
+        height: 160px;
+        border: 1px solid black;
+        display: block;
+        width: 100%;
+    }
+    .calendar-input__radio-wrap{
+        margin-top:$space_m;
+        .calendaer-input__radio{
+            vertical-align: -1px;
+            margin-right: 5px;
+        }
+    }
+    .calendar-input__btn-wrap{
+        display: flex;
+        justify-content: flex-end;
+        .calendar-input__btn{
+            padding: $space_s $space_m;
+            border: 1px solid $secondary-text-color;
+        }
+    }
+}
+
