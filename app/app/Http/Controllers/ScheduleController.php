@@ -24,17 +24,17 @@ class ScheduleController extends Controller
             'end_date' => 'required|date',
             'event_name' => 'required|max:32',
             'achivement_flg' => 'required|boolean',
+            'habit_id'=>'required|int',
         ]);
         logger('バリデーションOKです');
         // 登録処理
         $schedule = new Schedule;
         // 日付に変換。JavaScriptのタイムスタンプはミリ秒なので秒に変換
-        // $schedule->start_date = date('Y-m-d', $request->input('start_date') / 1000);
-        // $schedule->end_date = date('Y-m-d', $request->input('end_date') / 1000);
         $schedule->start_date = $request->input('start_date');
         $schedule->end_date = $request->input('end_date');
         $schedule->event_name = $request->input('event_name');
         $schedule->achivement_flg = $request->input('achivement_flg');
+        $schedule->habit_id = $request->input('habit_id');
         $schedule->save();
 
         return;
@@ -51,13 +51,16 @@ class ScheduleController extends Controller
         // バリデーション
         $request->validate([
             'start_date' => 'required|integer',
-            'end_date' => 'required|integer'
+            'end_date' => 'required|integer',
+            'habit_id' => 'required',
         ]);
+        logger('バリデーションOK');
 
         // カレンダー表示期間
         $start_date = date('Y-m-d', $request->input('start_date') / 1000);
         $end_date = date('Y-m-d', $request->input('end_date') / 1000);
-
+        $habit_id = $request->input('habit_id');
+        logger($habit_id);
         // 登録処理
         $schedules = Schedule::query()
             ->select(
@@ -70,6 +73,7 @@ class ScheduleController extends Controller
             // FullCalendarの表示範囲のみ表示
             ->where('end_date', '>', $start_date)
             ->where('start_date', '<', $end_date)
+            ->where('habit_id',$habit_id)
             ->get();
         logger($schedules);
         $schedules->map(function($item,$key){
@@ -91,11 +95,10 @@ class ScheduleController extends Controller
         // バリデーション
         $request->validate([
             'start_date' => 'required|date',
+            'habit_id'=>'required',
         ]);
         logger('バリデーションOKです');
-        logger($request['start_date']);
-        $record = Schedule::where('start_date',$request['start_date'])->first();
-        logger('recordの中身');
+        $record = Schedule::where([['start_date',$request['start_date']],'habit_id'=>$request['habit_id']])->first();
         logger($record);
         // 中身があるか判定する
         if(is_null($record)){
@@ -122,13 +125,13 @@ class ScheduleController extends Controller
         $request->validate([
             'start_date' => 'required|date',
             'event_name' => 'required|max:32',
+            'habit_id' => 'required',
         ]);
         logger('バリデーションOKです');
+
         // 登録処理
-        $schedule = Schedule::where('start_date',$request['start_date'])->first();
+        $schedule = Schedule::where([['start_date',$request['start_date']],'habit_id'=>$request['habit_id']])->first();
         logger($schedule);
-        $schedule->start_date = $request->input('start_date');
-        $schedule->end_date = $request->input('end_date');
         $schedule->event_name = $request->input('event_name');
         $schedule->achivement_flg = $request->input('achivement_flg');
         $schedule->save();

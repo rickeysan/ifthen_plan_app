@@ -12,7 +12,10 @@ let calendar = new Calendar(calendarEl, {
     headerToolbar: {
         left: "prev,next today",
         center: "title",
-        right: "dayGridMonth",
+        right:'',
+    },
+    buttonText: {
+        today:    '今日',
     },
     locale: "ja",
     editable:true,
@@ -20,27 +23,29 @@ let calendar = new Calendar(calendarEl, {
     // 日付をクリック、または範囲を選択したイベント
     selectable: true,
     select: function (info) {
-
+        console.log('hello');
         console.log('日付がクリックされました');
+        console.log(info);
         $('.calendar-input-form').show();
 
         var $date = info.startStr;
-        console.log('$dateの中身');
-        console.log($date);
+
+        // console.log('$dateの中身');
+        // console.log($date);
         axios
             .post('/schedule-judge',{
                 start_date:$date,
+                habit_id: habit_id,
             })
             .then((response) => {
                 console.log('scheduleJudgeからの返り値');
-                // console.log(response);
                 console.log(response.data);
                 if(response.data.flg){
                     console.log('データはあります');
                     console.log('編集フォームを表示します');
                     $('.calendar-input-title').text('編集');
                     $('.calendar-input-date').val(response.data.start_date);
-                    $('.calendar-input-text').val(response.data.text);
+                    $('.js-textarea').val(response.data.text);
                     $('#btn-edit').show();
                     $('#btn-store').hide();
                     if(response.data.achivement_flg==0){
@@ -55,7 +60,7 @@ let calendar = new Calendar(calendarEl, {
                     console.log('新規登録フォームを表示します');
                     $('.calendar-input-title').text('新規作成');
                     $('.calendar-input-date').val(response.data.start_date);
-                    $('.calendar-input-text').val('');
+                    $('.js-textarea').val('');
                     $('#btn-edit').hide();
                     $('#btn-store').show();                }
             })
@@ -70,19 +75,20 @@ let calendar = new Calendar(calendarEl, {
     // イベントをクリックした時の動作
     eventClick: function(info) {
         console.log('クリックされました');
-        alert('Event: ' + info.event.title);
-
+        console.log(info);
     },
 
 
 
     events: function (info, successCallback, failureCallback) {
         console.log('取得します');
+
         // Laravelのスケジュール取得処理の呼び出し
         axios
             .post("/schedule-get", {
                 start_date: info.start.valueOf(),
                 end_date: info.end.valueOf(),
+                habit_id: habit_id,
             })
             .then((response) => {
                 console.log('responseの中身');
@@ -101,30 +107,43 @@ calendar.render();
 $('#btn-store').click(function(){
     console.log('新規登録画面が押されました');
     console.log('登録処理を開始します');
-    var $date = $('.calendar-input-date').val();
-    console.log($date);
-    var $text = $('.calendar-input-text').val();
-    console.log($text);
-    var $achivement_flg = $("input[name='achivement_flg']:checked").val();
-    console.log($achivement_flg);
+    var date = $('.calendar-input-date').val();
+    console.log(date);
+    var text = $('.js-textarea').val();
+    console.log(text);
+    var achivement_flg = $("input[name='achivement_flg']:checked").val();
+    console.log(achivement_flg);
+    console.log(habit_id);
 
     // Laravelの登録処理の呼び出し
     axios
         .post("/schedule-add", {
-            start_date: $date,
-            end_date: $date,
-            event_name: $text,
-            achivement_flg: $achivement_flg,
+            start_date: date,
+            end_date: date,
+            event_name: text,
+            achivement_flg: achivement_flg,
+            habit_id: habit_id,
         })
         .then(() => {
             console.log("登録に成功しました");
             // イベントの追加
-            calendar.addEvent({
-                title: $text,
-                start: $date,
-                end: $date,
-                allDay: true,
-            });
+            if(achivement_flg == 0){
+                calendar.addEvent({
+                    title: text,
+                    start: date,
+                    end: date,
+                    allDay: true,
+                    classNames: ['ok_class'],
+                });
+            }else{
+                calendar.addEvent({
+                    title: text,
+                    start: date,
+                    end: date,
+                    allDay: true,
+                    classNames: ['ng_class'],
+                });
+            }
             // calendar.render();
             console.log('全ての処理が終了しました');
         })
@@ -137,30 +156,32 @@ $('#btn-store').click(function(){
 // 編集の処理
 $('#btn-edit').click(function(){
     console.log('編集処理を開始します');
-    var $date = $('.calendar-input-date').val();
-    console.log($date);
-    var $text = $('.calendar-input-text').val();
-    console.log($text);
-    var $achivement_flg = $("input[name='achivement_flg']:checked").val();
+    var date = $('.calendar-input-date').val();
+    console.log(date);
+    var text = $('.js-textarea').val();
+    console.log(text);
+    var achivement_flg = $("input[name='achivement_flg']:checked").val();
 
     // Laravelの編集処理の呼び出し
     axios
         .post("/schedule-edit", {
-            start_date: $date,
-            end_date: $date,
-            event_name: $text,
-            achivement_flg: $achivement_flg,
+            start_date: date,
+            end_date: date,
+            event_name: text,
+            achivement_flg: achivement_flg,
+            habit_id: habit_id,
         })
         .then(() => {
             console.log("編集に成功しました");
             // イベントの更新
             calendar.addEvent({
-                title: $text,
-                start: $date,
-                end: $date,
+                title: text,
+                start: date,
+                end: date,
                 allDay: true,
             });
-            // calendar.render();
+
+            calendar.render();
             console.log('全ての処理が終了しました');
         })
         .catch(() => {

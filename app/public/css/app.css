@@ -298,6 +298,18 @@ a {
   padding-top: 15px;
 }
 
+.calendar-section #calendar .fc-event-main {
+  color: #000000;
+}
+
+.calendar-section #calendar .ok_class {
+  background: #c6fce5;
+}
+
+.calendar-section #calendar .ng_class {
+  background: #f38181;
+}
+
 .calendar-section .calender-info__container {
   width: 300px;
   padding: 15px;

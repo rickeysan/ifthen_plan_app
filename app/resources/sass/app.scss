@@ -363,6 +363,16 @@ a{
     #calendar{
         width:630px;
         padding-top: $space_l;
+        .fc-event-main{
+            color:#000000;
+        }
+        .ok_class{
+            background: $second-color;
+        }
+        .ng_class{
+            background: $msg-color;
+        }
+
     }
     .calender-info__container{
         width:300px;

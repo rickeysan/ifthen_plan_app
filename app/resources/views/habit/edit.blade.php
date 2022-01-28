@@ -113,8 +113,8 @@
                         <p class="calendar-info-title">記録の追加・編集フォーム</p>
                         <form action="" class="calendar-input-form" style="display: none;">
                             <p class="calendar-input-title"></p>
-                            <p><input type="date" name="start_date" class="calendar-input-date"></p>
-                            <textarea class="calendar-input__textarea" type="text" name="title" class="calendar-input-text" placeholder="上手くいったことや反省点を記入"></textarea>
+                            <p><input type="date" name="start_date" class="calendar-input-date" readonly></p>
+                            <textarea class="calendar-input__textarea js-textarea" type="text" name="title" class="calendar-input-text" placeholder="上手くいったことや反省点を記入"></textarea>
                             <div class="calendar-input__radio-wrap">
                                 <input class="calendaer-input__radio" type="radio" id="rd0" name="achivement_flg" value="0">達成
                                 <input class="calendaer-input__radio" type="radio" id="rd1" name="achivement_flg" value="1">例外日
@@ -129,6 +129,9 @@
             </div>
         </div>
     </main>
+    <script>
+        const habit_id = '{{ $habit[0]["id"] }}';
+    </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="{{ mix('js/app.js') }}"></script>
     </body>

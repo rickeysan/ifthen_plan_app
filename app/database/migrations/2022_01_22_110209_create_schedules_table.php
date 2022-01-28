@@ -15,6 +15,7 @@ class CreateSchedulesTable extends Migration
     {
         Schema::create('schedules', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('habit_id');
             $table->date('start_date')->comment('開始日');
             $table->date('end_date')->comment('終了日');
             $table->string('event_name')->comment('イベント名');
