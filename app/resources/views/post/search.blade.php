@@ -42,7 +42,7 @@
         <div class="habit-card-wrap">
 
             @foreach ($habits as $habit)
-            <a href="" class='habit-card'>
+            <a href="{{ route('habit.show',$habit['id']) }}" class='habit-card'>
                 <label>目標</label>
                 <p>{{ $habit['task'] }}</p>
                 <label>モチベーション</label>

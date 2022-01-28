@@ -34,9 +34,10 @@ class HabitController extends Controller
         $habit->fill($param)->save();
         return redirect('home');
     }
-    public function show(Request $request){
+    public function show(Request $request,$id){
         logger('HabitControllerのshowメソッドです');
-        return view('/habit/show');
+        $habit = Habit::where('id',$id)->first();
+        return view('/habit/show',compact('habit'));
         }
     public function edit(Request $request, $id){
         logger('HabitControllerのeditメソッドです');

@@ -7,8 +7,8 @@ use Faker\Generator as Faker;
 
 $factory->define(Habit::class, function (Faker $faker) {
     return [
-        'user_id'=>$faker->numberBetween($min = 1, $max = 5),
-        'category_id'=>$faker->numberBetween($min = 1, $max = 5),
+        'user_id'=>$faker->numberBetween($min = 1, $max = 3),
+        'category_id'=>$faker->numberBetween($min = 1, $max = 3),
         'purpose'=>$faker->realText(rand(10,80)),
         'task'=>$faker->realText(rand(10,40)),
         'start_date'=>$faker->date($format='Y-m-d',$max='now'),

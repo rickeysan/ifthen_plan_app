@@ -15,4 +15,7 @@ class Habit extends Model
         'category_id','purpose','task','start_date','finish_date','user_id',
     ];
 
+    public function category(){
+        return $this->belongsTo('App\Category');
+    }
 }
