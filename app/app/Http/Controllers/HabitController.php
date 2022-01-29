@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Habit;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Category;
+use App\Plan;
+use Illuminate\Support\Facades\Auth;
+
 
 class HabitController extends Controller
 {
@@ -18,20 +21,35 @@ class HabitController extends Controller
         return view('habit/create',compact('categories'));
     }
     public function store(Request $request){
-        logger('HabitControllerのcreateメソッドです');
+        logger('HabitControllerのstoreメソッドです');
+        logger('パリデーションをします');
+        // dd(Auth::id());
         $validate_rule = [
+            'category_id'=>'required',
             'purpose'=>'required',
             'task'=>'required',
             'start_date'=>'required',
             'finish_date'=>'required',
         ];
         $this->validate($request,$validate_rule);
+        logger('バリデーションOKです');
         $param = $request->all();
-        unset($param['_token']);
-        $param['user_id']=$request->session()->get('user_id');
         // dd($param);
+        $plan_text = $param['plan_text'];
+        unset($param['_token']);
+        unset($param['plan_text']);
+        $param['user_id']=Auth::id();
+
+
         $habit = new Habit;
         $habit->fill($param)->save();
+        $last_insert_id = $habit->id;
+        // dd($last_insert_id);
+
+        $plan = new Plan;
+        $plan_param = ['habit_id'=>$last_insert_id,'plan_text'=>$plan_text];
+        $plan->fill($plan_param)->save();
+
         return redirect('home');
     }
     public function show(Request $request,$id){

@@ -16,7 +16,7 @@ class CreatePlansTable extends Migration
         Schema::create('plans', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('habit_id');
-            $table->text('habit_text');
+            $table->text('plan_text');
             $table->timestamps();
         });
     }

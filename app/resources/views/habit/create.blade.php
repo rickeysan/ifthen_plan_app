@@ -53,7 +53,7 @@
                                         <p class="form-item__head-text">ジャンル</p>
                                     </div>
                                     <div class="form-item__body">
-                                        <select class="form-item__select">
+                                        <select name="category_id" class="form-item__select">
                                             <option class="form-item__select-item">選択して下さい</option>
                                             @foreach ($categories as $category)
                                             <option value="{{ $category['id'] }}">{{ $category['name'] }}</option>
@@ -92,8 +92,12 @@
                                     <p class="form-item__head-text">目的達成のために何をしますか？</p>
                                 </div>
                                 <div class="form-item__body">
-                                    <textarea class="form-item__textarea" name="tast">{{ old('task') }}</textarea>
+                                    <textarea class="form-item__textarea" name="task">{{ old('task') }}</textarea>
                                 </div>
+                            </div>
+                            <div class="plans__container">
+                                <h3 class="container-title">If-Thenプランニングを作りましょう(習慣化の成功率が3倍に上がります)</h3>
+                                <input type="text" name="plan_text" class="plans__form-input" value="{{ old('plan') }}">
                             </div>
                             <div class="btn-wrap">
                                 <button type="submit" class="form-input_btn">習慣を始める</button>

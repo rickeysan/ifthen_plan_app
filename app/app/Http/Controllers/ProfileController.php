@@ -16,7 +16,6 @@ class ProfileController extends Controller
     public function index(){
         logger('PfofileControllerのindexです');
         $user_info = User::where('id',Auth::id())->get();
-        // dd($user_info);
         return view('/profile',compact('user_info'));
     }
 
@@ -30,8 +29,6 @@ class ProfileController extends Controller
         ];
         $this->validate($request,$validate_rule);
         $param = $request->all();
-        // dd($upload_image);
-        // dd($param);
         unset($param['_method']);
         unset($param['_token']);
 
@@ -50,8 +47,6 @@ class ProfileController extends Controller
 		}
         $user = User::find(Auth::id());
         $user->fill($param)->save();
-
-
         return redirect('home');
     }
 
