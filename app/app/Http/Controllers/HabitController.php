@@ -30,11 +30,11 @@ class HabitController extends Controller
             'task'=>'required',
             'start_date'=>'required',
             'finish_date'=>'required',
+            'plan_text'=>'required',
         ];
         $this->validate($request,$validate_rule);
         logger('バリデーションOKです');
         $param = $request->all();
-        // dd($param);
         $plan_text = $param['plan_text'];
         unset($param['_token']);
         unset($param['plan_text']);
@@ -44,7 +44,6 @@ class HabitController extends Controller
         $habit = new Habit;
         $habit->fill($param)->save();
         $last_insert_id = $habit->id;
-        // dd($last_insert_id);
 
         $plan = new Plan;
         $plan_param = ['habit_id'=>$last_insert_id,'plan_text'=>$plan_text];
@@ -59,28 +58,39 @@ class HabitController extends Controller
         }
     public function edit(Request $request, $id){
         logger('HabitControllerのeditメソッドです');
-        $habit = Habit::where('id',$id)->where('user_id',\Auth::id())->get();
+        $habit = Habit::where('id',$id)->where('user_id',\Auth::id())->first();
+        // dd($habit->plan->plan_text);
         $categories = Category::all();
         return view('/habit/edit',compact('habit','categories'));
     }
     public function update(Request $request, $id) {
         logger('HabitControllerのupdateメソッドです');
+        logger('バリデーションをします');
         $validate_rule = [
+            'category_id'=>'required',
             'purpose'=>'required',
             'task'=>'required',
             'start_date'=>'required',
             'finish_date'=>'required',
+            'plan_text'=>'required',
         ];
         $this->validate($request,$validate_rule);
+        logger('バリデーションOKです');
         $param = $request->all();
+        $plan_text = $request->input('plan_text');
         unset($param['_method']);
         unset($param['_token']);
-        // dd($param);
+        unset($param['plan_text']);
+
         $habit = Habit::find($id);
-        // dd(get_class($habit));
-        // dd($habit);
+        $plan_id = $habit['id'];
+        $plan = Plan::find($plan_id);
+        $plan->plan_text = $plan_text;
+        $plan->save();
         $habit->fill($param)->save();
-        return redirect('home');
+
+        $categories = Category::all();
+        return view('/habit/edit',compact('habit','categories'));
     }
     public function destroy($id) {
         logger('HabitControllerのdestoryメソッドです');

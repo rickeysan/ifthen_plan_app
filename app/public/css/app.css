@@ -294,7 +294,7 @@ a {
 
 .main-sections__container .btn-wrap {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 .main-sections__container .form-input_btn {
@@ -302,6 +302,26 @@ a {
   border: 1px solid #757575;
   border-radius: 10px;
   background: #ebfffa;
+}
+
+.main-sections__container .plans__container {
+  margin-bottom: 30px;
+}
+
+.main-sections__container .plans__container .container-title {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.main-sections__container .plans__container .plans__form-input {
+  border: 1px solid gray;
+  width: 100%;
+  padding: 0 5px;
+}
+
+.main-sections__container .err-msg {
+  font-size: 14px;
+  color: #f38181;
 }
 
 .calendar-section {

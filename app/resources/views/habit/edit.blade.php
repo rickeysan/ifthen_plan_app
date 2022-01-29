@@ -45,7 +45,7 @@
                 <section class="habit-input__section">
                     <h2 class="section-title">今日の記録をつけましょう</h2>
                     <div class="habit-input__container">
-                        <form action="{{ route('habit.update',$habit[0]['id']) }}" method="post">
+                        <form action="{{ route('habit.update',$habit['id']) }}" method="post">
                             @csrf
                             @method('PUT')
                             <div class="form-item__columns-3">
@@ -54,16 +54,19 @@
                                         <p class="form-item__head-text">ジャンル</p>
                                     </div>
                                     <div class="form-item__body">
-                                        <select class="form-item__select">
+                                        <select name="category_id" class="form-item__select">
                                             <option class="form-item__select-item">選択して下さい</option>
                                             @foreach ($categories as $category)
-                                                @if($category['id'] == $habit[0]['category_id'])
+                                                @if($category['id'] == $habit['category_id'])
                                                     <option value="{{ $category['id'] }}" selected>{{ $category['name'] }}</option>
                                                 @else
                                                     <option value="{{ $category['id'] }}">{{ $category['name'] }}</option>
                                                 @endif
                                             @endforeach
                                         </select>
+                                        @error('category_id')
+                                            <span>入力してください</span>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="form-item form-item__columns-3__contents">
@@ -71,7 +74,10 @@
                                         <p class="form-item__head-text">開始日</p>
                                     </div>
                                     <div class="form-item__body">
-                                        <input type="date" name="start_date" value="{{ $habit[0]['start_date'] }}">
+                                        <input type="date" name="start_date" value="{{ $habit['start_date'] }}">
+                                        @error('start_date')
+                                            <span class="form-item__input-area__msg err-msg">入力必須です</span>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="form-item form-item__columns-3__contents">
@@ -79,7 +85,10 @@
                                         <p class="form-item__head-text">終了日</p>
                                     </div>
                                     <div class="form-item__body">
-                                        <input type="date" name="finish_date" value="{{ $habit[0]['finish_date'] }}">
+                                        <input type="date" name="finish_date" value="{{ $habit['finish_date'] }}">
+                                        @error('finish_date')
+                                            <span class="form-item__input-area__msg err-msg">入力必須です</span>
+                                        @enderror
                                     </div>
                                 </div>
                             </div>
@@ -89,7 +98,10 @@
                                     <p class="form-item__head-text">なんのために習慣化をしますか？</p>
                                 </div>
                                 <div class="form-item__body">
-                                    <textarea class="form-item__textarea" name="purpose">{{ $habit[0]['purpose'] }}</textarea>
+                                    <textarea class="form-item__textarea" name="purpose">{{ $habit['purpose'] }}</textarea>
+                                    @error('purpose')
+                                        <span class="form-item__input-area__msg err-msg">入力必須です</span>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="form-item">
@@ -97,11 +109,21 @@
                                     <p class="form-item__head-text">目的達成のために何をしますか？</p>
                                 </div>
                                 <div class="form-item__body">
-                                    <textarea class="form-item__textarea" name="tast">{{ $habit[0]['task'] }}</textarea>
+                                    <textarea class="form-item__textarea" name="task">{{ $habit['task'] }}</textarea>
+                                    @error('task')
+                                        <span class="form-item__input-area__msg err-msg">入力必須です</span>
+                                    @enderror
                                 </div>
                             </div>
+                            <div class="plans__container">
+                                <h3 class="container-title">If-Thenプランニングを作りましょう(習慣化の成功率が3倍に上がります)</h3>
+                                <input type="text" name="plan_text" class="plans__form-input" value="{{ $habit->plan->plan_text }}">
+                                @error('plan_text')
+                                    <span class="form-item__input-area__msg err-msg">入力必須です</span>
+                                @enderror
+                            </div>
                             <div class="btn-wrap">
-                                <button type="submit" class="form-input_btn">習慣を始める</button>
+                                <button type="submit" class="form-input_btn">習慣を保存する</button>
                             </div>
                         </form>
 
@@ -130,7 +152,7 @@
         </div>
     </main>
     <script>
-        const habit_id = '{{ $habit[0]["id"] }}';
+        const habit_id = '{{ $habit["id"] }}';
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="{{ mix('js/app.js') }}"></script>

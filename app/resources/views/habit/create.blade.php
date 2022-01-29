@@ -54,11 +54,14 @@
                                     </div>
                                     <div class="form-item__body">
                                         <select name="category_id" class="form-item__select">
-                                            <option class="form-item__select-item">選択して下さい</option>
+                                            <option value="0" class="form-item__select-item">選択して下さい</option>
                                             @foreach ($categories as $category)
                                             <option value="{{ $category['id'] }}">{{ $category['name'] }}</option>
                                             @endforeach
                                         </select>
+                                        @error('category_id')
+                                            <span>入力してください</span>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="form-item form-item__columns-3__contents">
@@ -67,6 +70,9 @@
                                     </div>
                                     <div class="form-item__body">
                                         <input type="date" name="start_date">
+                                        @error('start_date')
+                                            <span class="form-item__input-area__msg err-msg">入力必須です</span>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="form-item form-item__columns-3__contents">
@@ -75,6 +81,9 @@
                                     </div>
                                     <div class="form-item__body">
                                         <input type="date" name="finish_date">
+                                        @error('finish_date')
+                                            <span class="form-item__input-area__msg err-msg">入力必須です</span>
+                                        @enderror
                                     </div>
                                 </div>
                             </div>
@@ -85,6 +94,9 @@
                                 </div>
                                 <div class="form-item__body">
                                     <textarea class="form-item__textarea" name="purpose">{{ old('purpose') }}</textarea>
+                                    @error('purpose')
+                                        <span class="form-item__input-area__msg err-msg">入力必須です</span>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="form-item">
@@ -93,11 +105,17 @@
                                 </div>
                                 <div class="form-item__body">
                                     <textarea class="form-item__textarea" name="task">{{ old('task') }}</textarea>
+                                    @error('task')
+                                        <span class="form-item__input-area__msg err-msg">入力必須です</span>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="plans__container">
                                 <h3 class="container-title">If-Thenプランニングを作りましょう(習慣化の成功率が3倍に上がります)</h3>
                                 <input type="text" name="plan_text" class="plans__form-input" value="{{ old('plan') }}">
+                                @error('plan_text')
+                                    <span class="form-item__input-area__msg err-msg">入力必須です</span>
+                                @enderror
                             </div>
                             <div class="btn-wrap">
                                 <button type="submit" class="form-input_btn">習慣を始める</button>
