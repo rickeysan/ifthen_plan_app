@@ -94,6 +94,10 @@
                                     <textarea class="form-item__textarea" name="tast" readonly>{{ $habit['task'] }}</textarea>
                                 </div>
                             </div>
+                            <div class="plans__container">
+                                <h3 class="container-title">If-Thenプランニングを作りましょう(習慣化の成功率が3倍に上がります)</h3>
+                                <input type="text" name="plan_text" class="plans__form-input" value="{{ $habit->plan->plan_text }}" readonly>
+                            </div>
 
                     </div>
                 </section>
