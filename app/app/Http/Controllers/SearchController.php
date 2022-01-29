@@ -16,8 +16,8 @@ class SearchController extends Controller
         return view('post/search',compact('habits','total_habits_amount','categories'));
     }
 
-    public function store(Request $request){
-        logger('PostControllerのstoreメソッドです');
+    public function show(Request $request){
+        logger('PostControllerのshowメソッドです');
         logger($request);
         $categories = Category::all();
         $key_word = $request->input('key_word');

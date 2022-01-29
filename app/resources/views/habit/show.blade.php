@@ -38,7 +38,7 @@
                     <li class="dashbord-menu__list-item"><a class="dashbord-menu__list-item-link" href=""><i class="far fa-id-card"></i>プロフィール</a></li>
                     <li class="dashbord-menu__list-item"><a class="dashbord-menu__list-item-link" href=""><i class="far fa-heart"></i>フォローリスト</a></li>
                 </ul>
-                <a href="" class="profile-card">
+                <a href="{{ route('profile.show', $habit->user->id) }}" class="profile-card">
                     <img src="{{ asset('img/top_banner.png') }}"   alt="" class="profile-card__img">
                     <span class="profile-card__name">伊藤フミヤ</span>
                 </a>

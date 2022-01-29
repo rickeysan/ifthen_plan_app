@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Habit;
 use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
@@ -52,6 +53,12 @@ class ProfileController extends Controller
 
 
         return redirect('home');
+    }
+
+    public function show($id){
+        logger('ProfileControllerのshowメソッドです');
+        $habits = Habit::where('user_id',$id)->get();
+        return view('personal',compact('habits'));
     }
 
 }

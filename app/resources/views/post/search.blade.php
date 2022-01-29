@@ -31,7 +31,7 @@
     <main id="main">
         <div class="main__inner columns-2">
             <nav class="search-menu__list-nav">
-                <form action="{{ route('search.store') }}" method="post">
+                <form action="{{ route('search.show',['key_word','category_id']) }}" method="get">
                     @csrf
                     <div class="search-menu__item-head">
                         <p class="search-menu__item-head__text">キーワード</p>
@@ -88,7 +88,7 @@
 
                 </div>
                 <div class="pagination-wrap">
-                    {{ $habits->links('vendor.pagination.simple-default') }}
+                    {{ $habits->appends(request()->query())->links('vendor.pagination.simple-default')}}
                 </div>
 
             </section>

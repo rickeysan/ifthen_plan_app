@@ -22,7 +22,7 @@ Route::resource('habit','HabitController',['only'=>['create','store','show','edi
 
 Route::resource('password/change','Auth\ChangePasswordController',['only'=>['index','store']]);
 
-Route::resource('profile','ProfileController',['only'=>['index','store']]);
+Route::resource('profile','ProfileController',['only'=>['index','show','store']]);
 
 Route::resource('withdraw','WithdrawController',['only'=>['index','destroy']]);
 Route::resource('post', 'PostController');
