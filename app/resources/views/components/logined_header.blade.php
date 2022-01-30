@@ -6,7 +6,7 @@
         <nav>
             <ul class="header__nav-list">
                 <li class="logined-header__nav-item">
-                    <a href="">
+                    <a href="{{ route('home.index') }}">
                     <img class="logined-header__nav-item__img" src="img/top_banner.png" alt="">
                     </a>
                 </li>
