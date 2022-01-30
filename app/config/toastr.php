@@ -17,9 +17,9 @@ return [
        'type' => 'success',
        'text' => '編集処理が正常に完了しました',
    ],
-   'validation_error' => [
-       'type' => 'danger',
-       'text' => '入力内容を修正してください',
+   'profile_update' => [
+       'type' => 'success',
+       'text' => 'プロフィールを編集しました',
    ],
    'error' => [
        'type' => 'danger',

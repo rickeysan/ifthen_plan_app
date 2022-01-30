@@ -47,6 +47,7 @@ class ProfileController extends Controller
 		}
         $user = User::find(Auth::id());
         $user->fill($param)->save();
+        session()->flash('toastr', config('toastr.profile_update'));
         return redirect('home');
     }
 
