@@ -1,6 +1,10 @@
 <?php
 
 return [
+    'register' => [
+        'type' => 'success',
+        'text' => '会員登録しました',
+    ],
    'save' => [
        'type' => 'success',
        'text' => '保存処理が正常に完了しました',

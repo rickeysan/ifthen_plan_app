@@ -48,8 +48,20 @@ $breakpoints: (
     }
 }
 
-// CodeSeven/toastr 
+// CodeSeven/toastr
 @import "toastr";
+.toast {
+    width:400px;
+ }
+ .toast-success {
+    background-color: $fourth-color;
+    color:black;
+
+ }
+
+
+
+
 
 // ============================
 // base

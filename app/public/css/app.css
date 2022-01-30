@@ -256,6 +256,15 @@ button.toast-close-button {
   }
 }
 
+.toast {
+  width: 400px;
+}
+
+.toast-success {
+  background-color: #0dceda;
+  color: black;
+}
+
 html,
 body {
   width: 100%;

@@ -16,9 +16,6 @@ class HomeController extends Controller
         logger('HomeControllerのindexメソッドです');
 
         $habits = Habit::where('user_id',Auth::id())->get();
-        // session()->flash('message','作成しました');
-        // session()->flash('message', 'hello,toaster');
-        session()->flash('toastr', config('toastr.delete'));
         return view ('home',compact('habits'));
     }
 }
