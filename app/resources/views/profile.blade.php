@@ -43,7 +43,7 @@
             </div>
 
             <div class="form-item__image">
-                <div class="form-item__info-wrap">
+                <div class="form-item__info-wrap">  
                     <span class="form-item__title">アイコン画像</span><span class="form-item__title__batch batch-option">任意</span>
                 </div>
                 <div class="form-item__image-container">

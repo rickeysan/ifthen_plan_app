@@ -18,8 +18,8 @@ class CreateUsersTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->text('introduction')->nullable();
-            $table->string("file_name")->nullable();
-			$table->string("file_path")->nullable();
+            $table->string("file_name")->default('no_image');
+			$table->string("file_path")->default('no_image.png');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

@@ -1,7 +1,7 @@
 <header id="header">
     <div class="inner">
         <h1 class="logo">
-            <a href=""><img src="/app/public/img/top_banner.png" alt=""></a>
+            <a href=""><img src="{{ asset('img/site_logo.png') }}" alt="サイトロゴ"></a>
         </h1>
         <nav>
             <ul class="header__nav-list">
