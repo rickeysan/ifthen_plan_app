@@ -185,6 +185,7 @@ a{
                 color:$msg-color;
             }
         }
+
     }
     .input-panel-btn__wrap{
         padding-top:$space_l;
@@ -386,6 +387,11 @@ a{
                     height: 60px;
                     border: 1px solid gray;
                 }
+            }
+            .form-item__checkbox{
+                width: 18px;
+                height: 18px;
+                vertical-align: -2px;
             }
         }
     }

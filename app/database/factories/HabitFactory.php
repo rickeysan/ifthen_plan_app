@@ -11,6 +11,7 @@ $factory->define(Habit::class, function (Faker $faker) {
         'category_id'=>$faker->numberBetween($min = 1, $max = 3),
         'purpose'=>$faker->realText(rand(10,80)),
         'task'=>$faker->realText(rand(10,40)),
+        'is_open'=>$faker->numberBetween($min=0,$max=1),
         'start_date'=>$faker->date($format='Y-m-d',$max='now'),
         'finish_date'=>$faker->date($format='Y-m-d',$max='now'),
     ];

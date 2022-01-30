@@ -580,6 +580,12 @@ a {
   border: 1px solid gray;
 }
 
+.main-sections__container .habit-input__container .form-item .form-item__checkbox {
+  width: 18px;
+  height: 18px;
+  vertical-align: -2px;
+}
+
 .main-sections__container .btn-wrap {
   display: flex;
   justify-content: center;

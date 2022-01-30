@@ -31,8 +31,14 @@ class HabitController extends Controller
             'plan_text'=>'required',
         ];
         $this->validate($request,$validate_rule);
-        logger('バリデーションOKです');
         $param = $request->all();
+        if(isset($param['is_open'])){
+            // 1は公開
+            $param['is_open'] = 1;
+        }else{
+            // 0は非公開
+            $param['is_open'] = 0;
+        }
         $plan_text = $param['plan_text'];
         unset($param['_token']);
         unset($param['plan_text']);
@@ -74,6 +80,13 @@ class HabitController extends Controller
         $this->validate($request,$validate_rule);
         logger('バリデーションOKです');
         $param = $request->all();
+        if(isset($param['is_open'])){
+            // 1は公開
+            $param['is_open'] = 1;
+        }else{
+            // 0は非公開
+            $param['is_open'] = 0;
+        }
         $plan_text = $request->input('plan_text');
         unset($param['_method']);
         unset($param['_token']);
@@ -92,11 +105,7 @@ class HabitController extends Controller
     }
     public function destroy($id) {
         logger('HabitControllerのdestoryメソッドです');
-        // dd('destoryです');
-        // dd(Habit::find($id));
-
         Habit::find($id)->delete();
-
         return redirect('home');
     }
 }

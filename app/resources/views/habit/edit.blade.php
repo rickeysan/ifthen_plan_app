@@ -95,6 +95,10 @@
                         <span class="form-item__input-area__msg err-msg">入力必須です</span>
                     @enderror
                 </div>
+                <div class="form-item">
+                    <input name="is_open" type="checkbox" class="form-item__checkbox" value="true" {{ ($habit->is_open) ? 'checked' :'' }}>
+                    <span class="form-item__checkbox__info">習慣を公開する</span>
+                </div>
                 <div class="btn-wrap">
                     <button type="submit" class="form-input_btn">習慣を保存する</button>
                 </div>
