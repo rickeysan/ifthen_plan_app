@@ -22,6 +22,7 @@
     "dependencies": {
         "@fullcalendar/core": "^5.10.1",
         "@fullcalendar/daygrid": "^5.10.1",
-        "@fullcalendar/interaction": "^5.10.1"
+        "@fullcalendar/interaction": "^5.10.1",
+        "jquery": "^3.6.0"
     }
 }

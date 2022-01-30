@@ -32,6 +32,5 @@
         チャレンジ中の習慣はありません
         @endif
 </section>
-</div>
 
 @endsection
