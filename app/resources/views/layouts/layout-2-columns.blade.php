@@ -11,6 +11,9 @@
 </head>
 <body>
     @yield('header')
+    <p id="js-show-msg" class="msg-slide">
+        習慣の登録に成功しました
+    </p>
 
     <main id="main">
         <div class="main__inner columns-2">

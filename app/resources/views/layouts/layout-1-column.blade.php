@@ -11,6 +11,9 @@
 </head>
 <body>
     @yield('header')
+    <p class="js-show-msg">
+
+    </p>
 
     <main id="main">
         <div class="main__inner">

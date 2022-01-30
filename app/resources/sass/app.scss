@@ -69,7 +69,18 @@ main {
 a{
     display: block;
 }
-
+// ============================
+// js-show-msg
+// ============================
+.msg-slide{
+    position: absolute;
+    background: rgba(13,206,218,0.7);
+    width: 100%;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    font-size: 18px;
+}
 // ============================
 // header
 // ============================
