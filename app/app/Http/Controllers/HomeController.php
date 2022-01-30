@@ -14,12 +14,11 @@ class HomeController extends Controller
     }
     public function index(Request $request){
         logger('HomeControllerのindexメソッドです');
-        // dd(Auth::id());
-        // dd($request->session());
-        // dd($request->session()->get('user_id'));
+
         $habits = Habit::where('user_id',Auth::id())->get();
-        // dd($habits);
+        // session()->flash('message','作成しました');
+        // session()->flash('message', 'hello,toaster');
+        session()->flash('toastr', config('toastr.delete'));
         return view ('home',compact('habits'));
     }
 }
- 

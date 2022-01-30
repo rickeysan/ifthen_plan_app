@@ -11,9 +11,12 @@
 </head>
 <body>
     @yield('header')
-    <p id="js-show-msg" class="msg-slide">
-        習慣の登録に成功しました
-    </p>
+    {{-- @include('components.toastr') --}}
+    {{-- @if(null !== session('message'))
+        <p id="js-show-msg" class="msg-slide">
+            {{ session('message') }}
+        </p>
+    @endif --}}
 
     <main id="main">
         <div class="main__inner columns-2">
@@ -33,4 +36,6 @@
 <script src="{{ asset('js/app.js')}}"></script>
 {{-- URL（ページ）ごとの追加処理 --}}
 @yield('js')
+@include('components.toastr')
+
 </html>
