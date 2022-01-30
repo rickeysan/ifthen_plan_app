@@ -1,21 +1,21 @@
 <?php
 
 return [
-    'register' => [
+    'user_register' => [
         'type' => 'success',
         'text' => '会員登録しました',
     ],
-   'save' => [
+   'logout' => [
        'type' => 'success',
-       'text' => '保存処理が正常に完了しました',
+       'text' => 'ログアウトしました',
    ],
-   'update' => [
+   'habit_register' => [
        'type' => 'success',
-       'text' => '更新処理が正常に完了しました',
+       'text' => '新しい習慣を作成しました',
    ],
-   'delete' => [
+   'habit_update' => [
        'type' => 'success',
-       'text' => '削除処理が正常に完了しました',
+       'text' => '編集処理が正常に完了しました',
    ],
    'validation_error' => [
        'type' => 'danger',

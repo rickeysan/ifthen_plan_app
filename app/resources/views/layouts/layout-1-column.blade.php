@@ -33,4 +33,5 @@
 <script src="{{ asset('js/app.js')}}"></script>
 {{-- URL（ページ）ごとの追加処理 --}}
 @yield('js')
+@include('components.toastr')
 </html>

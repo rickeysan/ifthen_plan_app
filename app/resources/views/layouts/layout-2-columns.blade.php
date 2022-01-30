@@ -11,12 +11,6 @@
 </head>
 <body>
     @yield('header')
-    {{-- @include('components.toastr') --}}
-    {{-- @if(null !== session('message'))
-        <p id="js-show-msg" class="msg-slide">
-            {{ session('message') }}
-        </p>
-    @endif --}}
 
     <main id="main">
         <div class="main__inner columns-2">

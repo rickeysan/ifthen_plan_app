@@ -22,8 +22,6 @@ class HabitController extends Controller
     }
     public function store(Request $request){
         logger('HabitControllerのstoreメソッドです');
-        logger('パリデーションをします');
-        // dd(Auth::id());
         $validate_rule = [
             'category_id'=>'required',
             'purpose'=>'required',
@@ -48,7 +46,7 @@ class HabitController extends Controller
         $plan = new Plan;
         $plan_param = ['habit_id'=>$last_insert_id,'plan_text'=>$plan_text];
         $plan->fill($plan_param)->save();
-
+        session()->flash('toastr', config('toastr.habit_register'));
         return redirect('home');
     }
     public function show(Request $request,$id){
@@ -59,7 +57,6 @@ class HabitController extends Controller
     public function edit(Request $request, $id){
         logger('HabitControllerのeditメソッドです');
         $habit = Habit::where('id',$id)->where('user_id',Auth::id())->first();
-        // dd($habit->plan->plan_text);
         $categories = Category::all();
         return view('/habit/edit',compact('habit','categories'));
     }
@@ -90,6 +87,7 @@ class HabitController extends Controller
         $habit->fill($param)->save();
 
         $categories = Category::all();
+        session()->flash('toastr', config('toastr.habit_update'));
         return view('/habit/edit',compact('habit','categories'));
     }
     public function destroy($id) {

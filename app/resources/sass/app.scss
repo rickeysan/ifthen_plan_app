@@ -52,6 +52,7 @@ $breakpoints: (
 @import "toastr";
 .toast {
     width:400px;
+    color:$primary-text-color;
  }
  .toast-success {
     background-color: $fourth-color;

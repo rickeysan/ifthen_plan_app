@@ -258,6 +258,7 @@ button.toast-close-button {
 
 .toast {
   width: 400px;
+  color: #212121;
 }
 
 .toast-success {

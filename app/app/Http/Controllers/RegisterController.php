@@ -25,7 +25,7 @@ class RegisterController extends Controller
         $user->fill($param)->save();
         $user_id = $user->id;
         Auth::loginUsingId($user_id);
-        session()->flash('toastr', config('toastr.register'));
+        session()->flash('toastr', config('toastr.user_register'));
         return redirect('home');
     }
 }

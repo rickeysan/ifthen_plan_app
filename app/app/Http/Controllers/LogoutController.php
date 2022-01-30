@@ -10,6 +10,7 @@ class LogoutController extends Controller
     public function index(Request $request){
         logger('LogoutControllerのindexメソッドです');
         Auth::logout();
+        session()->flash('toastr', config('toastr.logout'));
         return redirect()->route('login.index');
     }
 }
