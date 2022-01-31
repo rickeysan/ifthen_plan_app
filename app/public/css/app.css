@@ -579,7 +579,7 @@ a {
 
 .main-sections__container .habit-input__container .form-item .form-item__body .form-item__select {
   width: 180px;
-  border: 1px solid gray;
+  border: 1px solid #BDBDBD;
   border-radius: 5px;
   padding: 0 5px;
 }
@@ -588,7 +588,12 @@ a {
   width: 100%;
   padding: 0 5px;
   height: 60px;
-  border: 1px solid gray;
+  border: 1px solid #BDBDBD;
+}
+
+.main-sections__container .habit-input__container .form-item .form-item__body .form-item__date {
+  border: 1px solid #BDBDBD;
+  border-radius: 5px;
 }
 
 .main-sections__container .habit-input__container .form-item .form-item__checkbox {
@@ -625,7 +630,7 @@ a {
 }
 
 .main-sections__container .plans__container .plans__form-input {
-  border: 1px solid gray;
+  border: 1px solid #BDBDBD;
   width: 100%;
   padding: 0 5px;
 }
@@ -636,6 +641,7 @@ a {
 }
 
 .calendar-section {
+  margin-top: 30px;
   display: flex;
 }
 
@@ -702,7 +708,7 @@ a {
 }
 
 .search-menu__list-nav form {
-  border: 1px solid gray;
+  border: 1px solid #BDBDBD;
   padding: 15px 10px;
   border-radius: 10px;
 }
@@ -759,14 +765,15 @@ a {
 .search__section .search-section__habits-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px 10px;
+  gap: 20px 35px;
 }
 
 .search__section .search-section__habits-container .habits-list__card {
   width: 280px;
-  border: 1px solid gray;
+  border: 1px solid #BDBDBD;
   height: 280px;
   padding: 15px;
+  box-shadow: 0 0 3px #BDBDBD;
 }
 
 .search__section .search-section__habits-container .habits-list__card .habits-list__card-title {
@@ -966,6 +973,43 @@ a {
 .pagination-wrap li {
   padding: 10px;
   display: inline-block;
+}
+
+.withdraw__section {
+  width: 1000px;
+  padding: 0 200px;
+}
+
+.withdraw__section .section-title {
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.withdraw__section .withdraw__container {
+  margin-top: 80px;
+}
+
+.withdraw__section .withdraw-form__info {
+  text-align: center;
+}
+
+.withdraw__section .form-item__btn-wrap {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.withdraw__section .form-item__btn-wrap .form-item__btn {
+  width: 120px;
+  border: 1px solid black;
+  padding: 5px 10px;
+  border-radius: 20px;
+  background: #ebfffa;
+}
+
+.withdraw__section .form-item__btn-wrap .form-item__btn:hover {
+  transition: 0.1s;
+  background: #f38181;
 }
 
 .plan-helper {

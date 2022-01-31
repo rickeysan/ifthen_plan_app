@@ -384,7 +384,7 @@ a{
             .form-item__body{
                 .form-item__select{
                     width: 180px;
-                    border: 1px solid gray;
+                    border: 1px solid $divider-color;
                     border-radius: 5px;
                     padding: 0 $space_s;
                 }
@@ -392,7 +392,12 @@ a{
                     width: 100%;
                     padding: 0 5px;
                     height: 60px;
-                    border: 1px solid gray;
+                    border: 1px solid $divider-color;
+                }
+                .form-item__date{
+                    border: 1px solid $divider-color;
+                    border-radius: 5px;
+
                 }
             }
             .form-item__checkbox{
@@ -424,7 +429,7 @@ a{
             margin-bottom:$space_l;
         }
         .plans__form-input{
-            border: 1px solid gray;
+            border: 1px solid $divider-color;
             width: 100%;
             padding: 0 5px;
         }
@@ -440,6 +445,7 @@ a{
 // calendar
 // ============================
 .calendar-section{
+    margin-top: $space_xxl;
     display: flex;
     #calendar{
         width:630px;
@@ -495,7 +501,7 @@ a{
 .search-menu__list-nav{
     width:220px;
     form{
-        border: 1px solid gray;
+        border: 1px solid $divider-color;
         padding: 15px 10px;
         border-radius: 10px;
     }
@@ -550,13 +556,13 @@ a{
     .search-section__habits-container{
         display: flex;
         flex-wrap: wrap;
-        gap:20px 10px;
-        // justify-content: space-between;
+        gap: 20px 35px;
         .habits-list__card{
             width: 280px;
-            border: 1px solid gray;
+            border: 1px solid $divider-color;
             height: 280px;
             padding: $space_l;
+            box-shadow: 0 0 3px $divider-color;
             .habits-list__card-title{
                 height:80px;
             }
@@ -740,6 +746,40 @@ a{
     }
 }
 
+// ============================
+// withdraw-seciton
+// ============================
+.withdraw__section{
+    width: 1000px;
+    padding: 0 200px;
+
+    .section-title{
+        font-size:$font-size_l;
+        text-align: center;
+        margin-bottom:$space_xl;
+    }
+    .withdraw__container{
+        margin-top: 80px;
+    }
+    .withdraw-form__info{
+        text-align: center;
+    }
+    .form-item__btn-wrap{
+        margin-top: 60px;
+        text-align: center;
+        .form-item__btn{
+            width: 120px;
+            border: 1px solid black;
+            padding: 5px 10px;
+            border-radius: 20px;
+            background: $first-color;
+            &:hover{
+                transition: 0.1s;
+                background: $msg-color;
+            }
+        }
+    }
+}
 
 // ============================
 // plan-helper

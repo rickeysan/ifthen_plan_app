@@ -13,13 +13,13 @@
 @endsection
 
 @section('main-contents')
-<section class="profile-edit__section">
-    <h2 class="section-title">パスワード変更</h2>
-    <div class="profile-edit__container">
+<section class="withdraw__section">
+    <h2 class="section-title">退会申し込み</h2>
+    <div class="withdraw__container">
         <form action="{{  route('withdraw.destroy',Auth::user()->id) }}" method="post">
             @csrf
             @method('delete')
-            <p>本当に退会しますか？</p>
+            <p class="withdraw-form__info">本当に退会しますか？</p>
             <div class="form-item__btn-wrap">
                 <button class="form-item__btn">退会する</button>
             </div>
