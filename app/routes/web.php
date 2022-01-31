@@ -27,6 +27,8 @@ Route::resource('profile','ProfileController',['only'=>['index','show','store']]
 Route::resource('withdraw','WithdrawController',['only'=>['index','destroy']]);
 Route::resource('post', 'PostController');
 Route::resource('search', 'SearchController');
+Route::resource('example', 'ExampleController');
+
 
 // スケジュール用のコントローラー（コンフリクト解決のために追記)
 

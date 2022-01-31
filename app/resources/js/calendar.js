@@ -79,7 +79,6 @@ let calendar = new Calendar(calendarEl, {
     },
 
 
-
     events: function (info, successCallback, failureCallback) {
         console.log('取得します');
 

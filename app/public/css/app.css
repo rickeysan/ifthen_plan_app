@@ -932,6 +932,42 @@ a {
   display: inline-block;
 }
 
+.plan-helper {
+  margin-top: 40px;
+  align-items: center;
+}
+
+.plan-helper .plan-helper__title {
+  text-align: center;
+}
+
+.plan-helper .plan-helper__info {
+  text-align: center;
+}
+
+.plan-helper .plan-helper__table {
+  width: 740px;
+  border: 1px solid #BDBDBD;
+  margin: 15px auto;
+}
+
+.plan-helper .plan-helper__table tbody {
+  width: 680px;
+}
+
+.plan-helper .plan-helper__table tr {
+  height: 40px;
+}
+
+.plan-helper .plan-helper__table td {
+  width: 50%;
+}
+
+.plan-helper .plan-helper__btn {
+  border: 1px solid #BDBDBD;
+  background: #c6fce5;
+}
+
 #footer {
   width: 100%;
   height: 30px;

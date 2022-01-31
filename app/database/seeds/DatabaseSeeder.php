@@ -16,5 +16,6 @@ class DatabaseSeeder extends Seeder
         $this->call(HabitTableSeeder::class);
         $this->call(CategoryTableSeeder::class);
         $this->call(PlanTableSeeder::class);
+        $this->call(ExampleTableSeeder::class);
     }
 }

@@ -100,6 +100,30 @@
             </form>
 
         </div>
+        <div class="plan-helper">
+            <h3 class="plan-helper__title">ランダムジェネレータ</h3>
+            <p class="plan-helper__info">ランダムでIf-Thenプランニングを作成します</p>
+            <table class="plan-helper__table">
+                <tbody>
+                    <tr>
+                        <td>If（もし〜なら）</td>
+                        <td>Then（〜する）</td>
+                    </tr>
+                    <tr>
+                        <td><p id="js-if-get-area"></p></td>
+                        <td><p id="js-then-get-area"></p></td>
+                    </tr>
+                    <tr>
+                        <td><button class="plan-helper__btn" id="js-if-get-btn">取得</button></td>
+                        <td><button class="plan-helper__btn" id="js-then-get-btn">取得</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </section>
 </div>
+@endsection
+
+@section('js')
+    <script src="{{ asset('js/example_show.js')}}"></script>
 @endsection
