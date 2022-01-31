@@ -2,5 +2,6 @@
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
     "/js/calendar.js": "/js/calendar.js",
+    "/js/example_show.js": "/js/example_show.js",
     "/js/profile_img.js": "/js/profile_img.js"
 }
