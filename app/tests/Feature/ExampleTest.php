@@ -12,6 +12,14 @@ class ExampleTest extends TestCase
      *
      * @return void
      */
+
+    use RefreshDatabase;
+
+    public function setUp(): void
+    {
+        dd(env('APP_ENV'), env('DB_DATABASE'), env('DB_CONNECTION'));
+    }
+    
     public function testBasicTest()
     {
         $response = $this->get('/');
