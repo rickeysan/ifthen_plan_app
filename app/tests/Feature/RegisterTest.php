@@ -13,6 +13,8 @@ class RegisterTest extends TestCase
      *
      * @return void
      */
+    // use RefreshDatabase;
+
     public function testExample()
     {
         $response = $this->get('register');
