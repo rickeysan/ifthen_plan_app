@@ -29,14 +29,14 @@ class SearchController extends Controller
                 $total_habits_amount = count(Habit::where('category_id',$category_id)->where('is_open',true)->get());
             }else{
                 //検索キーワードなし、カテゴリー選択なしの場合
-                $users = Habit::where('is_open',true)->paginate(12);
+                $habits = Habit::where('is_open',true)->paginate(12);
                 $total_habits_amount =count(Habit::where('is_open',true)->get());
             }
         } else {
             if(!empty($category_id)){
             //検索キーワードあり、カテゴリーが選択されている場合
-                $habits = Habit::where(['task','like','%'.$key_word.'%'])->where('category_id',$category_id)->where('is_open',true)->paginate(12);
-                $total_habits_amount = count(Habit::where(['task','like','%'.$key_word.'%'])->where('category_id',$category_id)->where('is_open',true)->get());
+                $habits = Habit::where('task','like','%'.$key_word.'%')->where('category_id',$category_id)->where('is_open',true)->paginate(12);
+                $total_habits_amount = count(Habit::where('task','like','%'.$key_word.'%')->where('category_id',$category_id)->where('is_open',true)->get());
             }else{
             //検索キーワードあり、カテゴリー選択なしの場合
             $habits = Habit::where('task','like','%'.$key_word.'%')->where('is_open',true)->paginate(12);

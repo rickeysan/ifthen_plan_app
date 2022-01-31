@@ -71,8 +71,6 @@
 @endsection
 
 @section('js')
-<script>
-     const habit_id ='{{ $habit["id"] }}';
-</script>
+
 <script src="{{ asset('js/calendar.js')}}"></script>
 @endsection
