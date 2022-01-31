@@ -23,7 +23,7 @@ class LoginTest extends TestCase
         // テストユーザ作成
         $this->user = factory(User::class)->create();
     }
-
+    // 正常系
     public function test_正しいパスワード()
     {
         $response = $this->get('/login');
@@ -35,7 +35,7 @@ class LoginTest extends TestCase
         $this->assertAuthenticatedAs($this->user);
 
     }
-
+    // 異常系
     public function test_間違ったパスワード()
     {
         $response = $this->get('/login');

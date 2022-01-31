@@ -63,6 +63,9 @@ class HabitController extends Controller
     public function edit(Request $request, $id){
         logger('HabitControllerのeditメソッドです');
         $habit = Habit::where('id',$id)->where('user_id',Auth::id())->first();
+        // dd(Auth::id());
+        // dd(Habit::where('id',$id)->first());
+        // dd($habit);
         $categories = Category::all();
         return view('/habit/edit',compact('habit','categories'));
     }
