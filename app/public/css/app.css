@@ -934,6 +934,7 @@ a {
 
 .plan-helper {
   margin-top: 40px;
+  align-items: center;
 }
 
 .plan-helper .plan-helper__title {
@@ -945,8 +946,13 @@ a {
 }
 
 .plan-helper .plan-helper__table {
-  width: 680px;
+  width: 740px;
   border: 1px solid #BDBDBD;
+  margin: 15px auto;
+}
+
+.plan-helper .plan-helper__table tbody {
+  width: 680px;
 }
 
 .plan-helper .plan-helper__table tr {

@@ -719,17 +719,20 @@ a{
 // ============================
 .plan-helper{
     margin-top:$space_3l;
-
+    align-items: center;
     .plan-helper__title{
         text-align: center;
-
     }
     .plan-helper__info{
         text-align: center;
     }
     .plan-helper__table{
-        width:680px;
+        width:740px;
         border:1px solid $divider-color;
+        margin:$space_l auto;
+        tbody{
+            width:680px;
+        }
         tr{
             height: 40px;
         }
