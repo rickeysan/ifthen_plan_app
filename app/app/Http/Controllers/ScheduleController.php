@@ -54,8 +54,6 @@ class ScheduleController extends Controller
             'end_date' => 'required|integer',
             'habit_id' => 'required',
         ]);
-        logger('バリデーションOK');
-
         // カレンダー表示期間
         $start_date = date('Y-m-d', $request->input('start_date') / 1000);
         $end_date = date('Y-m-d', $request->input('end_date') / 1000);

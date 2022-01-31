@@ -129,8 +129,6 @@
 </div>
 @endsection
 
-
-
 @section('js')
 <script>
      const habit_id ='{{ $habit["id"] }}';

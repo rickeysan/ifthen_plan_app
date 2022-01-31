@@ -713,6 +713,42 @@ a{
     }
 }
 
+
+// ============================
+// plan-helper
+// ============================
+.plan-helper{
+    margin-top:$space_3l;
+
+    .plan-helper__title{
+        text-align: center;
+
+    }
+    .plan-helper__info{
+        text-align: center;
+    }
+    .plan-helper__table{
+        width:680px;
+        border:1px solid $divider-color;
+        tr{
+            height: 40px;
+        }
+        td{
+            width:50%;
+        }
+
+    }
+    .plan-helper__btn{
+        border:1px solid $divider-color;
+        background: $second-color;
+    }
+
+
+}
+
+
+
+
 // ============================
 // footer
 // ============================
