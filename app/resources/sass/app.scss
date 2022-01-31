@@ -107,6 +107,7 @@ a{
     justify-content: space-around;
     align-items: center;
     background:$first-color;
+    box-shadow: 0 3px 6px rgb(0 0 0 / 5%);
     .inner{
         display: flex;
         align-items: center;
@@ -145,7 +146,7 @@ a{
 
     .main__inner{
         width:$site-width;
-        margin:$space_l auto;
+        margin:$space_xl auto;
     }
     .columns-2{
         display: flex;
@@ -195,6 +196,9 @@ a{
             background: $third-color;
             height: $space_3l;
             border-radius: 5px;
+            &:hover{
+                background: $fourth-color;
+            }
         }
         .submit-btn__link{
             margin-top:$space_xl;
@@ -235,8 +239,11 @@ a{
 // ============================
 .dashbord-menu__list-nav{
     width:200px;
-    font-size:$font-size_l;
+    font-size:$font-size_default;
     .dashbord-menu__list-ul{
+        border: 1px solid $divider-color;
+        padding: 15px 10px;
+        border-radius: 10px;
         .dashbord-menu__list-item{
             margin-bottom:$space_l;
             .dashbord-menu__list-item-link{
@@ -358,7 +365,7 @@ a{
 // ============================
 .main-sections__container{
     width:100%;
-    padding:$space_l $space_4l;
+    padding:0 $space_3l;
     .section-title{
         font-size:$font-size_l;
         text-align: center;
@@ -400,10 +407,15 @@ a{
         justify-content: center;
     }
     .form-input_btn{
+        width: 160px;
+        text-align: center;
         padding:$space_s;
-        border:1px solid $secondary-text-color;
+        border:2px solid $fourth-color;
         border-radius: 10px;
-        background: $first-color;
+        &:hover{
+            transition: 0.1s;
+            background: $third-color;
+        }
     }
     .plans__container{
         margin-bottom:$space_xxl;
@@ -481,7 +493,12 @@ a{
 // search-menu
 // ============================
 .search-menu__list-nav{
-    width:200px;
+    width:220px;
+    form{
+        border: 1px solid gray;
+        padding: 15px 10px;
+        border-radius: 10px;
+    }
 
     .search-menu__item-foot{
         margin-bottom:$space_xl;
@@ -501,7 +518,12 @@ a{
     .search-menu__item-btn__wrap{
         .search-menu__item-btn{
             border:1px solid $divider-color;
+            background: $first-color;
             padding:$space_s $space_m;
+            &:hover{
+                transition: 0.1s;
+                background: $second-color;
+            }
         }
     }
 
@@ -607,7 +629,6 @@ a{
         }
     }
     .form-item__image{
-        // height: 220px;
         display: flex;
         align-items: top;
         .form-item__image-container{
@@ -670,8 +691,14 @@ a{
         text-align: center;
         .form-item__btn{
             height: 40px;
-            width:80px;
             border:1px solid $divider-color;
+            background:$first-color;
+            border-radius: 20px;
+            width: 160px;
+            &:hover{
+                transition: 0.1s;
+                background:$second-color;
+            }
 
         }
     }

@@ -306,6 +306,7 @@ a {
   justify-content: space-around;
   align-items: center;
   background: #ebfffa;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
 }
 
 #header .inner {
@@ -333,7 +334,7 @@ a {
 
 #main .main__inner {
   width: 1200px;
-  margin: 15px auto;
+  margin: 20px auto;
 }
 
 #main .columns-2 {
@@ -387,6 +388,10 @@ a {
   border-radius: 5px;
 }
 
+.input-panel .input-panel-btn__wrap .submit-btn:hover {
+  background: #0dceda;
+}
+
 .input-panel .input-panel-btn__wrap .submit-btn__link {
   margin-top: 20px;
   text-align: center;
@@ -418,7 +423,13 @@ a {
 
 .dashbord-menu__list-nav {
   width: 200px;
-  font-size: 18px;
+  font-size: 16px;
+}
+
+.dashbord-menu__list-nav .dashbord-menu__list-ul {
+  border: 1px solid #BDBDBD;
+  padding: 15px 10px;
+  border-radius: 10px;
 }
 
 .dashbord-menu__list-nav .dashbord-menu__list-ul .dashbord-menu__list-item {
@@ -545,7 +556,7 @@ a {
 
 .main-sections__container {
   width: 100%;
-  padding: 15px 50px;
+  padding: 0 40px;
 }
 
 .main-sections__container .section-title {
@@ -592,10 +603,16 @@ a {
 }
 
 .main-sections__container .form-input_btn {
+  width: 160px;
+  text-align: center;
   padding: 5px;
-  border: 1px solid #757575;
+  border: 2px solid #0dceda;
   border-radius: 10px;
-  background: #ebfffa;
+}
+
+.main-sections__container .form-input_btn:hover {
+  transition: 0.1s;
+  background: #6ef3d6;
 }
 
 .main-sections__container .plans__container {
@@ -681,7 +698,13 @@ a {
 }
 
 .search-menu__list-nav {
-  width: 200px;
+  width: 220px;
+}
+
+.search-menu__list-nav form {
+  border: 1px solid gray;
+  padding: 15px 10px;
+  border-radius: 10px;
 }
 
 .search-menu__list-nav .search-menu__item-foot {
@@ -704,7 +727,13 @@ a {
 
 .search-menu__list-nav .search-menu__item-btn__wrap .search-menu__item-btn {
   border: 1px solid #BDBDBD;
+  background: #ebfffa;
   padding: 5px 10px;
+}
+
+.search-menu__list-nav .search-menu__item-btn__wrap .search-menu__item-btn:hover {
+  transition: 0.1s;
+  background: #c6fce5;
 }
 
 .search__section {
@@ -896,8 +925,15 @@ a {
 
 .profile-edit__section .form-item__btn-wrap .form-item__btn {
   height: 40px;
-  width: 80px;
   border: 1px solid #BDBDBD;
+  background: #ebfffa;
+  border-radius: 20px;
+  width: 160px;
+}
+
+.profile-edit__section .form-item__btn-wrap .form-item__btn:hover {
+  transition: 0.1s;
+  background: #c6fce5;
 }
 
 .profile-edit__section .err-msg {
