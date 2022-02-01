@@ -17,20 +17,20 @@
     <h2 class="section-title">個人ページ</h2>
     <div class="my-profile__container">
         <div class="my-profile__img-wrap">
-            <img src="{{ Storage::url($habits[0]->user->file_path) }}" alt="" class="my-profile__img">
+            <img src="{{ Storage::url($user->file_path) }}" alt="" class="my-profile__img">
         </div>
         <div class="my-profile__contents">
-            <p class="my-profile__name">{{ $habits[0]->user->name }}</p>
-            <p class="my-profile__text">{{ $habits[0]->user->introduction }}</p>
+            <p class="my-profile__name">{{ $user->name }}</p>
+            <p class="my-profile__text">{{ $user->introduction }}</p>
         </div>
 
     </div>
     <h2 class="section-title">習慣一覧</h2>
     <div class="search-section__habits-container my-habits-list">
-        @foreach ($habits as $habit)
+        @foreach ($user->habits as $habit)
         <a href="" class="habits-list__card">
             <h3 class="habits-list__card-title">{{ $habit['task'] }}</h3>
-            <p class="habits-list__card-plan">もし帰ってきて疲れていたら、マッサージガンで首をマッサージする</p>
+            <p class="habits-list__card-plan">{{ $habit->plan->plan_text }}</p>
             <div class="habits-list__card-profile">
                 <img src="/app/public/img/top_banner.png" alt="" class="habits-list__card-img">
                 <span class="habits-list__card-name">{{ $habit->user->name }}</span>

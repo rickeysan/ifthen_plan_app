@@ -53,8 +53,10 @@ class ProfileController extends Controller
 
     public function show($id){
         logger('ProfileControllerのshowメソッドです');
-        $habits = Habit::where('user_id',$id)->get();
-        return view('personal',compact('habits'));
+        $user = User::where('id',$id)->first();
+        // dd($user);
+        // $habits = Habit::where('user_id',$id)->get();
+        return view('personal',compact('user'));
     }
 
 }
