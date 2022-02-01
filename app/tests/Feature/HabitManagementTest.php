@@ -8,6 +8,7 @@ use Tests\TestCase;
 use App\User;
 use App\Habit;
 use App\Plan;
+use App\Schedule;
 use Illuminate\Support\Facades\Auth;
 
 class HabitManagementTest extends TestCase
@@ -87,7 +88,13 @@ class HabitManagementTest extends TestCase
         ];
     }
 
-
+    public function test_記録用カレンダーの空白の日付に適切な値を入力すると記録を新規作成できる(){
+        $response = $this->actingAs($this->user)->get('/habit/create');
+        $response->assertStatus(200);
+        $calendar_info = [
+            'calendar-input-date'=>'2021-02-01',
+        ];
+    }
 
     //  異常系
     public function test__認証ユーザーで不適切な入力をするとエラーつきで登録画面に返される()
