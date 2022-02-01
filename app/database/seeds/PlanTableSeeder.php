@@ -33,5 +33,7 @@ class PlanTableSeeder extends Seeder
         ];
         $plan->fill($param)->save();
 
+        factory(Plan::class, 80)->create();
+
     }
 }
