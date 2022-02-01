@@ -9,10 +9,8 @@
         <li class="dashbord-menu__list-item"><a class="dashbord-menu__list-item-link" href="{{ route('logout.index') }}">ログアウト</a></li>
         <li class="dashbord-menu__list-item"><a class="dashbord-menu__list-item-link" href="{{ route('withdraw.index') }}">退会</a></li>
     </ul>
-    {{-- {{ dd($my_sample) }} --}}
-    {{-- {{ dd($habit) }} --}}
-    <a href="{{ route('profile.show', $habit_user_id) }}" class="profile-card">
-        <img src="{{ asset('img/top_banner.png') }}"   alt="" class="profile-card__img">
-        <span class="profile-card__name">伊藤フミヤ</span>
+    <a href="{{ route('profile.show', $habit->user->id) }}" class="profile-card">
+        <img src="{{ asset( Storage::url($habit->user->file_path)) }}"   alt="" class="profile-card__img">
+        <span class="profile-card__name">{{ $habit->user->name }}</span>
     </a>
 </nav>

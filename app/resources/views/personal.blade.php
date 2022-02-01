@@ -17,7 +17,7 @@
     <h2 class="section-title">個人ページ</h2>
     <div class="my-profile__container">
         <div class="my-profile__img-wrap">
-            <img src="/app/public/img/top_banner.png" alt="" class="my-profile__img">
+            <img src="{{ Storage::url($habits[0]->user->file_path) }}" alt="" class="my-profile__img">
         </div>
         <div class="my-profile__contents">
             <p class="my-profile__name">{{ $habits[0]->user->name }}</p>

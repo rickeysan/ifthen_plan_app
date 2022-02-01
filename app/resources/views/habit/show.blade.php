@@ -6,10 +6,7 @@
 @endsection
 
 @section('dashbord-menu')
-    @component('components/habit-dashbord-menu')
-        @slot('habit_user_id')
-            {{ $habit->user->id }}
-        @endslot
+    @component('components/habit-dashbord-menu',['habit'=>$habit])
     @endcomponent
 @endsection
 
