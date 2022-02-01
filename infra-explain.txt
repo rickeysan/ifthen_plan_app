@@ -1,0 +1,6 @@
+24bitのネットワークアドレスが６本
+グローバルIPアドレスが３個（メールサーバとBastionサーバとWebサーバ）
+OSはCentOsを使う
+MailServerはPostfixを使う
+ALB(ロードバランサー)とAWS Certificate Managerでhttps化
+
