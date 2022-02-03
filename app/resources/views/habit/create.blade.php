@@ -105,11 +105,11 @@
             <p class="plan-helper__info">ランダムでIf-Thenプランニングを作成します</p>
             <table class="plan-helper__table">
                 <tbody>
-                    <tr>
+                    <tr class="plan-helper__table__top">
                         <td>If（もし〜なら）</td>
                         <td>Then（〜する）</td>
                     </tr>
-                    <tr>
+                    <tr class="plan-helper__table__middle">
                         <td><p id="js-if-get-area"></p></td>
                         <td><p id="js-then-get-area"></p></td>
                     </tr>

@@ -1048,20 +1048,32 @@ a {
 }
 
 .plan-helper .plan-helper__table tbody {
-  width: 680px;
-}
-
-.plan-helper .plan-helper__table tr {
-  height: 40px;
+  width: 720px;
+  text-align: center;
 }
 
 .plan-helper .plan-helper__table td {
   width: 50%;
+  padding: 10px;
+}
+
+.plan-helper .plan-helper__table .plan-helper__table__top {
+  background: #ebfffa;
+}
+
+.plan-helper .plan-helper__table .plan-helper__table__middle {
+  background: #c6fce5;
+  height: 50px;
 }
 
 .plan-helper .plan-helper__btn {
   border: 1px solid #BDBDBD;
   background: #c6fce5;
+  padding: 5px 15px;
+}
+
+.plan-helper .plan-helper__btn:hover {
+  opacity: 0.7;
 }
 
 .form-item__helper {
