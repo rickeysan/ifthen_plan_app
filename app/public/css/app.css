@@ -479,10 +479,10 @@ a {
 .my-habits__section .my-habits__container .my-habits__card {
   width: 440px;
   height: 160px;
-  padding: 15px;
-  border: 1px solid #BDBDBD;
+  padding: 10px 15px;
+  border: 2px solid #BDBDBD;
   margin-bottom: 30px;
-  border-radius: 12px;
+  box-shadow: 2px 2px 6px #bdbdbd;
 }
 
 .my-habits__section .my-habits__container .my-habits__card .my-habits__card-body {
@@ -490,72 +490,12 @@ a {
   overflow: hidden;
 }
 
-.my-habits__section .my-habits__container .my-habits__card .my-habits__card-foot {
-  display: flex;
-  justify-content: space-around;
+.my-habits__section .my-habits__container .my-habits__card .my-habits__card-tag {
+  font-size: 14px;
 }
 
-.my-habits__section .my-habits__container .my-habits__card .my-habits__button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 30%;
-  height: 30px;
-  background-color: #e8a48b;
-  box-sizing: border-box;
-  color: #fff;
-  font-size: 16px;
-  letter-spacing: 0.1em;
-  line-height: 2;
-  text-decoration: none;
-  transition-duration: 0.3s;
-  position: relative;
-}
-
-.my-habits__section .my-habits__container .my-habits__card .my-habits__button:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 30px 40px 0 0;
-  border-color: #ffffff transparent transparent transparent;
-}
-
-.my-habits__section .my-habits__container .my-habits__card .my-habits__button:after {
-  content: "";
-  position: absolute;
-  top: -6px;
-  left: 5px;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 0 0 40px 30px;
-  border-color: transparent transparent #efefef transparent;
-  box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.15);
-  transform: rotate(16deg);
-}
-
-.my-habits__section .my-habits__container .my-habits__card .my-habits__button span {
-  position: relative;
-  padding-left: 16px;
-  letter-spacing: 0.05em;
-}
-
-.my-habits__section .my-habits__container .my-habits__card .my-habits__button span:before {
-  content: "";
-  width: 6px;
-  height: 6px;
-  border: 0;
-  border-top: solid 2px #fff;
-  border-right: solid 2px #fff;
-  transform: rotate(45deg);
-  position: absolute;
-  top: 50%;
-  left: 0;
-  margin-top: -4px;
+.my-habits__section .my-habits__container .my-habits__card:hover {
+  opacity: 0.8;
 }
 
 .main-sections__container {
@@ -774,10 +714,10 @@ a {
 
 .search__section .search-section__habits-container .habits-list__card {
   width: 280px;
-  border: 1px solid #BDBDBD;
+  border: 2px solid #BDBDBD;
   height: 280px;
   padding: 15px;
-  box-shadow: 0 0 3px #BDBDBD;
+  box-shadow: 1px 1px 3px #BDBDBD;
 }
 
 .search__section .search-section__habits-container .habits-list__card .habits-list__card-title {
@@ -1048,20 +988,32 @@ a {
 }
 
 .plan-helper .plan-helper__table tbody {
-  width: 680px;
-}
-
-.plan-helper .plan-helper__table tr {
-  height: 40px;
+  width: 720px;
+  text-align: center;
 }
 
 .plan-helper .plan-helper__table td {
   width: 50%;
+  padding: 10px;
+}
+
+.plan-helper .plan-helper__table .plan-helper__table__top {
+  background: #ebfffa;
+}
+
+.plan-helper .plan-helper__table .plan-helper__table__middle {
+  background: #c6fce5;
+  height: 50px;
 }
 
 .plan-helper .plan-helper__btn {
   border: 1px solid #BDBDBD;
   background: #c6fce5;
+  padding: 5px 15px;
+}
+
+.plan-helper .plan-helper__btn:hover {
+  opacity: 0.7;
 }
 
 .form-item__helper {

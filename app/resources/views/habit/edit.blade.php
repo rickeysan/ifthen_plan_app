@@ -16,7 +16,7 @@
 <div class="main-sections__container">
 
     <section class="habit-input__section">
-        <h2 class="section-title">今日の記録をつけましょう</h2>
+        <h2 class="section-title">習慣化の記録</h2>
         <div class="habit-input__container">
             <form action="{{ route('habit.update',$habit['id']) }}" method="post">
                 @csrf
@@ -118,7 +118,7 @@
     <section class="calendar-section">
         <div  class="calendar" id='calendar'></div>
         <div class="calender-info__container">
-            <p class="calendar-info-title">記録の追加・編集フォーム</p>
+            <h3 class="calendar-info-title">記録の追加・編集フォーム</h3>
             <form action="" class="calendar-input-form" style="display: none;">
                 <p class="calendar-input-title"></p>
                 <p><input type="date" name="start_date" class="calendar-input-date" readonly></p>
