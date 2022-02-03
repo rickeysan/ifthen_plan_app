@@ -46,3 +46,5 @@ Route::post('/schedule-judge', [ScheduleController::class, 'scheduleJudge'])->na
 
 
 
+Route::get('/like/{id}', 'LikeController@addLike')->name('addlike');
+Route::get('/unlike/{id}', 'LikeController@removeLike')->name('removelike');

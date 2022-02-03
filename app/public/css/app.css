@@ -1062,6 +1062,27 @@ a {
   cursor: pointer;
 }
 
+.form-item__helper .like-btn__link {
+  display: inline-block;
+}
+
+.form-item__helper .like-btn {
+  padding: 10px;
+  font-size: 18px;
+}
+
+.form-item__helper .like-btn:hover {
+  opacity: 0.5;
+}
+
+.form-item__helper .removelike-btn {
+  color: red;
+}
+
+.form-item__helper .form-item__like-count {
+  display: inline-block;
+}
+
 .delete-form {
   width: 180px;
   height: 140px;

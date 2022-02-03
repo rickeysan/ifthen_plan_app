@@ -43,8 +43,20 @@
                             <input type="date" name="finish_date" value="{{ $habit['finish_date'] }}">
                         </div>
                     </div>
+                    <div class="form-item form-item__helper">
+                        @if ($habit->is_liked_by_auth_user())
+                            <a href="{{ route('removelike',['id'=>$habit['id']]) }}" class="like-btn__link">
+                                <i class="fas fa-heart like-btn removelike-btn"></i>
+                            </a>
+                            <span class="fomr-item__like-count">{{ $habit->likes()->count() }}</span>
+                            @else
+                            <a href="{{ route('addlike',['id'=>$habit['id']]) }}" class="like-btn__link">
+                                <i class="far fa-heart like-btn addlike-btn"></i>
+                            </a>
+                            <span class="fomr-item__like-count">{{ $habit->likes()->count() }}</span>
+                        @endif
+                    </div>
                 </div>
-
                 <div class="form-item">
                     <div class="form-item__head">
                         <p class="form-item__head-text">なんのために習慣化をしますか？</p>

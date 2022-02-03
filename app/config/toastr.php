@@ -25,8 +25,12 @@ return [
        'type' => 'success',
        'text' => 'プロフィールを編集しました',
    ],
-   'error' => [
-       'type' => 'danger',
-       'text' => '予期しないエラーが発生しました',
+   'add_like' => [
+       'type' => 'success',
+       'text' => 'お気に入りに登録しました',
    ],
+   'remove_like' => [
+    'type' => 'success',
+    'text' => 'お気に入りを解除しました',
+],
 ];

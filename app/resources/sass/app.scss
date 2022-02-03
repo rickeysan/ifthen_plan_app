@@ -825,6 +825,22 @@ a{
             cursor: pointer;
         }
     }
+    .like-btn__link{
+        display: inline-block;
+    }
+    .like-btn{
+        padding:$space_m;
+        font-size: $font-size_l;
+        &:hover{
+            opacity: 0.5;
+        }
+    }
+    .removelike-btn{
+        color:red;
+    }
+    .form-item__like-count{
+        display: inline-block;
+    }
 }
 .delete-form{
     width:180px;

@@ -72,5 +72,4 @@
 
 @section('js')
 
-<script src="{{ asset('js/calendar.js')}}"></script>
 @endsection
