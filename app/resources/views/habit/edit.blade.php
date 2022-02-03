@@ -64,6 +64,18 @@
                             @enderror
                         </div>
                     </div>
+                    <div class="form-item form-item__helper">
+                        <ul class="form-item__helper-nav">
+                            {{-- <li class="helper-nav__item"><a href="{{ route('habit.destroy',$habit['id']) }}"><i class="fas fa-trash-alt"></i>削除</a></li> --}}
+                            <li>
+                                <form action="{{ route('habit.destroy',$habit['id']) }}">
+                                    @method('DELETE')
+                                    <button type="submit">削除</button>
+                                </form>
+                            </li>
+                        </ul>
+                        <span><i class="fas fa-ellipsis-h"></i></span>
+                    </div>
                 </div>
 
                 <div class="form-item">
