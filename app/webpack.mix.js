@@ -15,6 +15,7 @@ mix.js('resources/js/app.js','public/js')
     .js('resources/js/calendar.js','public/js')
     .js('resources/js/profile_img.js','public/js')
     .js('resources/js/example_show.js','public/js')
+    .js('resources/js/delete_msg.js','public/js')
     .sass('resources/sass/app.scss', 'public/css')
     .sourceMaps()
     .autoload({

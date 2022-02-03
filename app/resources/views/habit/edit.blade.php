@@ -65,16 +65,14 @@
                         </div>
                     </div>
                     <div class="form-item form-item__helper">
-                        <ul class="form-item__helper-nav">
-                            {{-- <li class="helper-nav__item"><a href="{{ route('habit.destroy',$habit['id']) }}"><i class="fas fa-trash-alt"></i>削除</a></li> --}}
-                            <li>
-                                <form action="{{ route('habit.destroy',$habit['id']) }}">
-                                    @method('DELETE')
-                                    <button type="submit">削除</button>
-                                </form>
-                            </li>
-                        </ul>
-                        <span><i class="fas fa-ellipsis-h"></i></span>
+                        <span id="js-delete-show"><i class="far fa-trash-alt"></i></span>
+                        <div id="js-delete-form" class="delete-form">
+                            <p class="delete-form__info">一度削除すると<br>元に戻せません。<br>本当に削除しますか？</p>
+                            <form action="{{ route('habit.destroy',$habit['id']) }}">
+                                @method('DELETE')
+                                <button class="delete-btn"type="submit">削除</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
 
@@ -115,7 +113,6 @@
                     <button type="submit" class="form-input_btn">習慣を保存する</button>
                 </div>
             </form>
-
         </div>
     </section>
     <section class="calendar-section">
@@ -146,4 +143,5 @@
      const habit_id ='{{ $habit["id"] }}';
 </script>
 <script src="{{ asset('js/calendar.js')}}"></script>
+<script src="{{ asset('js/delete_msg.js') }}"></script>
 @endsection

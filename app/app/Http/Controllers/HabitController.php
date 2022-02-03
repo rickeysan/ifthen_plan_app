@@ -106,6 +106,7 @@ class HabitController extends Controller
     public function destroy($id) {
         logger('HabitControllerのdestoryメソッドです');
         Habit::find($id)->delete();
+        session()->flash('toastr', config('toastr.habit_delete'));
         return redirect('home');
     }
 }
