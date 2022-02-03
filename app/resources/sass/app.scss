@@ -589,6 +589,12 @@ a{
             .habits-list__card-list__mark{
                 margin-left: auto;
             }
+            .habits-list__card-like{
+                margin-left: auto;
+                .icon-like{
+                    color:red;
+                }
+            }
         }
     }
 }

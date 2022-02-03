@@ -51,14 +51,14 @@
             <h3 class="habits-list__card-title">{{ $habit['task'] }}</h3>
             <p class="habits-list__card-plan">もし帰ってきて疲れていたら、マッサージガンで首をマッサージする</p>
             <div class="habits-list__card-profile">
-                <img src="{{ asset('img/top_banner.png') }}" alt="" class="habits-list__card-img">
-                <span class="habits-list__card-name">伊藤フミヤ</span>
+                <img src="{{ Storage::url($habit->user->file_path) }}" alt="" class="habits-list__card-img">
+                <span class="habits-list__card-name">{{ $habit->user->name }}</span>
             </div>
             <div class="habits-list__card-info">
                 <span class="habits-list__card-flg">チャレンジ中</span>
                 <span class="habits-list__card-like">
-                    <span class="habits-list__card-like__mark">○</span>
-                    <span class="habits-list__card-list__amount">13</span>
+                    <span class="habits-list__card-like__mark"><i class="fas fa-heart icon-like"></i></span>
+                    <span class="habits-list__card-list__amount">{{ $habit->likes()->count() }}</span>
                 </span>
             </div>
         </a>

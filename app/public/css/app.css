@@ -811,6 +811,14 @@ a {
   margin-left: auto;
 }
 
+.search__section .search-section__habits-container .habits-list__card .habits-list__card-info .habits-list__card-like {
+  margin-left: auto;
+}
+
+.search__section .search-section__habits-container .habits-list__card .habits-list__card-info .habits-list__card-like .icon-like {
+  color: red;
+}
+
 .profile-edit__section {
   width: 1000px;
   padding: 0 200px;
