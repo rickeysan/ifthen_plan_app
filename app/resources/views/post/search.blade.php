@@ -43,13 +43,13 @@
     <h2 class="section-title">習慣を探す</h2>
     <div class="section-info">
         <p class="section-info__amount">{{ $total_habits_amount }}件の習慣が見つかりました</p>
-        <p class="section-info__page">３ページ目　21-30件を表示</p>
+        <p class="section-info__page">{{ $habits->currentPage() }}ページ目</p>
     </div>
     <div class="search-section__habits-container">
         @foreach ($habits as $habit)
         <a href="{{ route('habit.show',$habit['id']) }}" class="habits-list__card">
             <h3 class="habits-list__card-title">{{ $habit['task'] }}</h3>
-            <p class="habits-list__card-plan">もし帰ってきて疲れていたら、マッサージガンで首をマッサージする</p>
+            <p class="habits-list__card-plan">{{ $habit->plan->plan_text }}</p>
             <div class="habits-list__card-profile">
                 <img src="{{ Storage::url($habit->user->file_path) }}" alt="" class="habits-list__card-img">
                 <span class="habits-list__card-name">{{ $habit->user->name }}</span>
