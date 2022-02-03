@@ -5,12 +5,19 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Like;
 use Illuminate\Support\Facades\Auth;
-
+use App\Habit;
+use App\User;
 
 class LikeController extends Controller
 {
+    public function show(){
+        logger('LikeControllerのshowメソッドです');
+        $user = User::with('likes.habit')->where('id',Auth::id())->first();
+        return view('my_likes',compact('user'));
+    }
+
     public function addLike($habit_id){
-        logger('LikeControllerのdoLikeメソッドです');
+        logger('LikeControllerのaddLikeメソッドです');
         $like = new Like;
         $param = [
             'habit_id'=>$habit_id,

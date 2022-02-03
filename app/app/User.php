@@ -39,4 +39,10 @@ class User extends Authenticatable
     public function habits(){
         return $this->hasMany('App\Habit');
     }
+
+    public function likes(){
+        logger('Userモデルのlikesメソッド');
+        return $this->hasMany('App\Like');
+    }
+
 }
