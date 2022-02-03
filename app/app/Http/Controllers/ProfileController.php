@@ -54,8 +54,9 @@ class ProfileController extends Controller
     public function show($id){
         logger('ProfileControllerのshowメソッドです');
         $user = User::where('id',$id)->first();
-        // dd($user);
-        // $habits = Habit::where('user_id',$id)->get();
+        if(empty($user)){
+            return redirect('home');
+        }
         return view('personal',compact('user'));
     }
 

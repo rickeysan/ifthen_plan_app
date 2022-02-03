@@ -58,11 +58,17 @@ class HabitController extends Controller
     public function show(Request $request,$id){
         logger('HabitControllerのshowメソッドです');
         $habit = Habit::where('id',$id)->first();
+        if(empty($habit)){
+            return redirect('search');
+        }
         return view('/habit/show',compact('habit'));
         }
     public function edit(Request $request, $id){
         logger('HabitControllerのeditメソッドです');
         $habit = Habit::where('id',$id)->where('user_id',Auth::id())->first();
+        if(empty($habit)){
+            return redirect('home');
+        }
         $categories = Category::all();
         return view('/habit/edit',compact('habit','categories'));
     }
