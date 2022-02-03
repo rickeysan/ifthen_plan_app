@@ -59,5 +59,4 @@ class ProfileController extends Controller
         }
         return view('personal',compact('user'));
     }
-
 }
