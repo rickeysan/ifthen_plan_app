@@ -18,15 +18,10 @@
     <div class="my-habits__container">
         @if (isset($habits))
             @foreach ($habits as $habit)
-            <div class="my-habits__card">
-                <a href="{{ route('habit.edit',$habit->id) }}" class="my-habits__card-body">
-                    <p class="my-habits__card-body__text">{{ $habit['task'] }}</p>
-                </a>
-                <div class="my-habits__card-foot">
-                    <button class="my-habits__button">達成</button>
-                    <button class="my-habits__button">例外日</button>
-                </div>
-            </div>
+                <a href="{{ route('habit.edit',$habit->id) }}" class="my-habits__card">
+                    <span class="my-habits__card-tag">やるべきこと</span><p class="my-habits__card-body__task my-habits__card-body__text">{{ $habit['task'] }}</p>
+                    <span class="my-habits__card-tag">プランニング</span><p class="my-habits__card-body__plan my-habits__card-body__text">{{ $habit->plan->plan_text }}</p>
+            </a>
             @endforeach
         @else
         チャレンジ中の習慣はありません
