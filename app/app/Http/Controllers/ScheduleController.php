@@ -34,13 +34,8 @@ class ScheduleController extends Controller
         // 登録処理
         $schedule = new Schedule;
         // 日付に変換。JavaScriptのタイムスタンプはミリ秒なので秒に変換
-        $schedule->start_date = $request->input('start_date');
-        $schedule->end_date = $request->input('end_date');
-        $schedule->event_name = $request->input('event_name');
-        $schedule->achivement_flg = $request->input('achivement_flg');
-        $schedule->habit_id = $request->input('habit_id');
-        $schedule->save();
-
+        $param = $request->only(['start_date','end_date','event_name','achivement_flg','habit_id']);
+        $schedule->fill($param)->save();
         return;
     }
 
@@ -93,7 +88,6 @@ class ScheduleController extends Controller
     public function scheduleJudge(Request $request)
     {
         logger('scheduleJudgeです');
-        logger($request);
         // バリデーション
         $request->validate([
             'start_date' => 'required|date',

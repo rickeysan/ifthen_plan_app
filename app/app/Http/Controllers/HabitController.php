@@ -23,7 +23,7 @@ class HabitController extends Controller
     }
     public function store(HabitRequest $request){
         logger('HabitControllerのstoreメソッドです');
-        $param = $request->all();
+        $param = $request->only(['category_id','start_date','finish_date','purpose','task','plan_text']);
         if(isset($param['is_open'])){
             // 1は公開
             $param['is_open'] = 1;
@@ -32,10 +32,7 @@ class HabitController extends Controller
             $param['is_open'] = 0;
         }
         $plan_text = $param['plan_text'];
-        unset($param['_token']);
-        unset($param['plan_text']);
         $param['user_id']=Auth::id();
-
 
         $habit = new Habit;
         $habit->fill($param)->save();
@@ -66,7 +63,7 @@ class HabitController extends Controller
     }
     public function update(HabitRequest $request, $id) {
         logger('HabitControllerのupdateメソッドです');
-        $param = $request->all();
+        $param = $request->only(['category_id','start_date','finish_date','purpose','task','plan_text']);
         if(isset($param['is_open'])){
             // 1は公開
             $param['is_open'] = 1;
@@ -75,9 +72,6 @@ class HabitController extends Controller
             $param['is_open'] = 0;
         }
         $plan_text = $request->input('plan_text');
-        unset($param['_method']);
-        unset($param['_token']);
-        unset($param['plan_text']);
 
         $habit = Habit::find($id);
         $plan_id = $habit['id'];

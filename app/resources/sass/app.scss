@@ -389,6 +389,16 @@ a{
         color:$msg-color;
     }
 }
+// ============================
+// habit-show
+// ============================
+.form-item__show{
+    display: inline-block;
+    width:160px;
+    border:1px solid $divider-color;
+    padding-left:$space_s;
+}
+
 
 // ============================
 // calendar

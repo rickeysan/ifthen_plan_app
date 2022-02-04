@@ -17,9 +17,7 @@ class RegisterController extends Controller
     }
     public function store(RegisterRequest $request){
         logger('RegisterControllerのstoreメソッドです');
-        $param = $request->all();
-        unset($param['_token']);
-        unset($param['passowrd_confirmation']);
+        $param = $request->only(['email','name','password','password_confirmation']);
         $param['password'] = Hash::make($param['password']);
         $user = new User;
         $user->fill($param)->save();

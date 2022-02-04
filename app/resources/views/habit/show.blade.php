@@ -19,28 +19,26 @@
                 <div class="form-item__columns-3">
                     <div class="form-item form-item__columns-3__contents">
                         <div class="form-item__head">
-                            <p class="form-item__head-text">ジャンル</p>
+                            <span class="form-item__head-text">ジャンル</span>
                         </div>
                         <div class="form-item__body">
-                            <select class="form-item__select" aria-readonly="false">
-                                <option class="form-item__select-item">{{ $habit->category->name }}</option>
-                            </select>
+                            <span class="form-item__show-category form-item__show">{{ $habit->category->name }}</span>
                         </div>
                     </div>
                     <div class="form-item form-item__columns-3__contents">
                         <div class="form-item__head">
-                            <p class="form-item__head-text">開始日</p>
+                            <span class="form-item__head-text">開始日</span>
                         </div>
                         <div class="form-item__body">
-                            <input type="date" name="start_date" value="{{ $habit['start_date'] }}">
+                            <span class=" form-item__show-date form-item__show">{{ $habit['created_at']->format('Y年m月j日') }}</span>
                         </div>
                     </div>
                     <div class="form-item form-item__columns-3__contents">
                         <div class="form-item__head">
-                            <p class="form-item__head-text">終了日</p>
+                            <span class="form-item__head-text">終了日</span>
                         </div>
                         <div class="form-item__body">
-                            <input type="date" name="finish_date" value="{{ $habit['finish_date'] }}">
+                            <span class=" form-item__show-date form-item__show">{{ $habit['finish_date'] }}</span>
                         </div>
                     </div>
                     <div class="form-item form-item__helper">
@@ -62,7 +60,7 @@
                         <p class="form-item__head-text">なんのために習慣化をしますか？</p>
                     </div>
                     <div class="form-item__body">
-                        <textarea class="form-item__textarea" name="purpose" readonly>{{ $habit['purpose'] }}</textarea>
+                        <p class="form-item__textarea">{{ $habit['purpose'] }}</p>
                     </div>
                 </div>
                 <div class="form-item">
@@ -70,12 +68,12 @@
                         <p class="form-item__head-text">目的達成のために何をしますか？</p>
                     </div>
                     <div class="form-item__body">
-                        <textarea class="form-item__textarea" name="tast" readonly>{{ $habit['task'] }}</textarea>
+                        <p class="form-item__textarea">{{ $habit['task'] }}</p>
                     </div>
                 </div>
                 <div class="plans__container">
                     <h3 class="container-title">If-Thenプランニングを作りましょう(習慣化の成功率が3倍に上がります)</h3>
-                    <input type="text" name="plan_text" class="plans__form-input" value="{{ $habit->plan->plan_text }}" readonly>
+                    <p type="text" class="plans__form-input">{{ $habit->plan->plan_text }}</p>
                 </div>
 
         </div>

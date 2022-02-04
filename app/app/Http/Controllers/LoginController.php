@@ -17,9 +17,7 @@ class LoginController extends Controller
     }
     public function store(LoginRequest $request){
         logger('LoginControllerクラスのstoreメソッド');
-        logger('適正ユーザーかどうか判定します');
-        $param = $request->all();
-
+        $param = $request->only(['email','password']);
         if(Auth::attempt(['email'=>$param['email'],'password'=>$param['password']])){
             // $request->session()->put('login_limit',60*60);
             // $request->session()->put('login_date',time());
