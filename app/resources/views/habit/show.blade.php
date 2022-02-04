@@ -30,7 +30,7 @@
                             <span class="form-item__head-text">開始日</span>
                         </div>
                         <div class="form-item__body">
-                            <span class=" form-item__show-date form-item__show">{{ $habit['created_at']->format('Y年m月j日') }}</span>
+                            <span class=" form-item__show-date form-item__show">{{ date('Y年m月d日',strtotime($habit['start_date'])) }}</span>
                         </div>
                     </div>
                     <div class="form-item form-item__columns-3__contents">
@@ -38,7 +38,7 @@
                             <span class="form-item__head-text">終了日</span>
                         </div>
                         <div class="form-item__body">
-                            <span class=" form-item__show-date form-item__show">{{ $habit['finish_date'] }}</span>
+                            <span class=" form-item__show-date form-item__show">{{ date('Y年m月d日',strtotime($habit['start_date'])) }}</span>
                         </div>
                     </div>
                     <div class="form-item form-item__helper">
@@ -96,7 +96,6 @@
     </section>
 </div>
 @endsection
-
 
 
 @section('js')
