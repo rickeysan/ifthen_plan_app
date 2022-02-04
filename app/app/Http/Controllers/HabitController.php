@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\HabitRequest;
 use App\Habit;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Category;
@@ -20,17 +21,8 @@ class HabitController extends Controller
         $categories = Category::all();
         return view('habit/create',compact('categories'));
     }
-    public function store(Request $request){
+    public function store(HabitRequest $request){
         logger('HabitControllerのstoreメソッドです');
-        $validate_rule = [
-            'category_id'=>'required',
-            'purpose'=>'required',
-            'task'=>'required',
-            'start_date'=>'required',
-            'finish_date'=>'required',
-            'plan_text'=>'required',
-        ];
-        $this->validate($request,$validate_rule);
         $param = $request->all();
         if(isset($param['is_open'])){
             // 1は公開
@@ -74,17 +66,6 @@ class HabitController extends Controller
     }
     public function update(Request $request, $id) {
         logger('HabitControllerのupdateメソッドです');
-        logger('バリデーションをします');
-        $validate_rule = [
-            'category_id'=>'required',
-            'purpose'=>'required',
-            'task'=>'required',
-            'start_date'=>'required',
-            'finish_date'=>'required',
-            'plan_text'=>'required',
-        ];
-        $this->validate($request,$validate_rule);
-        logger('バリデーションOKです');
         $param = $request->all();
         if(isset($param['is_open'])){
             // 1は公開

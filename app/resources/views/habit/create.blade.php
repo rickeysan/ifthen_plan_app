@@ -27,13 +27,13 @@
                         </div>
                         <div class="form-item__body">
                             <select name="category_id" class="form-item__select">
-                                <option value="0" class="form-item__select-item">選択して下さい</option>
+                                <option value="" class="form-item__select-item">選択して下さい</option>
                                 @foreach ($categories as $category)
                                 <option value="{{ $category['id'] }}">{{ $category['name'] }}</option>
                                 @endforeach
                             </select>
                             @error('category_id')
-                                <span>入力してください</span>
+                                <span class="form-item__input-area__msg err-msg">{{ $message }}</span>
                             @enderror
                         </div>
                     </div>
@@ -42,7 +42,7 @@
                             <p class="form-item__head-text">開始日</p>
                         </div>
                         <div class="form-item__body">
-                            <input type="date" name="start_date" class="form-item__date">
+                            <input type="date" name="start_date" class="form-item__date" value="{{ old('start_date') }}">
                             @error('start_date')
                                 <span class="form-item__input-area__msg err-msg">{{ $message }}</span>
                             @enderror
@@ -53,7 +53,7 @@
                             <p class="form-item__head-text">終了日</p>
                         </div>
                         <div class="form-item__body">
-                            <input type="date" name="finish_date" class="form-item__date">
+                            <input type="date" name="finish_date" class="form-item__date" value="{{ old('finish_date') }}">
                             @error('finish_date')
                                 <span class="form-item__input-area__msg err-msg">{{ $message }}</span>
                             @enderror
