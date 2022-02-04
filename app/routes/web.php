@@ -19,7 +19,7 @@ Route::get('/',function(){
 
 Route::resource('register','RegisterController',['only'=>['index','store']]);
 Route::resource('login','LoginController',['only'=>['index','store']]);
-Route::resource('home','HomeController');
+Route::resource('home','HomeController',['only'=>['index']]);
 Route::resource('logout','LogoutController',['only'=>['index']]);
 Route::resource('habit','HabitController',['only'=>['create','store','show','edit','update','destroy']]);
 
@@ -28,16 +28,13 @@ Route::resource('password/change','Auth\ChangePasswordController',['only'=>['ind
 Route::resource('profile','ProfileController',['only'=>['index','show','store']]);
 
 Route::resource('withdraw','WithdrawController',['only'=>['index','destroy']]);
-Route::resource('post', 'PostController');
-Route::resource('search', 'SearchController');
-Route::resource('example', 'ExampleController');
+Route::resource('post', 'PostController',['only'=>['show']]);
+Route::resource('search', 'SearchController',['only'=>['index','show']]);
+Route::resource('example', 'ExampleController',['only'=>['show']]);
 
 
-// スケジュール用のコントローラー（コンフリクト解決のために追記)
 
-Route::get('/schedule', function () {
-    return view('schedule');
-});
+Route::get('/schedule',[ScheduleController::class,'scheduleIndex']);
 // スケジュール登録処理
 Route::post('/schedule-add', [ScheduleController::class, 'scheduleAdd'])->name('schedule-add');
 // スケジュール取得処理

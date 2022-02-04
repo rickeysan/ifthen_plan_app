@@ -20,5 +20,4 @@ class ExampleController extends Controller
         }
         return $example;
     }
-
 }
