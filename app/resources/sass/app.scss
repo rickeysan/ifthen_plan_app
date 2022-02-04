@@ -320,6 +320,7 @@ a{
         margin-bottom:$space_xxl;
     }
     .habit-input__container{
+        position: relative;
         .form-item__columns-3{
             display: flex;
         }
@@ -784,8 +785,9 @@ a{
 // form-item__helper
 // ============================
 .form-item__helper{
-    margin-left:auto;
-    position: relative;
+    position: absolute;
+    top: 0;
+    right: 0;
     .fa-trash-alt{
         font-size: 18px;
         padding: $space_s;

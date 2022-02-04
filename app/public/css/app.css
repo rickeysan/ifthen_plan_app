@@ -509,6 +509,10 @@ a {
   margin-bottom: 30px;
 }
 
+.main-sections__container .habit-input__container {
+  position: relative;
+}
+
 .main-sections__container .habit-input__container .form-item__columns-3 {
   display: flex;
 }
@@ -1017,8 +1021,9 @@ a {
 }
 
 .form-item__helper {
-  margin-left: auto;
-  position: relative;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .form-item__helper .fa-trash-alt {

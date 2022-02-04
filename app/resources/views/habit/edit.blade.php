@@ -64,16 +64,6 @@
                             @enderror
                         </div>
                     </div>
-                    <div class="form-item form-item__helper">
-                        <span id="js-delete-show"><i class="far fa-trash-alt"></i></span>
-                        <div id="js-delete-form" class="delete-form">
-                            <p class="delete-form__info">一度削除すると<br>元に戻せません。<br>本当に削除しますか？</p>
-                            <form action="{{ route('habit.destroy',$habit['id']) }}">
-                                @method('DELETE')
-                                <button class="delete-btn"type="submit">削除</button>
-                            </form>
-                        </div>
-                    </div>
                 </div>
 
                 <div class="form-item">
@@ -113,6 +103,16 @@
                     <button type="submit" class="form-input_btn">習慣を保存する</button>
                 </div>
             </form>
+            <div class="form-item form-item__helper">
+                <span id="js-delete-show"><i class="far fa-trash-alt"></i></span>
+                <div id="js-delete-form" class="delete-form">
+                    <p class="delete-form__info">一度削除すると<br>元に戻せません。<br>本当に削除しますか？</p>
+                    <form action="{{ route('habit.destroy',$habit['id']) }}" id="delete-form">
+                        @method('DELETE')
+                        <button class="delete-btn" type="submit" form="delete-form">削除</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </section>
     <section class="calendar-section">
