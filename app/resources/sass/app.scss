@@ -835,6 +835,24 @@ a{
     }
 }
 
+// ============================
+// welcome-page
+// ============================
+.welcome__content{
+    width:980px;
+    margin:30px auto;
+
+    .content-title{
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+}
+.mainvisual-img{
+    width:100%;
+    height: calc(100vh - 70px);
+    object-fit: cover;
+}
 
 // ============================
 // footer

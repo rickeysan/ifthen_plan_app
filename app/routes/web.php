@@ -12,7 +12,10 @@
 */
 use App\Http\Controllers\ScheduleController;
 
-
+// 初期画面
+Route::get('/',function(){
+    return view('welcome');
+});
 
 Route::resource('register','RegisterController',['only'=>['index','store']]);
 Route::resource('login','LoginController',['only'=>['index','store']]);
