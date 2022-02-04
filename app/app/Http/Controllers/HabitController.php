@@ -64,7 +64,7 @@ class HabitController extends Controller
         $categories = Category::all();
         return view('/habit/edit',compact('habit','categories'));
     }
-    public function update(Request $request, $id) {
+    public function update(HabitRequest $request, $id) {
         logger('HabitControllerのupdateメソッドです');
         $param = $request->all();
         if(isset($param['is_open'])){
@@ -88,6 +88,7 @@ class HabitController extends Controller
 
         $categories = Category::all();
         session()->flash('toastr', config('toastr.habit_update'));
+        logger('処理終了');
         return view('/habit/edit',compact('habit','categories'));
     }
     public function destroy($id) {

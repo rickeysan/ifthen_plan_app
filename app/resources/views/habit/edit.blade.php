@@ -47,7 +47,7 @@
                             <p class="form-item__head-text">開始日</p>
                         </div>
                         <div class="form-item__body">
-                            <input type="date" name="start_date" value="{{ $habit['start_date'] }}">
+                            <input type="date" name="start_date" class="form-item__date" value="{{ $habit['start_date'] }}">
                             @error('start_date')
                                 <span class="form-item__input-area__msg err-msg">入力必須です</span>
                             @enderror
@@ -58,7 +58,7 @@
                             <p class="form-item__head-text">終了日</p>
                         </div>
                         <div class="form-item__body">
-                            <input type="date" name="finish_date" value="{{ $habit['finish_date'] }}">
+                            <input type="date" name="finish_date" class="form-item__date" value="{{ $habit['finish_date'] }}">
                             @error('finish_date')
                                 <span class="form-item__input-area__msg err-msg">入力必須です</span>
                             @enderror
@@ -73,7 +73,7 @@
                     <div class="form-item__body">
                         <textarea class="form-item__textarea" name="purpose">{{ $habit['purpose'] }}</textarea>
                         @error('purpose')
-                            <span class="form-item__input-area__msg err-msg">入力必須です</span>
+                            <span class="form-item__input-area__msg err-msg">{{ $message }}</span>
                         @enderror
                     </div>
                 </div>
@@ -84,7 +84,7 @@
                     <div class="form-item__body">
                         <textarea class="form-item__textarea" name="task">{{ $habit['task'] }}</textarea>
                         @error('task')
-                            <span class="form-item__input-area__msg err-msg">入力必須です</span>
+                            <span class="form-item__input-area__msg err-msg">{{ $message }}</span>
                         @enderror
                     </div>
                 </div>
@@ -92,7 +92,7 @@
                     <h3 class="container-title">If-Thenプランニングを作りましょう(習慣化の成功率が3倍に上がります)</h3>
                     <input type="text" name="plan_text" class="plans__form-input" value="{{ $habit->plan->plan_text }}">
                     @error('plan_text')
-                        <span class="form-item__input-area__msg err-msg">入力必須です</span>
+                        <span class="form-item__input-area__msg err-msg">{{ $message }}</span>
                     @enderror
                 </div>
                 <div class="form-item">

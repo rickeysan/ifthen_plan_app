@@ -25,11 +25,11 @@ class HabitRequest extends FormRequest
     {
         return [
             'category_id'=>'required',
-            'purpose'=>'required',
-            'task'=>'required',
+            'purpose'=>'required|max:255',
+            'task'=>'required|max:255',
             'start_date'=>'required',
             'finish_date'=>'required',
-            'plan_text'=>'required',
+            'plan_text'=>'required|max:60',
         ];
     }
 }
