@@ -49,7 +49,7 @@
                         <div class="form-item__body">
                             <input type="date" name="start_date" class="form-item__date" value="{{ $habit['start_date'] }}">
                             @error('start_date')
-                                <span class="form-item__input-area__msg err-msg">入力必須です</span>
+                                <span class="form-item__input-area__msg err-msg">{{ $message }}</span>
                             @enderror
                         </div>
                     </div>
@@ -60,7 +60,7 @@
                         <div class="form-item__body">
                             <input type="date" name="finish_date" class="form-item__date" value="{{ $habit['finish_date'] }}">
                             @error('finish_date')
-                                <span class="form-item__input-area__msg err-msg">入力必須です</span>
+                                <span class="form-item__input-area__msg err-msg">{{ $message }}</span>
                             @enderror
                         </div>
                     </div>

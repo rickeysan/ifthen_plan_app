@@ -3,10 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use App\User;
-use App\Rules\alpha_num_check;
 
-class RegisterRequest extends FormRequest
+class LoginRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,11 +24,8 @@ class RegisterRequest extends FormRequest
     public function rules()
     {
         return [
-                'email'=>'required|email|unique:users,email|max:255',
-                'name'=>'required|max:255',
-                'password'=>['required','min:8','confirmed','max:255',new alpha_num_check()],
-                'password_confirmation'=>'required',
-          ];
-
+            'email'=>'required|email',
+            'password'=>'required',
+        ];
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\LoginRequest;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -14,14 +15,9 @@ class LoginController extends Controller
         logger('LoginControllerクラスのindexメソッドです');
         return view('login');
     }
-    public function store(Request $request){
+    public function store(LoginRequest $request){
         logger('LoginControllerクラスのstoreメソッド');
         logger('適正ユーザーかどうか判定します');
-        $validate_rule = [
-            'email' => 'required | email',
-            'password' => 'required',
-        ];
-        $request->validate($validate_rule);
         $param = $request->all();
 
         if(Auth::attempt(['email'=>$param['email'],'password'=>$param['password']])){

@@ -44,10 +44,10 @@
 
             <div class="form-item">
                 <div class="form-item__info-wrap">
-                    <span class="form-item__title">新しいパスワード<br>（確認用)</span>
+                    <span class="form-item__title">新しいパスワード<br>（確認用）</span>
                 </div>
                 <div class="form-item__input-area">
-                    <input type="text" name="name" class="form-item__name form-item__input">
+                    <input type="password" name="name" class="form-item__name form-item__input">
                     @error('new_pass_confirmation')
                         <span class="form-item__input-area__msg err-msg">{{ $message }}</span>
                     @enderror

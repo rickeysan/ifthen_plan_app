@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Validator;
 // use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use App\Rules\alpha_num_check;
 
 class ChangePasswordRequest extends FormRequest
 {
@@ -28,21 +29,14 @@ class ChangePasswordRequest extends FormRequest
     public function rules()
     {
         return [
-            'new_pass' => 'required | min:8 | confirmed',
-            'new_pass_confirmation' => 'required',
             'current_pass' => ['required',
             function($attribute, $value, $fail){
                 if(!Hash::check($value, Auth::user()->password)){
                     logger('パスワードが違います');
                     $fail('現在のパスワードが違います');
                 }}],
+            'new_pass' => ['required','min:8','max:255','confirmed',new alpha_num_check()],
+            'new_pass_confirmation' => 'required',
         ];
     }
-
-    // public function withValidator(Validator $validator) {
-    //     $validator->after(function($validator) {
-    //         dd('withValidatorです');
-    //         dd($validator);
-    //     });
-    // }
 }

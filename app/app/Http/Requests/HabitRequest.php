@@ -28,7 +28,7 @@ class HabitRequest extends FormRequest
             'purpose'=>'required|max:255',
             'task'=>'required|max:255',
             'start_date'=>'required',
-            'finish_date'=>'required',
+            'finish_date'=>'required|after:start_date',
             'plan_text'=>'required|max:60',
         ];
     }
