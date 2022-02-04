@@ -8,35 +8,35 @@ use App\Schedule;
 class ScheduleController extends Controller
 {
 
-    public function scheduleIndex(){
-        return view('schedule');
-    }
+    // public function scheduleIndex(){
+    //     return view('schedule');
+    // }
 
     /**
      * スケジュールを登録
      *
      * @param  Request  $request
      */
-    public function scheduleAdd(Request $request)
+    public function scheduleAdd(Request $request,$habit_id)
     {
         logger('scheduleAddです');
         logger('バリデーションを行います');
-
         // バリデーション
         $request->validate([
             'start_date' => 'required|date',
-            'end_date' => 'required|date',
             'event_name' => 'required|max:32',
             'achivement_flg' => 'required|boolean',
-            'habit_id'=>'required|int',
         ]);
         logger('バリデーションOKです');
         // 登録処理
         $schedule = new Schedule;
         // 日付に変換。JavaScriptのタイムスタンプはミリ秒なので秒に変換
-        $param = $request->only(['start_date','end_date','event_name','achivement_flg','habit_id']);
+        $param = $request->only(['start_date','event_name','achivement_flg','habit_id']);
+        $param['end_date'] = $param['start_date'];
+        $param['habit_id'] = $habit_id;
         $schedule->fill($param)->save();
-        return;
+        session()->flash('toastr', config('toastr.habit_update'));
+        return redirect()->route('habit.edit',['habit'=>$habit_id]);
     }
 
     /**
@@ -112,27 +112,28 @@ class ScheduleController extends Controller
      *
      * @param  Request  $request
      */
-    public function scheduleEdit(Request $request)
+    public function scheduleEdit(Request $request,$habit_id)
     {
         logger('scheduleEditです');
+        // dd($request['start_date']);
         logger($request);
         logger('バリデーションを行います');
         // バリデーション
         $request->validate([
             'start_date' => 'required|date',
-            'event_name' => 'required|max:32',
-            'habit_id' => 'required',
+            'event_name' => 'required|max:80',
+            'achivement_flg'=>'required',
         ]);
         logger('バリデーションOKです');
 
         // 登録処理
-        $schedule = Schedule::where([['start_date',$request['start_date']],'habit_id'=>$request['habit_id']])->first();
+        $schedule = Schedule::where([['start_date',$request['start_date']],'habit_id'=>$habit_id])->first();
         logger($schedule);
         $schedule->event_name = $request->input('event_name');
         $schedule->achivement_flg = $request->input('achivement_flg');
         $schedule->save();
-
-        return;
+        session()->flash('toastr', config('toastr.habit_edit'));
+        return redirect()->route('habit.edit',['habit'=>$habit_id]);
     }
 
 }

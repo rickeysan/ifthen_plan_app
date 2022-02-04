@@ -34,13 +34,16 @@ Route::resource('example', 'ExampleController',['only'=>['show']]);
 
 
 
-Route::get('/schedule',[ScheduleController::class,'scheduleIndex']);
+// Route::get('/schedule',[ScheduleController::class,'scheduleIndex']);
 // スケジュール登録処理
-Route::post('/schedule-add', [ScheduleController::class, 'scheduleAdd'])->name('schedule-add');
+Route::post('schedule-add/{id}', [ScheduleController::class, 'scheduleAdd']);
+// Route::post('schedule-add/{id}', function($id){
+//     return $id;
+// });
 // スケジュール取得処理
 Route::post('/schedule-get', [ScheduleController::class, 'scheduleGet'])->name('schedule-get');
 // スケジュール編集処理
-Route::post('/schedule-edit', [ScheduleController::class, 'scheduleEdit'])->name('schedule-edit');
+Route::post('/schedule-edit/{id}', [ScheduleController::class, 'scheduleEdit'])->name('schedule-edit');
 // スケジュール判定処理
 Route::post('/schedule-judge', [ScheduleController::class, 'scheduleJudge'])->name('schedule-judge');
 
@@ -49,3 +52,9 @@ Route::post('/schedule-judge', [ScheduleController::class, 'scheduleJudge'])->na
 Route::get('/like/{id}', 'LikeController@addLike')->name('addlike');
 Route::get('/unlike/{id}', 'LikeController@removeLike')->name('removelike');
 Route::get('/like-show','LikeController@show');
+
+
+
+Route::get('hello/{id}/{pass?}',function($id,$pass){
+    return $pass;
+});

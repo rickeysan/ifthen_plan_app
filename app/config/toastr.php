@@ -32,5 +32,13 @@ return [
    'remove_like' => [
     'type' => 'success',
     'text' => 'お気に入りを解除しました',
-],
+    ],
+    'schedule_add'=>[
+        'type'=>'success',
+        'text'=>'記録を追加しました',
+    ],
+    'schedule_edit'=>[
+        'type'=>'success',
+        'text'=>'記録を編集しました',
+    ],
 ];

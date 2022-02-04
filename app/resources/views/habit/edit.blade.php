@@ -119,19 +119,19 @@
         <div  class="calendar" id='calendar'></div>
         <div class="calender-info__container">
             <h3 class="calendar-info-title">記録の追加・編集フォーム</h3>
-            <form action="" class="calendar-input-form" style="display: none;">
+            <form action="" id="js-form" method="post" class="calendar-input-form" style="display: none;">
+                @csrf
                 <p class="calendar-input-title"></p>
                 <p><input type="date" name="start_date" class="calendar-input-date" readonly></p>
-                <textarea class="calendar-input__textarea js-textarea" type="text" name="title" class="calendar-input-text" placeholder="上手くいったことや反省点を記入"></textarea>
+                <textarea class="calendar-input__textarea js-textarea" type="text" name="event_name" class="calendar-input-text" placeholder="上手くいったことや反省点を記入"></textarea>
                 <div class="calendar-input__radio-wrap">
                     <input class="calendaer-input__radio" type="radio" id="rd0" name="achivement_flg" value="0">達成
                     <input class="calendaer-input__radio" type="radio" id="rd1" name="achivement_flg" value="1">例外日
                 </div>
+                <div class="calendar-input__btn-wrap">
+                    <button class="calendar-input__btn" type="submit">登録</button>
+                </div>
             </form>
-            <div class="calendar-input__btn-wrap">
-                <button class="calendar-input__btn" id="btn-store" style="display: none;">登録</button>
-                <button class="calendar-input__btn" id="btn-edit" style="display: none;">編集</button>
-            </div>
         </div>
     </section>
 </div>
