@@ -64,3 +64,12 @@ Route::get('hello/{id}/{pass?}',function($id,$pass){
 // Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');
 Route::resource('forget-password', 'ForgetPasswordController');
 Route::resource('forget-password-key', 'ForgetPasswordKeyController');
+
+
+use Illuminate\Support\Facades\Mail;
+use App\Mail\TestMail;
+
+Route::get('/testmail', function(){
+    Mail::to('test@example.com')->send(new TestMail);
+    return 'メール送信完了';
+});
