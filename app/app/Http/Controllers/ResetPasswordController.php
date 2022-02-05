@@ -8,6 +8,7 @@ use App\User;
 use Hash;
 use DB;
 use App\Http\Requests\ResetPasswordRequest;
+use App\Model;
 
 class ResetPasswordController extends Controller
 {
@@ -18,7 +19,7 @@ class ResetPasswordController extends Controller
 
     public function store(ResetPasswordRequest $request){
         logger('ResetPasswordControllerのstoreメソッドです');
-        dd('fdsa');
+
         $updatePassword = DB::table('password_resets')
             ->where([
                 'email' => $request->email,
