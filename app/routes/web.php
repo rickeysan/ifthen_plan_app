@@ -33,7 +33,6 @@ Route::resource('search', 'SearchController',['only'=>['index','show']]);
 Route::resource('example', 'ExampleController',['only'=>['show']]);
 
 
-
 // Route::get('/schedule',[ScheduleController::class,'scheduleIndex']);
 // スケジュール登録処理
 Route::post('schedule-add/{id}', [ScheduleController::class, 'scheduleAdd']);
@@ -58,3 +57,10 @@ Route::get('/like-show','LikeController@show');
 Route::get('hello/{id}/{pass?}',function($id,$pass){
     return $pass;
 });
+
+// Route::get('forget-password', [ForgotPasswordController::class, 'showForgetPasswordForm'])->name('forget.password.get');
+// Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPasswordForm'])->name('forget.password.post');
+// Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showResetPasswordForm'])->name('reset.password.get');
+// Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');
+Route::resource('forget-password', 'ForgetPasswordController');
+Route::resource('forget-password-key', 'ForgetPasswordKeyController');

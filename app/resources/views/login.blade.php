@@ -47,7 +47,7 @@
                 <div class="login-btn__info">
                     <input type="checkbox" class="submit-checkbox"><span class="login-btn__info-msg">ログインしたままにする</span>
                 </div>
-                <a href="" class="submit-btn__link">パスワードを忘れた方はこちら</a>
+                <a href="{{ route('forget-password.index') }}" class="submit-btn__link">パスワードを忘れた方はこちら</a>
             </div>
 
         </form>
