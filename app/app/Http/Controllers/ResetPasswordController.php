@@ -7,6 +7,7 @@ use Mail;
 use App\User;
 use Hash;
 use DB;
+use App\Http\Requests\ResetPasswordRequest;
 
 class ResetPasswordController extends Controller
 {
@@ -15,13 +16,9 @@ class ResetPasswordController extends Controller
         return view('auth.forgetPasswordLink', ['token' => $token]);
     }
 
-    public function store(Request $request){
+    public function store(ResetPasswordRequest $request){
         logger('ResetPasswordControllerのstoreメソッドです');
-        $request->validate([
-            'email' => 'required|email|exists:users',
-            'password' => 'required|string|min:8|confirmed',
-            'password_confirmation' => 'required'
-        ]);
+        dd('fdsa');
         $updatePassword = DB::table('password_resets')
             ->where([
                 'email' => $request->email,
