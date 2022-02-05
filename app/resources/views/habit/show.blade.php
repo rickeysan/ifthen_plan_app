@@ -82,15 +82,10 @@
         <div  class="calendar" id='calendar'></div>
         <div class="calender-info__container">
             <p class="calendar-info-title">記録フォーム</p>
-            <form action="" class="calendar-input-form" style="display: none;">
-                <p class="calendar-input-title" style="display:none"></p>
-                <p><input type="date" name="start_date" class="calendar-input-date" readonly></p>
+            <div class="calendar-input-form">
+                <p><input type="date" name="start_date" class="calendar-input-date" readonly></p><span class="calendar-show__tag">達成</span>
                 <textarea class="calendar-input__textarea js-textarea" type="text" name="title" class="calendar-input-text" placeholder="記録がありません" readonly></textarea>
-                <div class="calendar-input__radio-wrap">
-                    <input class="calendaer-input__radio" type="radio" id="rd0" name="achivement_flg" value="0" readonly>達成
-                    <input class="calendaer-input__radio" type="radio" id="rd1" name="achivement_flg" value="1" readonly>例外日
-                </div>
-            </form>
+            </div>
 
         </div>
     </section>
@@ -102,5 +97,5 @@
 <script>
      const habit_id ='{{ $habit["id"] }}';
 </script>
-<script src="{{ asset('js/calendar.js')}}"></script>
+<script src="{{ asset('js/calendar_show.js')}}"></script>
 @endsection

@@ -155,10 +155,13 @@ return [
         'new_pass'=>'新しいパスワード',
         'new_pass_confirmation' =>'新しいパスワード（確認用 ）',
         'category_id'=>'カテゴリー',
-        'start_date'=>'開始日',
+        'begin_date'=>'開始日',
         'finish_date'=>'終了日',
         'purpose'=>'習慣の目的',
         'plan_text'=>'プランニング',
+        'start_date'=>'日付',
+        'event_name'=>'振り返り',
+        'achivement_flg'=>'達成・例外日',
     ],
 
 ];

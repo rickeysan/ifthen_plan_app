@@ -19,7 +19,7 @@ class CreateHabitsTable extends Migration
             $table->integer('category_id');
             $table->text('purpose');
             $table->text('task');
-            $table->date('start_date');
+            $table->date('begin_date');
             $table->date('finish_date');
             $table->boolean('is_open');
             $table->softDeletes();

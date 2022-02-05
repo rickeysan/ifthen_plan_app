@@ -13,7 +13,7 @@ class Habit extends Model
     protected $dates = ['deleted_at'];
 
     protected $fillable = [
-        'category_id','purpose','task','start_date','finish_date','user_id','is_open',
+        'category_id','purpose','task','begin_date','finish_date','user_id','is_open',
     ];
 
     public function category(){

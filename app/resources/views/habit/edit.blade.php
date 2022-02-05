@@ -47,8 +47,8 @@
                             <p class="form-item__head-text">開始日</p>
                         </div>
                         <div class="form-item__body">
-                            <input type="date" name="start_date" class="form-item__date" value="{{ $habit['start_date'] }}">
-                            @error('start_date')
+                            <input type="date" name="begin_date" class="form-item__date" value="{{ $habit['begin_date'] }}">
+                            @error('begin_date')
                                 <span class="form-item__input-area__msg err-msg">{{ $message }}</span>
                             @enderror
                         </div>
@@ -119,15 +119,29 @@
         <div  class="calendar" id='calendar'></div>
         <div class="calender-info__container">
             <h3 class="calendar-info-title">記録の追加・編集フォーム</h3>
-            <form action="" id="js-form" method="post" class="calendar-input-form" style="display: none;">
+            <span class="calendar-info">記録したい日付をクリックしてください</span>
+            <form action='/schedule-add/{{$habit['id']}}' id="js-form" method="post" class="calendar-input-form">
                 @csrf
                 <p class="calendar-input-title"></p>
                 <p><input type="date" name="start_date" class="calendar-input-date" readonly></p>
+                @error('start_date')
+                    <span class="calendar-input__msg">{{ $message }}</span>
+                @enderror
                 <textarea class="calendar-input__textarea js-textarea" type="text" name="event_name" class="calendar-input-text" placeholder="上手くいったことや反省点を記入"></textarea>
-                <div class="calendar-input__radio-wrap">
-                    <input class="calendaer-input__radio" type="radio" id="rd0" name="achivement_flg" value="0">達成
-                    <input class="calendaer-input__radio" type="radio" id="rd1" name="achivement_flg" value="1">例外日
+                @error('event_name')
+                    <span class="calendar-input__msg">{{ $message }}</span>
+                @enderror
+                <div class="calendar-input__radio-area">
+                    <div class="calendar-input__radio-wrap">
+                        <input class="calendaer-input__radio" type="radio" id="rd0" name="achivement_flg" value="0"><span class="calendar-input__radio__ok-tag">達成</span>
+                    </div>
+                    <div class="calendar-input__radio-wrap">
+                        <input class="calendaer-input__radio" type="radio" id="rd1" name="achivement_flg" value="1"><span class="calendar-input__radio__ng-tag">例外日</span>
+                    </div>
                 </div>
+                @error('achivement_flg')
+                    <span class="calendar-input__msg">{{ $message }}</span>
+                @enderror
                 <div class="calendar-input__btn-wrap">
                     <button class="calendar-input__btn" type="submit">登録</button>
                 </div>

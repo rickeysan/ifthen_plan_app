@@ -24,7 +24,7 @@ class ScheduleController extends Controller
         // バリデーション
         $request->validate([
             'start_date' => 'required|date',
-            'event_name' => 'required|max:32',
+            'event_name' => 'required|max:120',
             'achivement_flg' => 'required|boolean',
         ]);
         logger('バリデーションOKです');

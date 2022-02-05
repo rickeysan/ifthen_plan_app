@@ -622,6 +622,15 @@ a {
   padding: 15px;
 }
 
+.calendar-section .calender-info__container .calendar-info {
+  font-size: 12px;
+}
+
+.calendar-section .calender-info__container .calendar-input__msg {
+  font-size: 14px;
+  color: #f38181;
+}
+
 .calendar-section .fc-view-harness {
   font-size: 14px !important;
 }
@@ -639,23 +648,40 @@ a {
   width: 100%;
 }
 
-.calendar-section .calendar-input__radio-wrap {
+.calendar-section .calendar-input__radio-area {
   margin-top: 10px;
+  display: flex;
+  justify-content: space-around;
 }
 
-.calendar-section .calendar-input__radio-wrap .calendaer-input__radio {
+.calendar-section .calendar-input__radio-area .calendaer-input__radio {
   vertical-align: -1px;
   margin-right: 5px;
+}
+
+.calendar-section .calendar-input__radio-area .calendar-input__radio__ok-tag {
+  padding: 5px 10px;
+  background: #c6fce5;
+}
+
+.calendar-section .calendar-input__radio-area .calendar-input__radio__ng-tag {
+  padding: 5px 10px;
+  background: #f38181;
 }
 
 .calendar-section .calendar-input__btn-wrap {
   display: flex;
   justify-content: flex-end;
+  margin-top: 10px;
 }
 
 .calendar-section .calendar-input__btn-wrap .calendar-input__btn {
   padding: 5px 10px;
   border: 1px solid #757575;
+}
+
+.calendar-section .calendar-input__btn-wrap .calendar-input__btn:hover {
+  opacity: 0.7;
 }
 
 .search-menu__list-nav {
