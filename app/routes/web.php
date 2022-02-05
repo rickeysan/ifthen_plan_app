@@ -63,7 +63,7 @@ Route::get('hello/{id}/{pass?}',function($id,$pass){
 // Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showResetPasswordForm'])->name('reset.password.get');
 // Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');
 Route::resource('forget-password', 'ForgetPasswordController');
-Route::resource('forget-password-key', 'ForgetPasswordKeyController');
+Route::resource('reset-password', 'ResetPasswordController');
 
 
 use Illuminate\Support\Facades\Mail;

@@ -41,4 +41,12 @@ return [
         'type'=>'success',
         'text'=>'記録を編集しました',
     ],
+    'reset-email_send'=>[
+        'type'=>'success',
+        'text'=>'パスワード変更メールを送信しました',
+    ],
+    'password-reset_done'=>[
+        'type'=>'success',
+        'text'=>'パスワードを再設定しました',
+    ],
 ];

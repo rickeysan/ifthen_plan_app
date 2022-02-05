@@ -9,7 +9,7 @@
                   <div class="card-header">Reset Password</div>
                   <div class="card-body">
 
-                      <form action="{{ route('reset.password.post') }}" method="POST">
+                      <form action="{{ route('reset-password.store') }}" method="POST">
                           @csrf
                           <input type="hidden" name="token" value="{{ $token }}">
 
