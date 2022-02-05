@@ -1,59 +1,62 @@
-@extends('layout')
+@extends('layouts.layout-1-column')
 
-@section('content')
-<main class="login-form">
-  <div class="cotainer">
-      <div class="row justify-content-center">
-          <div class="col-md-8">
-              <div class="card">
-                  <div class="card-header">Reset Password</div>
-                  <div class="card-body">
+@section('header')
+    @component('components/not_logined_header')
 
-                      <form action="{{ route('reset-password.store') }}" method="POST">
-                          @csrf
-                          <input type="hidden" name="token" value="{{ $token }}">
+    @endcomponent
+@endsection
 
-                          <div class="form-group row">
-                              <label for="email_address" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
-                              <div class="col-md-6">
-                                  <input type="text" id="email_address" class="form-control" name="email" required autofocus>
-                                  @if ($errors->has('email'))
-                                      <span class="text-danger">{{ $errors->first('email') }}</span>
-                                  @endif
-                              </div>
-                          </div>
 
-                          <div class="form-group row">
-                              <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
-                              <div class="col-md-6">
-                                  <input type="password" id="password" class="form-control" name="password" required autofocus>
-                                  @if ($errors->has('password'))
-                                      <span class="text-danger">{{ $errors->first('password') }}</span>
-                                  @endif
-                              </div>
-                          </div>
 
-                          <div class="form-group row">
-                              <label for="password-confirm" class="col-md-4 col-form-label text-md-right">Confirm Password</label>
-                              <div class="col-md-6">
-                                  <input type="password" id="password-confirm" class="form-control" name="password_confirmation" required autofocus>
-                                  @if ($errors->has('password_confirmation'))
-                                      <span class="text-danger">{{ $errors->first('password_confirmation') }}</span>
-                                  @endif
-                              </div>
-                          </div>
+@section('main-contents')
+<section class="input-panel__container">
+    <div class="input-panel">
+        <form action="{{ route('reset-password.store') }}" method="post">
+        @csrf
+        <input type="hidden" name="token" value="{{ $token }}">
+        <h2 class="panel-title">パスワードリセット</h2>
 
-                          <div class="col-md-6 offset-md-4">
-                              <button type="submit" class="btn btn-primary">
-                                  Reset Password
-                              </button>
-                          </div>
-                      </form>
+            <div class="form-item">
+                @if (Session::has('error'))
+                    <div class="alert alert-success" role="alert">
+                        {{ Session::get('error') }}
+                    </div>
+                @endif
+                <div class="form-item__head">
+                    <p>メールアドレス</p>
+                </div>
+                <div class="form-item__body">
+                    <input type="text" name="email" class="form-item__input"  value="{{old('email')}}">
+                    @error('email')
+                        <span class="form-item__body__error">{{ $message }}</span>
+                    @enderror
+                </div>
 
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
-</main>
+                <div class="form-item__head">
+                    <p>新しいパスワード</p>
+                </div>
+                <div class="form-item__body">
+                    <input type="password" name="password" class="form-item__input">
+                    @error('password')
+                        <span class="form-item__body__error">{{ $message }}</span>
+                    @enderror
+                </div>
+
+                <div class="form-item__head">
+                    <p>新しいパスワード（確認用）</p>
+                </div>
+                <div class="form-item__body">
+                    <input type="password" name="password_confirmation" class="form-item__input">
+                    @error('password_confirmation')
+                        <span class="form-item__body__error">{{ $message }}</span>
+                    @enderror
+                </div>
+            </div>
+            <div class="input-panel-btn__wrap">
+                <button type="submit" class="submit-btn">パスワードをリセットする</button>
+            </div>
+
+        </form>
+    </div>
+</section>
 @endsection

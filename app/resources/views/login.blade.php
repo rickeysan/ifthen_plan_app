@@ -32,7 +32,7 @@
                     <p>パスワード</p>
                 </div>
                 <div class="form-item__body">
-                    <input type="text" name="password" class="form-item__input">
+                    <input type="password" name="password" class="form-item__input">
                     @error('password')
                         <span class="form-item__body__error">{{ $message }}</span>
                     @enderror

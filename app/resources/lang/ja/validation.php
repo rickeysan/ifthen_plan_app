@@ -41,7 +41,7 @@ return [
     'distinct'             => ':attributeには異なった値を指定してください。',
     'email'                => ':attributeの形式が正しくありません。',
     'ends_with'            => ':attributeには、:valuesのどれかで終わる値を指定してください。',
-    'exists'               => '選択された:attributeは正しくありません。',
+    'exists'               => '入力された:attributeは正しくありません。',
     'file'                 => ':attributeにはファイルを指定してください。',
     'filled'               => ':attributeに値を指定してください。',
     'gt'                   => [
