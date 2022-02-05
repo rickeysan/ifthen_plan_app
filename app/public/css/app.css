@@ -631,6 +631,20 @@ a {
   color: #f38181;
 }
 
+.calendar-section .calender-info__container .calendar-show__tag {
+  font-size: 14px;
+  margin-left: 10px;
+  padding: 5px;
+}
+
+.calendar-section .calender-info__container .js-ok-tag {
+  background: #c6fce5;
+}
+
+.calendar-section .calender-info__container .js-ng-tag {
+  background: #f38181;
+}
+
 .calendar-section .fc-view-harness {
   font-size: 14px !important;
 }

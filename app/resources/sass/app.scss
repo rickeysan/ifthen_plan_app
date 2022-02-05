@@ -418,7 +418,6 @@ a{
         .ng_class{
             background: $msg-color;
         }
-
     }
     .calender-info__container{
         width:300px;
@@ -429,6 +428,17 @@ a{
         .calendar-input__msg{
             font-size: 14px;
             color:$msg-color;
+        }
+        .calendar-show__tag{
+            font-size: $font-size_m;
+            margin-left:$space_m;
+            padding:$space_s;
+        }
+        .js-ok-tag{
+            background: $second-color;
+        }
+        .js-ng-tag{
+            background: $msg-color;
         }
     }
     .fc-view-harness{

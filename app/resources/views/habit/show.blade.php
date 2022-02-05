@@ -83,7 +83,7 @@
         <div class="calender-info__container">
             <p class="calendar-info-title">記録フォーム</p>
             <div class="calendar-input-form">
-                <p><input type="date" name="start_date" class="calendar-input-date" readonly></p><span class="calendar-show__tag">達成</span>
+                <p style="display: inline-block;vertical-align: middle;" class="calendar-input__date-show"></p><span class="calendar-show__tag js-ok-tag" style='display:none;'>達成</span><span class="calendar-show__tag js-ng-tag" style='display: none;'>例外日</span>
                 <textarea class="calendar-input__textarea js-textarea" type="text" name="title" class="calendar-input-text" placeholder="記録がありません" readonly></textarea>
             </div>
 

@@ -39,25 +39,24 @@ let calendar = new Calendar(calendarEl, {
                 console.log(response.data);
                 if(response.data.flg){
                     console.log('データはあります');
-                    console.log('編集フォームを表示します');
-                    $('#js-form').attr('action','/schedule-edit/'+habit_id);
-                    $('.calendar-input-title').text('編集');
-                    $('.calendar-input-date').val(response.data.start_date);
+                    $('.calendar-input__date-show').text(response.data.start_date);
                     $('.js-textarea').val(response.data.text);
                     if(response.data.achivement_flg==0){
                         console.log('達成');
+                        $('.js-ok-tag').show();
+                        $('.js-ng-tag').hide();
                         $('#rd0').prop('checked', true);
                     }else{
                         console.log('例外日');
-                        $('#rd1').prop('checked', true);
+                        $('.js-ok-tag').hide();
+                        $('.js-ng-tag').show();
                     }
                 }else{
                     console.log('データはありません');
-                    console.log('新規登録フォームを表示します');
-                    $('#js-form').attr('action','/schedule-add/'+habit_id);
-                    $('.calendar-input-title').text('新規作成');
-                    $('.calendar-input-date').val(response.data.start_date);
+                    $('.calendar-input__date-show').text(response.data.start_date);
                     $('.js-textarea').val('');
+                    $('.js-ok-tag').hide();
+                    $('.js-ng-tag').hide();
                 }
             })
             .catch(() => {
@@ -98,39 +97,3 @@ let calendar = new Calendar(calendarEl, {
 });
 calendar.render();
 
-// 編集の処理
-$('#btn-edit').click(function(){
-    console.log('編集処理を開始します');
-    var date = $('.calendar-input-date').val();
-    console.log(date);
-    var text = $('.js-textarea').val();
-    console.log(text);
-    var achivement_flg = $("input[name='achivement_flg']:checked").val();
-
-    // Laravelの編集処理の呼び出し
-    axios
-        .post("/schedule-edit", {
-            start_date: date,
-            end_date: date,
-            event_name: text,
-            achivement_flg: achivement_flg,
-            habit_id: habit_id,
-        })
-        .then(() => {
-            console.log("編集に成功しました");
-            // イベントの更新
-            calendar.addEvent({
-                title: text,
-                start: date,
-                end: date,
-                allDay: true,
-            });
-
-            calendar.render();
-            console.log('全ての処理が終了しました');
-        })
-        .catch(() => {
-            // バリデーションエラーなど
-            console.log("編集に失敗しました");
-        });
-})
