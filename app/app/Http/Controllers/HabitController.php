@@ -63,7 +63,7 @@ class HabitController extends Controller
     }
     public function update(HabitRequest $request, $id) {
         logger('HabitControllerのupdateメソッドです');
-        $param = $request->only(['category_id','start_date','finish_date','purpose','task','plan_text']);
+        $param = $request->only(['category_id','start_date','finish_date','purpose','task','plan_text','is_open']);
         if(isset($param['is_open'])){
             // 1は公開
             $param['is_open'] = 1;
