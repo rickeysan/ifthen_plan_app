@@ -358,6 +358,12 @@ a {
   }
 }
 
+@media screen and (max-width: 767px) {
+  #main .main__inner {
+    margin: 16px auto;
+  }
+}
+
 #main .columns-2 {
   display: flex;
 }
@@ -956,11 +962,23 @@ a {
   margin-bottom: 8px;
 }
 
+@media screen and (max-width: 767px) {
+  .search-menu__responsive {
+    padding: 8px;
+  }
+}
+
 .search-menu__responsive .search-menu__item__input {
   border: 1px solid #BDBDBD;
   border-radius: 5px;
   padding-left: 8px;
   width: 240px;
+}
+
+@media screen and (max-width: 767px) {
+  .search-menu__responsive .search-menu__item__input {
+    width: 200px;
+  }
 }
 
 .search-menu__responsive .search-menu__item__select {
@@ -970,8 +988,18 @@ a {
   width: 160px;
 }
 
+@media screen and (max-width: 767px) {
+  .search-menu__responsive .search-menu__item__select {
+    width: 200px;
+  }
+}
+
 .search-menu__responsive .search-menu__item {
   margin-bottom: 8px;
+}
+
+.search-menu__responsive .search-menu__item-btn__wrap {
+  text-align: center;
 }
 
 .search-menu__responsive .search-menu__item-btn {
@@ -1027,6 +1055,12 @@ a {
   }
 }
 
+@media screen and (max-width: 767px) {
+  .search__section .search-section__habits-container {
+    justify-content: center;
+  }
+}
+
 .search__section .search-section__habits-container .habits-list__card {
   width: 280px;
   border: 2px solid #BDBDBD;
@@ -1039,6 +1073,12 @@ a {
   .search__section .search-section__habits-container .habits-list__card {
     width: 230px;
     padding: 16px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .search__section .search-section__habits-container .habits-list__card {
+    width: 280px;
   }
 }
 

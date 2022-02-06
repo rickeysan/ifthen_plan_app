@@ -157,6 +157,9 @@ a{
         @include mq(tab) {
             width:100%;
         }
+        @include mq(sp){
+            margin: $space_m auto;
+        }
     }
     .columns-2{
         display: flex;
@@ -693,22 +696,34 @@ a{
 .search-menu__responsive{
     border: 1px solid $divider-color;
     border-radius: 14px;
-    padding: 16px;
+    padding: $space_m;
     margin-bottom: $space_s;
+    @include mq(sp){
+        padding: $space_s;
+    }
     .search-menu__item__input{
         border: 1px solid $divider-color;
         border-radius:5px;
         padding-left:$space_s;
         width:240px;
+        @include mq(sp){
+            width: 200px;
+        }
     }
     .search-menu__item__select{
         border: 1px solid $divider-color;
         border-radius:5px;
         padding-left:$space_s;
         width: 160px;
+        @include mq(sp){
+            width: 200px;
+        }
     }
     .search-menu__item{
         margin-bottom:$space_s;
+    }
+    .search-menu__item-btn__wrap{
+        text-align: center;
     }
     .search-menu__item-btn{
         display: inline-block;
@@ -751,6 +766,9 @@ a{
         @include mq(tab){
             gap: 30px 20px;
         }
+        @include mq(sp){
+            justify-content: center;
+        }
         .habits-list__card{
             width: 280px;
             border: 2px solid $divider-color;
@@ -760,6 +778,9 @@ a{
             @include mq(tab){
                 width:230px;
                 padding:$space_m;
+            }
+            @include mq(sp){
+                width: 280px;
             }
             .habits-list__card-title{
                 height:80px;
