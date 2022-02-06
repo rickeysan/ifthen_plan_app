@@ -985,7 +985,7 @@ a {
   border: 1px solid #BDBDBD;
   border-radius: 5px;
   padding-left: 8px;
-  width: 160px;
+  width: 240px;
 }
 
 @media screen and (max-width: 767px) {
@@ -1132,6 +1132,12 @@ a {
 .profile-edit__section {
   width: 1000px;
   padding: 0 200px;
+}
+
+@media screen and (max-width: 1179px) {
+  .profile-edit__section {
+    padding: 0 80px;
+  }
 }
 
 .profile-edit__section .section-title {

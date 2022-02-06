@@ -714,7 +714,7 @@ a{
         border: 1px solid $divider-color;
         border-radius:5px;
         padding-left:$space_s;
-        width: 160px;
+        width: 240px;
         @include mq(sp){
             width: 200px;
         }
@@ -828,6 +828,9 @@ a{
 .profile-edit__section{
     width: 1000px;
     padding: 0 200px;
+    @include mq(tab){
+        padding: 0 80px;
+    }
     .section-title{
         font-size:$font-size_l;
         text-align: center  ;
