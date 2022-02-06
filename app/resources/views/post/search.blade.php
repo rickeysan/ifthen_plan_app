@@ -41,6 +41,31 @@
 @section('main-contents')
 <section class="search__section">
     <h2 class="section-title">習慣を探す</h2>
+    <nav class="search-menu__responsive">
+        <form action="{{ route('search.show',['key_word','category_id']) }}" method="get">
+            @csrf
+            <div class="search-menu__item">
+                <span class="search-menu__item__text">キーワード</span>
+                <input type="text" name="key_word" value="{{ isset($key_word) ? $key_word :'' }}" class="search-menu__item__input">
+            </div>
+            <div class="search-menu__item">
+                <span class="search-menu__item-head__text">カテゴリー</span>
+                <select name="category_id"class="search-menu__item__select">
+                    <option value="" class="search-menu__item__option">選択してください</option>
+                    @foreach ($categories as $category)
+                    @if(isset($category_id) && $category['id'] == $category_id)
+                        <option value="{{ $category['id'] }}" class="search-menu__item__option" selected>{{ $category['name'] }}</option>
+                    @else
+                        <option value="{{ $category['id'] }}" class="search-menu__item__option">{{ $category['name'] }}</option>
+                    @endif
+                    @endforeach
+                </select>
+            </div>
+            <div class="search-menu__item-btn__wrap">
+                <button class="search-menu__item-btn">検索する</button>
+            </div>
+        </form>
+    </nav>
     <div class="section-info">
         <p class="section-info__amount">{{ $total_habits_amount }}件の習慣が見つかりました</p>
         <p class="section-info__page">{{ $habits->currentPage() }}ページ目</p>

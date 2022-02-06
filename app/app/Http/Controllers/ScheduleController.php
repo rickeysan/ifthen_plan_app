@@ -8,10 +8,6 @@ use App\Schedule;
 class ScheduleController extends Controller
 {
 
-    // public function scheduleIndex(){
-    //     return view('schedule');
-    // }
-
     /**
      * スケジュールを登録
      *

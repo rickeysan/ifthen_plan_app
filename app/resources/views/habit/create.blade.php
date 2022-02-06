@@ -43,7 +43,7 @@
                         </div>
                         <div class="form-item__body">
                             <input type="date" name="start_date" class="form-item__date" value="{{ old('start_date') }}">
-                            @error('start_date')
+                            @error('begin_date')
                                 <span class="form-item__input-area__msg err-msg">{{ $message }}</span>
                             @enderror
                         </div>

@@ -651,6 +651,9 @@ a{
 // ============================
 .search-menu__list-nav{
     width:220px;
+    @include mq(tab){
+        display: none;
+    }
     form{
         border: 1px solid $divider-color;
         padding: 15px 10px;
@@ -683,19 +686,56 @@ a{
             }
         }
     }
-
-
 }
+// ============================
+// search-menu__responsive
+// ============================
+.search-menu__responsive{
+    border: 1px solid $divider-color;
+    border-radius: 14px;
+    padding: 16px;
+    margin-bottom: $space_s;
+    .search-menu__item__input{
+        border: 1px solid $divider-color;
+        border-radius:5px;
+        padding-left:$space_s;
+        width:240px;
+    }
+    .search-menu__item__select{
+        border: 1px solid $divider-color;
+        border-radius:5px;
+        padding-left:$space_s;
+        width: 160px;
+    }
+    .search-menu__item{
+        margin-bottom:$space_s;
+    }
+    .search-menu__item-btn{
+        display: inline-block;
+        width: 80px;
+        border: 1px solid $divider-color;
+        text-align: center;
+        border-radius:5px;
+        background: $first-color;
+    }
+}
+
 // ============================
 // search-seciton
 // ============================
 .search__section{
     width:100%;
     padding:0 $space_4l;
+    @include mq(tab){
+        padding:0 $space_m;
+    }
     .section-title{
         font-size: $font-size_l;
         text-align: center;
         margin-bottom:$space_xxl;
+        @include mq(tab){
+            margin-bottom: $space_m;
+        }
     }
     .section-info{
         display: flex;
@@ -708,12 +748,19 @@ a{
         display: flex;
         flex-wrap: wrap;
         gap: 20px 35px;
+        @include mq(tab){
+            gap: 30px 20px;
+        }
         .habits-list__card{
             width: 280px;
             border: 2px solid $divider-color;
             height: 280px;
             padding: $space_l;
             box-shadow: 1px 1px 3px $divider-color;
+            @include mq(tab){
+                width:230px;
+                padding:$space_m;
+            }
             .habits-list__card-title{
                 height:80px;
             }
