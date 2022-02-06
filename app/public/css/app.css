@@ -309,10 +309,16 @@ a {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
 }
 
+@media screen and (max-width: 1179px) {
+  #header {
+    padding: 0 32px;
+  }
+}
+
 #header .inner {
   display: flex;
   align-items: center;
-  width: 1200px;
+  width: 1180px;
   justify-content: space-between;
 }
 
@@ -321,9 +327,9 @@ a {
 }
 
 #header .header__nav-item {
-  padding: 5px;
+  padding: 8px;
   border-radius: 5px;
-  margin-left: 10px;
+  margin-left: 16px;
 }
 
 .logined-header__nav-item .logined-header__nav-item__img {
@@ -333,8 +339,14 @@ a {
 }
 
 #main .main__inner {
-  width: 1200px;
-  margin: 20px auto;
+  width: 1180px;
+  margin: 32px auto;
+}
+
+@media screen and (max-width: 1179px) {
+  #main .main__inner {
+    width: 100%;
+  }
 }
 
 #main .columns-2 {
@@ -348,7 +360,7 @@ a {
 
 .input-panel {
   width: 480px;
-  padding: 20px 30px;
+  padding: 32px 40px;
 }
 
 .input-panel .panel-title {
@@ -359,15 +371,15 @@ a {
 }
 
 .input-panel .form-item {
-  margin-top: 10px;
+  margin-top: 16px;
 }
 
 .input-panel .form-item .form-item__body .form-item__input {
   display: block;
   border: 1px solid #BDBDBD;
   width: 100%;
-  border-radius: 10px;
-  height: 40px;
+  border-radius: 16px;
+  height: 48px;
   padding-left: 5px;
 }
 
@@ -377,14 +389,14 @@ a {
 }
 
 .input-panel .input-panel-btn__wrap {
-  padding-top: 15px;
+  padding-top: 24px;
 }
 
 .input-panel .input-panel-btn__wrap .submit-btn {
   width: 100%;
   text-align: center;
   background: #6ef3d6;
-  height: 40px;
+  height: 48px;
   border-radius: 5px;
 }
 
@@ -393,7 +405,7 @@ a {
 }
 
 .input-panel .input-panel-btn__wrap .submit-btn__link {
-  margin-top: 20px;
+  margin-top: 32px;
   text-align: center;
   font-size: 14px;
 }
@@ -403,7 +415,7 @@ a {
 }
 
 .login-panel .submit-btn {
-  margin-bottom: 10px;
+  margin-bottom: 16px;
 }
 
 .login-panel .login-btn__info {
@@ -411,9 +423,9 @@ a {
 }
 
 .login-panel .submit-checkbox {
-  width: 15px;
-  height: 15px;
-  margin-right: 5px;
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
 }
 
 .login-panel .login-btn__info-msg {
@@ -433,11 +445,11 @@ a {
 }
 
 .dashbord-menu__list-nav .dashbord-menu__list-ul .dashbord-menu__list-item {
-  margin-bottom: 15px;
+  margin-bottom: 24px;
 }
 
 .dashbord-menu__list-nav .dashbord-menu__list-ul .dashbord-menu__list-item .dashbord-menu__list-item-link i {
-  margin-right: 10px;
+  margin-right: 16px;
 }
 
 .dashbord-menu__list-nav .dashbord-menu__list-ul .dashbord-menu__list-item .dashbord-menu__list-item-link:hover {
@@ -445,7 +457,7 @@ a {
 }
 
 .dashbord-menu__list-nav .profile-card {
-  padding: 5px 10px;
+  padding: 8px 16px;
   border: 1px solid #BDBDBD;
 }
 
@@ -461,13 +473,13 @@ a {
 
 .my-habits__section {
   width: 100%;
-  padding: 0 50px;
+  padding: 0 56px;
 }
 
 .my-habits__section .section-title {
   font-size: 18px;
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 .my-habits__section .my-habits__container {
@@ -500,13 +512,13 @@ a {
 
 .main-sections__container {
   width: 100%;
-  padding: 0 40px;
+  padding: 0 48px;
 }
 
 .main-sections__container .section-title {
   font-size: 18px;
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 .main-sections__container .habit-input__container {
@@ -522,14 +534,14 @@ a {
 }
 
 .main-sections__container .habit-input__container .form-item {
-  margin-bottom: 15px;
+  margin-bottom: 24px;
 }
 
 .main-sections__container .habit-input__container .form-item .form-item__body .form-item__select {
   width: 180px;
   border: 1px solid #BDBDBD;
   border-radius: 5px;
-  padding: 0 5px;
+  padding: 0 8px;
 }
 
 .main-sections__container .habit-input__container .form-item .form-item__body .form-item__textarea {
@@ -558,7 +570,7 @@ a {
 .main-sections__container .form-input_btn {
   width: 160px;
   text-align: center;
-  padding: 5px;
+  padding: 8px;
   border: 2px solid #0dceda;
   border-radius: 10px;
 }
@@ -569,12 +581,12 @@ a {
 }
 
 .main-sections__container .plans__container {
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 .main-sections__container .plans__container .container-title {
   text-align: center;
-  margin-bottom: 15px;
+  margin-bottom: 24px;
 }
 
 .main-sections__container .plans__container .plans__form-input {
@@ -592,17 +604,17 @@ a {
   display: inline-block;
   width: 160px;
   border: 1px solid #BDBDBD;
-  padding-left: 5px;
+  padding-left: 8px;
 }
 
 .calendar-section {
-  margin-top: 30px;
+  margin-top: 40px;
   display: flex;
 }
 
 .calendar-section #calendar {
   width: 630px;
-  padding-top: 15px;
+  padding-top: 24px;
 }
 
 .calendar-section #calendar .fc-event-main {
@@ -619,7 +631,7 @@ a {
 
 .calendar-section .calender-info__container {
   width: 300px;
-  padding: 15px;
+  padding: 24px;
 }
 
 .calendar-section .calender-info__container .calendar-info {
@@ -633,8 +645,8 @@ a {
 
 .calendar-section .calender-info__container .calendar-show__tag {
   font-size: 14px;
-  margin-left: 10px;
-  padding: 5px;
+  margin-left: 16px;
+  padding: 8px;
 }
 
 .calendar-section .calender-info__container .js-ok-tag {
@@ -654,8 +666,8 @@ a {
 }
 
 .calendar-section .calendar-input__textarea {
-  margin-top: 10px;
-  padding: 5px;
+  margin-top: 16px;
+  padding: 8px;
   height: 160px;
   border: 1px solid black;
   display: block;
@@ -663,7 +675,7 @@ a {
 }
 
 .calendar-section .calendar-input__radio-area {
-  margin-top: 10px;
+  margin-top: 16px;
   display: flex;
   justify-content: space-around;
 }
@@ -674,23 +686,23 @@ a {
 }
 
 .calendar-section .calendar-input__radio-area .calendar-input__radio__ok-tag {
-  padding: 5px 10px;
+  padding: 8px 16px;
   background: #c6fce5;
 }
 
 .calendar-section .calendar-input__radio-area .calendar-input__radio__ng-tag {
-  padding: 5px 10px;
+  padding: 8px 16px;
   background: #f38181;
 }
 
 .calendar-section .calendar-input__btn-wrap {
   display: flex;
   justify-content: flex-end;
-  margin-top: 10px;
+  margin-top: 16px;
 }
 
 .calendar-section .calendar-input__btn-wrap .calendar-input__btn {
-  padding: 5px 10px;
+  padding: 8px 16px;
   border: 1px solid #757575;
 }
 
@@ -709,27 +721,27 @@ a {
 }
 
 .search-menu__list-nav .search-menu__item-foot {
-  margin-bottom: 20px;
+  margin-bottom: 32px;
 }
 
 .search-menu__list-nav .search-menu__item-foot .search-menu__item-foot__input {
   border: 1px solid #BDBDBD;
-  height: 40px;
+  height: 48px;
   width: 100%;
-  padding: 5px;
+  padding: 8px;
 }
 
 .search-menu__list-nav .search-menu__item-foot .search-menu__item-foot__select {
   border: 1px solid #BDBDBD;
-  height: 40px;
+  height: 48px;
   width: 100%;
-  padding: 0 5px;
+  padding: 0 8px;
 }
 
 .search-menu__list-nav .search-menu__item-btn__wrap .search-menu__item-btn {
   border: 1px solid #BDBDBD;
   background: #ebfffa;
-  padding: 5px 10px;
+  padding: 8px 16px;
 }
 
 .search-menu__list-nav .search-menu__item-btn__wrap .search-menu__item-btn:hover {
@@ -739,18 +751,18 @@ a {
 
 .search__section {
   width: 100%;
-  padding: 0 50px;
+  padding: 0 56px;
 }
 
 .search__section .section-title {
   font-size: 18px;
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 .search__section .section-info {
   display: flex;
-  margin-bottom: 15px;
+  margin-bottom: 24px;
 }
 
 .search__section .section-info .section-info__page {
@@ -767,7 +779,7 @@ a {
   width: 280px;
   border: 2px solid #BDBDBD;
   height: 280px;
-  padding: 15px;
+  padding: 24px;
   box-shadow: 1px 1px 3px #BDBDBD;
 }
 
@@ -794,7 +806,7 @@ a {
 
 .search__section .search-section__habits-container .habits-list__card .habits-list__card-profile .habits-list__card-name {
   font-size: 14px;
-  margin-left: 10px;
+  margin-left: 16px;
 }
 
 .search__section .search-section__habits-container .habits-list__card .habits-list__card-info {
@@ -826,12 +838,12 @@ a {
 .profile-edit__section .section-title {
   font-size: 18px;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 32px;
 }
 
 .profile-edit__section .form-item__title__batch {
-  margin-left: 10px;
-  padding: 5px;
+  margin-left: 16px;
+  padding: 8px;
   font-size: 12px;
   border: 1px solid #BDBDBD;
 }
@@ -857,7 +869,7 @@ a {
 
 .profile-edit__section .form-item .form-item__input-area .form-item__input {
   width: 100%;
-  padding: 0 5px;
+  padding: 0 8px;
   border: 1px solid #BDBDBD;
 }
 
@@ -914,7 +926,7 @@ a {
   height: 120px;
   display: flex;
   align-items: center;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 .profile-edit__section .form-item__textarea .form-item__input-area {
@@ -923,7 +935,7 @@ a {
 
 .profile-edit__section .form-item__textarea .form-item__input-area .form-item__textarea__input {
   height: 100px;
-  padding: 0 5px;
+  padding: 0 8px;
   width: 400px;
   border: 1px solid #BDBDBD;
 }
@@ -959,7 +971,7 @@ a {
   display: flex;
   align-items: center;
   height: 120px;
-  margin-bottom: 40px;
+  margin-bottom: 48px;
 }
 
 .profile__section .my-profile__container .my-profile__img {
@@ -969,16 +981,16 @@ a {
 }
 
 .profile__section .my-profile__container .my-profile__contents {
-  margin-left: 15px;
+  margin-left: 24px;
 }
 
 .pagination-wrap {
-  margin-top: 30px;
+  margin-top: 40px;
   text-align: center;
 }
 
 .pagination-wrap li {
-  padding: 10px;
+  padding: 16px;
   display: inline-block;
 }
 
@@ -990,7 +1002,7 @@ a {
 .withdraw__section .section-title {
   font-size: 18px;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 32px;
 }
 
 .withdraw__section .withdraw__container {
@@ -1020,7 +1032,7 @@ a {
 }
 
 .plan-helper {
-  margin-top: 40px;
+  margin-top: 48px;
   align-items: center;
 }
 
@@ -1035,7 +1047,7 @@ a {
 .plan-helper .plan-helper__table {
   width: 740px;
   border: 1px solid #BDBDBD;
-  margin: 15px auto;
+  margin: 24px auto;
 }
 
 .plan-helper .plan-helper__table tbody {
@@ -1075,7 +1087,7 @@ a {
 
 .form-item__helper .fa-trash-alt {
   font-size: 18px;
-  padding: 5px;
+  padding: 8px;
 }
 
 .form-item__helper .fa-trash-alt:hover {
@@ -1087,7 +1099,7 @@ a {
 }
 
 .form-item__helper .like-btn {
-  padding: 10px;
+  padding: 16px;
   font-size: 18px;
 }
 

@@ -13,7 +13,6 @@ $divider-color: #BDBDBD;
 $icon-color: #000000;
 $msg-color:#f38181;
 
-$site-width:1200px;
 
 $font-size_s:12px;
 $font-size_m:14px;
@@ -23,26 +22,28 @@ $font-size_xl:24px;
 $font-size_xxl:30px;
 $font-size_3l:38px;
 
-$space_s:5px;
-$space_m:10px;
-$space_l:15px;
-$space_xl:20px;
-$space_xxl:30px;
-$space_3l:40px;
-$space_4l:50px;
+$space_s:8px;
+$space_m:16px;
+$space_l:24px;
+$space_xl:32px;
+$space_xxl:40px;
+$space_3l:48px;
+$space_4l:56px;
+
+// レイアウト幅
+$layout-width-inner: 1180px;
 
 $breakpoints: (
-    'sm' : 'screen and (max-width:414px)',
-    'md' : 'screen and (max-width:768px)',
-    'lg' : 'screen and (max-width:1000px)',
-    'xl' : 'screen and (max-width:1200px)',
+	"sp": "screen and (max-width: 767px)",
+	"tab": "screen and (max-width: #{$layout-width-inner - 1px})",
+	"pc": "screen and (min-width: #{$layout-width-inner})",
 ) !default;
 
 
 // ============================
 // mixin
 // ============================
-@mixin mq($breakpoints: sm){
+@mixin mq($breakpoint: sp){
     @media #{map-get($breakpoints, $breakpoint)}{
         @content;
     }
@@ -108,10 +109,13 @@ a{
     align-items: center;
     background:$first-color;
     box-shadow: 0 3px 6px rgb(0 0 0 / 5%);
+    @include mq(tab){
+        padding: 0 $space_xl;
+    }
     .inner{
         display: flex;
         align-items: center;
-        width:$site-width;
+        width:$layout-width-inner;
         justify-content: space-between;
     }
     .header__nav-list{
@@ -145,8 +149,11 @@ a{
 #main{
 
     .main__inner{
-        width:$site-width;
+        width:$layout-width-inner;
         margin:$space_xl auto;
+        @include mq(tab) {
+            width:100%;
+        }
     }
     .columns-2{
         display: flex;
