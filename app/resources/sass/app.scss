@@ -156,9 +156,10 @@ a{
         margin:$space_xl auto;
         @include mq(tab) {
             width:100%;
+            margin:$space_s auto;
         }
         @include mq(sp){
-            margin: $space_m auto;
+            margin: $space_s auto;
         }
     }
     .columns-2{
@@ -419,6 +420,9 @@ a{
         font-size:$font-size_l;
         text-align: center;
         margin-bottom:$space_xxl;
+        @include mq(tab){
+            margin-bottom: $space_m;
+        }
     }
     .my-habits__container{
         display: flex;
@@ -457,12 +461,21 @@ a{
     width:100%;
     padding:0 $space_3l;
     @include mq(tab){
-        padding: $space_l;
+        padding: $space_m $space_l;
+    }
+    @include mq(sp){
+        padding: $space_s $space_m;
     }
     .section-title{
         font-size:$font-size_l;
         text-align: center;
         margin-bottom:$space_xxl;
+        @include mq(tab){
+            margin-bottom: $space_m;
+        }
+        @include mq(sp){
+            margin-bottom: $space_s;
+        }
     }
     .habit-input__container{
         position: relative;
@@ -481,7 +494,12 @@ a{
         }
         .form-item{
             margin-bottom:$space_l;
-
+            @include mq(tab){
+                margin-bottom: $space_m;
+            }
+            @include mq(sp){
+                margin-bottom:$space_s;
+            }
             .form-item__body{
                 .form-item__select{
                     width: 180px;
@@ -525,6 +543,12 @@ a{
     }
     .plans__container{
         margin-bottom:$space_xxl;
+        @include mq(tab){
+            margin-bottom: $space_m;
+        }
+        @include mq(sp){
+            margin-bottom: $space_s;
+        }
         .container-title{
             text-align: center;
             margin-bottom:$space_l;
@@ -831,14 +855,20 @@ a{
     @include mq(tab){
         padding: 0 80px;
     }
+    @include mq(sp){
+        padding: 0 $space_s;
+    }
     .section-title{
         font-size:$font-size_l;
         text-align: center  ;
         margin-bottom:$space_xl;
+        @include mq(sp){
+            margin-bottom: $space_s;
+        }
     }
     .form-item__title__batch{
-        margin-left:$space_m;
-        padding:$space_s;
+        margin-left:$space_s;
+        padding:4px;
         font-size:$font-size_s;
         border:1px solid $divider-color;
     }
@@ -852,9 +882,18 @@ a{
         display: flex;
         height: 60px;
         align-items: top;
+        @include mq(sp){
+            flex-wrap: wrap;
+            height: auto;
+            margin-bottom: $space_s;
+        }
         .form-item__input-area{
             margin-left:auto;
             width:400px;
+            @include mq(sp){
+                width:100%;
+                margin-left: 0;
+            }
             .form-item__input{
                 width:100%;
                 padding:0 $space_s;
@@ -909,6 +948,9 @@ a{
         display: flex;
         align-items: center;
         margin-bottom:$space_xxl;
+        @include mq(sp){
+            flex-wrap: wrap;
+        }
         .form-item__input-area{
             margin-left:auto;
 
@@ -917,6 +959,9 @@ a{
                 padding:0 $space_s;
                 width:400px;
                 border:1px solid $divider-color;
+                @include mq(sp){
+                    width:100%;
+                }
             }
             .form-item__input-area__msg{
                 display: block;
@@ -1018,6 +1063,12 @@ a{
 .plan-helper{
     margin-top:$space_3l;
     align-items: center;
+    @include mq(tab){
+        margin-top:$space_l;
+    }
+    @include mq(sp){
+        margin-top:$space_m;
+    }
     .plan-helper__title{
         text-align: center;
     }
@@ -1028,6 +1079,9 @@ a{
         width:740px;
         border:1px solid $divider-color;
         margin:$space_l auto;
+        @include mq(sp){
+            width: auto;
+        }
         tbody{
             width:720px;
             text-align: center;
@@ -1035,7 +1089,7 @@ a{
 
         td{
             width:50%;
-            padding: 10px
+            padding: $space_s;
         }
         .plan-helper__table__top{
             background:$first-color;
@@ -1043,6 +1097,9 @@ a{
         .plan-helper__table__middle{
             background: $second-color;
             height: 50px;
+            @include mq(sp){
+                height: 80px;
+            }
         }
     }
     .plan-helper__btn{

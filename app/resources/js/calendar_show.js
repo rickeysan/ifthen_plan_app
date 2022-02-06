@@ -18,8 +18,9 @@ let calendar = new Calendar(calendarEl, {
         today:    '今日',
     },
     locale: "ja",
-    editable:true,
-
+    editable:false,
+    eventDurationEditable:false,
+    longPressDelay:0,
     // 日付をクリック、または範囲を選択したイベント
     selectable: true,
     select: function (info) {
@@ -62,15 +63,53 @@ let calendar = new Calendar(calendarEl, {
             .catch(() => {
                 console.log("ajaxの通信に失敗しました");
             });
-
     },
-
-
 
     // イベントをクリックした時の動作
     eventClick: function(info) {
-        console.log('クリックされました');
+        console.log('イベントがされました');
         console.log(info);
+        console.log('startStr' in info);
+        console.log(info.event);
+        console.log(info.event._instance.range.start);
+        $('.calendar-input-form').show();
+
+        var $date = info.event._instance.range.start;
+
+        axios
+            .post('/schedule-judge',{
+                start_date:$date,
+                habit_id: habit_id,
+            })
+            .then((response) => {
+                console.log('scheduleJudgeからの返り値');
+                console.log(response.data);
+                if(response.data.flg){
+                    console.log('データはあります');
+                    console.log('編集フォームを表示します');
+                    $('#js-form').attr('action','/schedule-edit/'+habit_id);
+                    $('.calendar-input-title').text('編集');
+                    $('.calendar-input-date').val(response.data.start_date);
+                    $('.js-textarea').val(response.data.text);
+                    if(response.data.achivement_flg==0){
+                        console.log('達成');
+                        $('#rd0').prop('checked', true);
+                    }else{
+                        console.log('例外日');
+                        $('#rd1').prop('checked', true);
+                    }
+                }else{
+                    console.log('データはありません');
+                    console.log('新規登録フォームを表示します');
+                    $('#js-form').attr('action','/schedule-add/'+habit_id);
+                    $('.calendar-input-title').text('新規作成');
+                    $('.calendar-input-date').val(response.data.start_date);
+                    $('.js-textarea').val('');
+                }
+            })
+            .catch(() => {
+                console.log("ajaxの通信に失敗しました");
+            });
     },
 
 
