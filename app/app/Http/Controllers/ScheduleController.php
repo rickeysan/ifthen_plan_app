@@ -103,7 +103,7 @@ class ScheduleController extends Controller
         }else{
             logger('データはあります');
             return ['flg'=>true, 'text'=>$record['event_name'],
-            'start_date'=>$request['start_date'], 'achivement_flg'=>$record['achivement_flg'] ];
+            'start_date'=>$record['start_date'], 'achivement_flg'=>$record['achivement_flg'] ];
             return 'OK';
         }
     }
