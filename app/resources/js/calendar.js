@@ -18,8 +18,9 @@ let calendar = new Calendar(calendarEl, {
         today:    '今日',
     },
     locale: "ja",
-    editable:true,
-
+    editable:false,
+    eventDurationEditable:false,
+    longPressDelay:0,
     // 日付をクリック、または範囲を選択したイベント
     selectable: true,
     select: function (info) {
@@ -95,8 +96,10 @@ let calendar = new Calendar(calendarEl, {
                 alert("取得に失敗しました");
             });
     },
+
 });
 calendar.render();
+
 
 // 編集の処理
 $('#btn-edit').click(function(){

@@ -117,7 +117,7 @@
     </section>
     <section class="calendar-section">
         <div  class="calendar" id='calendar'></div>
-        <div class="calender-info__container">
+        <div class="calendar-info__container">
             <h3 class="calendar-info-title">記録の追加・編集フォーム</h3>
             <span class="calendar-info">記録したい日付をクリックしてください</span>
             <form action='/schedule-add/{{$habit['id']}}' id="js-form" method="post" class="calendar-input-form">

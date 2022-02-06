@@ -335,6 +335,9 @@ a{
 .main-sections__container{
     width:100%;
     padding:0 $space_3l;
+    @include mq(tab){
+        padding: $space_l;
+    }
     .section-title{
         font-size:$font-size_l;
         text-align: center;
@@ -444,9 +447,12 @@ a{
             background: $msg-color;
         }
     }
-    .calender-info__container{
+    .calendar-info__container{
         width:300px;
         padding:$space_l;
+        @include mq(tab){
+            padding: $space_m $space_s $space_m $space_m;
+        }
         .calendar-info{
             font-size: $font-size_s;
         }

@@ -541,6 +541,12 @@ a {
   padding: 0 48px;
 }
 
+@media screen and (max-width: 1179px) {
+  .main-sections__container {
+    padding: 24px;
+  }
+}
+
 .main-sections__container .section-title {
   font-size: 18px;
   text-align: center;
@@ -662,31 +668,37 @@ a {
   background: #f38181;
 }
 
-.calendar-section .calender-info__container {
+.calendar-section .calendar-info__container {
   width: 300px;
   padding: 24px;
 }
 
-.calendar-section .calender-info__container .calendar-info {
+@media screen and (max-width: 1179px) {
+  .calendar-section .calendar-info__container {
+    padding: 16px 8px 16px 16px;
+  }
+}
+
+.calendar-section .calendar-info__container .calendar-info {
   font-size: 12px;
 }
 
-.calendar-section .calender-info__container .calendar-input__msg {
+.calendar-section .calendar-info__container .calendar-input__msg {
   font-size: 14px;
   color: #f38181;
 }
 
-.calendar-section .calender-info__container .calendar-show__tag {
+.calendar-section .calendar-info__container .calendar-show__tag {
   font-size: 14px;
   margin-left: 16px;
   padding: 8px;
 }
 
-.calendar-section .calender-info__container .js-ok-tag {
+.calendar-section .calendar-info__container .js-ok-tag {
   background: #c6fce5;
 }
 
-.calendar-section .calender-info__container .js-ng-tag {
+.calendar-section .calendar-info__container .js-ng-tag {
   background: #f38181;
 }
 

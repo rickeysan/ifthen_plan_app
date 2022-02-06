@@ -80,7 +80,7 @@
     </section>
     <section class="calendar-section">
         <div  class="calendar" id='calendar'></div>
-        <div class="calender-info__container">
+        <div class="calendar-info__container">
             <p class="calendar-info-title">記録フォーム</p>
             <div class="calendar-input-form">
                 <p style="display: inline-block;vertical-align: middle;" class="calendar-input__date-show"></p><span class="calendar-show__tag js-ok-tag" style='display:none;'>達成</span><span class="calendar-show__tag js-ng-tag" style='display: none;'>例外日</span>
