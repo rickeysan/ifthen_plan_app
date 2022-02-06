@@ -686,6 +686,12 @@ a {
   display: flex;
 }
 
+@media screen and (max-width: 767px) {
+  .main-sections__container .habit-input__container .form-item__columns-3 {
+    display: block;
+  }
+}
+
 .main-sections__container .habit-input__container .form-item__columns-3__contents {
   width: 20%;
 }
@@ -776,9 +782,21 @@ a {
   display: flex;
 }
 
+@media screen and (max-width: 767px) {
+  .calendar-section {
+    display: block;
+  }
+}
+
 .calendar-section #calendar {
   width: 630px;
   padding-top: 24px;
+}
+
+@media screen and (max-width: 767px) {
+  .calendar-section #calendar {
+    width: 100%;
+  }
 }
 
 .calendar-section #calendar .fc-event-main {
@@ -801,6 +819,12 @@ a {
 @media screen and (max-width: 1179px) {
   .calendar-section .calendar-info__container {
     padding: 16px 8px 16px 16px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .calendar-section .calendar-info__container {
+    margin: 0 auto;
   }
 }
 

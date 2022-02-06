@@ -465,6 +465,9 @@ a{
         position: relative;
         .form-item__columns-3{
             display: flex;
+            @include mq(sp){
+                display: block;
+            }
         }
         .form-item__columns-3__contents{
             width:20%;
@@ -552,9 +555,15 @@ a{
 .calendar-section{
     margin-top: $space_xxl;
     display: flex;
+    @include mq(sp){
+        display:block;
+    }
     #calendar{
         width:630px;
         padding-top: $space_l;
+        @include mq(sp){
+            width: 100%;
+        }
         .fc-event-main{
             color:#000000;
         }
@@ -570,6 +579,9 @@ a{
         padding:$space_l;
         @include mq(tab){
             padding: $space_m $space_s $space_m $space_m;
+        }
+        @include mq(sp){
+            margin: 0 auto;
         }
         .calendar-info{
             font-size: $font-size_s;

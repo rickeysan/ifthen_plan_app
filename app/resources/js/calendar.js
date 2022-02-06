@@ -26,7 +26,7 @@ let calendar = new Calendar(calendarEl, {
     select: function (info) {
         console.log('日付がクリックされました');
         console.log(info);
-        $('.calendar-input-form').show();
+        $('.calendar-input- form').show();
 
         var $date = info.startStr;
 
@@ -68,11 +68,11 @@ let calendar = new Calendar(calendarEl, {
     },
 
 
-
     // イベントをクリックした時の動作
     eventClick: function(info) {
         console.log('クリックされました');
         console.log(info);
+
     },
 
 
