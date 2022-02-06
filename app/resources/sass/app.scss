@@ -112,6 +112,9 @@ a{
     @include mq(tab){
         padding: 0 $space_xl;
     }
+    @include mq(sp){
+        padding: 0 $space_m;
+    }
     .inner{
         display: flex;
         align-items: center;
@@ -244,8 +247,14 @@ a{
 // dashbord-menu
 // ============================
 .dashbord-menu__list-nav{
-    width:200px;
+    width:180px;
     font-size:$font-size_default;
+    flex-shrink: 0;
+    @include mq(tab){
+        margin-left: 16px;
+        display: none;
+    }
+
     .dashbord-menu__list-ul{
         border: 1px solid $divider-color;
         padding: 15px 10px;
@@ -282,6 +291,9 @@ a{
 .my-habits__section{
     width:100%;
     padding:0 $space_4l;
+    @include mq(tab){
+        padding:0 $space_l;
+    }
     .section-title{
         font-size:$font-size_l;
         text-align: center;
@@ -291,7 +303,9 @@ a{
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-
+        @include mq(tab){
+            justify-content: center;
+        }
         .my-habits__card{
             width: 440px;
             height: 160px;
@@ -333,6 +347,10 @@ a{
         }
         .form-item__columns-3__contents{
             width:20%;
+            @include mq(tab){
+                width: 180px;
+                margin-right:$space_m;
+            }
         }
         .form-item{
             margin-bottom:$space_l;

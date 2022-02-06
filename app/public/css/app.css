@@ -315,6 +315,12 @@ a {
   }
 }
 
+@media screen and (max-width: 767px) {
+  #header {
+    padding: 0 16px;
+  }
+}
+
 #header .inner {
   display: flex;
   align-items: center;
@@ -434,8 +440,16 @@ a {
 }
 
 .dashbord-menu__list-nav {
-  width: 200px;
+  width: 180px;
   font-size: 16px;
+  flex-shrink: 0;
+}
+
+@media screen and (max-width: 1179px) {
+  .dashbord-menu__list-nav {
+    margin-left: 16px;
+    display: none;
+  }
 }
 
 .dashbord-menu__list-nav .dashbord-menu__list-ul {
@@ -476,6 +490,12 @@ a {
   padding: 0 56px;
 }
 
+@media screen and (max-width: 1179px) {
+  .my-habits__section {
+    padding: 0 24px;
+  }
+}
+
 .my-habits__section .section-title {
   font-size: 18px;
   text-align: center;
@@ -486,6 +506,12 @@ a {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+
+@media screen and (max-width: 1179px) {
+  .my-habits__section .my-habits__container {
+    justify-content: center;
+  }
 }
 
 .my-habits__section .my-habits__container .my-habits__card {
@@ -531,6 +557,13 @@ a {
 
 .main-sections__container .habit-input__container .form-item__columns-3__contents {
   width: 20%;
+}
+
+@media screen and (max-width: 1179px) {
+  .main-sections__container .habit-input__container .form-item__columns-3__contents {
+    width: 180px;
+    margin-right: 16px;
+  }
 }
 
 .main-sections__container .habit-input__container .form-item {
