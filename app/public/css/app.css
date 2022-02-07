@@ -682,23 +682,30 @@ a {
 }
 
 .mainvisual-link__wrap {
-  text-align: center;
-  margin-bottom: 16px;
+  display: none;
 }
 
-.mainvisual-link__wrap .mainvisual-link__responsive {
-  display: inline-block;
-  padding: 8px;
-  width: 90%;
-  background: #0dceda;
-  text-align: center;
-  border-bottom: 4px solid #BDBDBD;
-}
+@media screen and (max-width: 767px) {
+  .mainvisual-link__wrap {
+    display: block;
+    text-align: center;
+    margin-bottom: 16px;
+  }
 
-.mainvisual-link__wrap .mainvisual-link__responsive:hover {
-  margin-top: 3px;
-  border-bottom: 2px solid #BDBDBD;
-  opacity: 0.8;
+  .mainvisual-link__wrap .mainvisual-link__responsive {
+    display: inline-block;
+    padding: 8px;
+    width: 90%;
+    background: #0dceda;
+    text-align: center;
+    border-bottom: 4px solid #BDBDBD;
+  }
+
+  .mainvisual-link__wrap .mainvisual-link__responsive:hover {
+    margin-top: 3px;
+    border-bottom: 2px solid #BDBDBD;
+    opacity: 0.8;
+  }
 }
 
 .my-habits__section {

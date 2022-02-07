@@ -33,6 +33,7 @@
                 <div class="mainvisual-text">
                     <p class="mainvisual-text__title">挫折はあなたの弱さじゃない</p>
                     <p class="mainvisual-text__title-sub">If-Thenプランニングで新しい習慣を手に入れよう</p>
+                    <a class="mainvisual-link" href="{{ route('register.index') }}">習慣化を始める</a>
                 </div>
             </div>
             <section class="welcome__content">

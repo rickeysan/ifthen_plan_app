@@ -455,19 +455,23 @@ a{
     }
 }
 .mainvisual-link__wrap{
-    text-align: center;
-    margin-bottom: 16px;
-    .mainvisual-link__responsive{
-        display: inline-block;
-        padding: 8px;
-        width:90%;
-        background: #0dceda;
+    display: none;
+    @include mq(sp){
+        display: block;
         text-align: center;
-        border-bottom: 4px solid $divider-color;
-        &:hover{
-            margin-top:3px;
-            border-bottom: 2px solid $divider-color;
-            opacity: 0.8;
+        margin-bottom: 16px;
+        .mainvisual-link__responsive{
+            display: inline-block;
+            padding: 8px;
+            width:90%;
+            background: #0dceda;
+            text-align: center;
+            border-bottom: 4px solid $divider-color;
+            &:hover{
+                margin-top:3px;
+                border-bottom: 2px solid $divider-color;
+                opacity: 0.8;
+            }
         }
     }
 }
