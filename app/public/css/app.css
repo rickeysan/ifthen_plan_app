@@ -662,6 +662,10 @@ a {
   font-size: 20px;
 }
 
+#mainvisual .mainvisual-text__title-sub span {
+  display: inline-block;
+}
+
 @media screen and (max-width: 767px) {
   #mainvisual .mainvisual-text__title-sub {
     font-size: 14px;
@@ -673,6 +677,12 @@ a {
   padding: 8px;
   background: #0dceda;
   border-bottom: 4px solid #BDBDBD;
+}
+
+@media screen and (max-width: 767px) {
+  #mainvisual .mainvisual-link {
+    display: none;
+  }
 }
 
 #mainvisual .mainvisual-link:hover {

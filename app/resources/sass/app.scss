@@ -438,6 +438,9 @@ a{
     }
     .mainvisual-text__title-sub{
         font-size:20px;
+        span{
+            display: inline-block;
+        }
         @include mq(sp){
             font-size: $font-size_m;
         }
@@ -447,6 +450,9 @@ a{
         padding: 8px;
         background: #0dceda;
         border-bottom: 4px solid $divider-color;
+        @include mq(sp){
+            display: none;
+        }
         &:hover{
             margin-top:3px;
             border-bottom: 2px solid $divider-color;

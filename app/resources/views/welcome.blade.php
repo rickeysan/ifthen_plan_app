@@ -32,7 +32,7 @@
                 <img class="mainvisual-img" src="img/mainvisual.jpg" alt="">
                 <div class="mainvisual-text">
                     <p class="mainvisual-text__title">挫折はあなたの弱さじゃない</p>
-                    <p class="mainvisual-text__title-sub">If-Thenプランニングで新しい習慣を手に入れよう</p>
+                    <p class="mainvisual-text__title-sub"><span>If-Thenプランニングで新しい習慣を</span><span>手に入れよう</span></p>
                     <a class="mainvisual-link" href="{{ route('register.index') }}">習慣化を始める</a>
                 </div>
             </div>
@@ -43,8 +43,8 @@
 
                 <h2 class="content-title">今日から〜を始めよう</h2>
                 <p class="content__body">
-                    If-Thenプランニングという手法をご存じでしょうか<br>
-                    これは目標達成術の一つで、【if】Xしたら【then】Yするというものです。<br>
+                    If-Thenプランニングという手法をご存じでしょうか。
+                    これは目標達成術の一つで、【if】Xしたら【then】Yするというものです。
                     このアプリは、If-Thenプランニングという手法を通して、人々から習慣化の挫折経験をなくしたいという思いで作りました。
                 </p>
                 <h2 class="content-title">鋼の意志と仕組み化</h2>
