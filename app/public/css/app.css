@@ -355,7 +355,7 @@ a {
 @media screen and (max-width: 1179px) {
   #main .main__inner {
     width: 100%;
-    margin: 8px auto;
+    margin: 16px auto;
   }
 }
 
@@ -617,6 +617,90 @@ a {
   width: 30%;
 }
 
+#mainvisual {
+  position: relative;
+}
+
+#mainvisual .mainvisual-text {
+  position: absolute;
+  top: 100px;
+  left: 10%;
+  background: rgba(235, 255, 250, 0.8);
+  box-shadow: 10px 5px 20px 0px rgba(235, 255, 250, 0.5);
+  z-index: 2;
+  padding: 16px;
+  color: #212121;
+}
+
+@media screen and (max-width: 1179px) {
+  #mainvisual .mainvisual-text {
+    left: 50%;
+    transform: translateX(-50%);
+    top: 20%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #mainvisual .mainvisual-text {
+    width: 80%;
+    top: 10%;
+    padding: 8px;
+  }
+}
+
+#mainvisual .mainvisual-text__title {
+  font-size: 24px;
+}
+
+@media screen and (max-width: 767px) {
+  #mainvisual .mainvisual-text__title {
+    font-size: 18px;
+  }
+}
+
+#mainvisual .mainvisual-text__title-sub {
+  font-size: 20px;
+}
+
+@media screen and (max-width: 767px) {
+  #mainvisual .mainvisual-text__title-sub {
+    font-size: 14px;
+  }
+}
+
+#mainvisual .mainvisual-link {
+  display: inline-block;
+  padding: 8px;
+  background: #0dceda;
+  border-bottom: 4px solid #BDBDBD;
+}
+
+#mainvisual .mainvisual-link:hover {
+  margin-top: 3px;
+  border-bottom: 2px solid #BDBDBD;
+  opacity: 0.8;
+}
+
+.mainvisual-link__wrap {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.mainvisual-link__wrap .mainvisual-link__responsive {
+  display: inline-block;
+  padding: 8px;
+  width: 90%;
+  background: #0dceda;
+  text-align: center;
+  border-bottom: 4px solid #BDBDBD;
+}
+
+.mainvisual-link__wrap .mainvisual-link__responsive:hover {
+  margin-top: 3px;
+  border-bottom: 2px solid #BDBDBD;
+  opacity: 0.8;
+}
+
 .my-habits__section {
   width: 100%;
   padding: 0 56px;
@@ -654,16 +738,19 @@ a {
 
 .my-habits__section .my-habits__container .my-habits__card {
   width: 440px;
-  height: 160px;
-  padding: 10px 15px;
+  height: 190px;
+  padding: 8px 16px;
   border: 2px solid #BDBDBD;
   margin-bottom: 30px;
   box-shadow: 2px 2px 6px #bdbdbd;
 }
 
-.my-habits__section .my-habits__container .my-habits__card .my-habits__card-body {
-  height: 80px;
+.my-habits__section .my-habits__container .my-habits__card .my-habits__card-body__text {
+  height: 55px;
   overflow: hidden;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
 }
 
 .my-habits__section .my-habits__container .my-habits__card .my-habits__card-tag {
@@ -1133,11 +1220,19 @@ a {
 
 .search__section .search-section__habits-container .habits-list__card .habits-list__card-title {
   height: 80px;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
 }
 
 .search__section .search-section__habits-container .habits-list__card .habits-list__card-plan {
   font-size: 14px;
-  height: 80px;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  height: 70px;
 }
 
 .search__section .search-section__habits-container .habits-list__card .habits-list__card-profile {
@@ -1563,6 +1658,19 @@ a {
   margin: 30px auto;
 }
 
+@media screen and (max-width: 1179px) {
+  .welcome__content {
+    width: 100%;
+    padding: 0 24px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .welcome__content {
+    margin: 16px auto;
+  }
+}
+
 .welcome__content .content-title {
   font-size: 24px;
   font-weight: bold;
@@ -1573,6 +1681,18 @@ a {
   height: calc(100vh - 70px);
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+@media screen and (max-width: 1179px) {
+  .mainvisual-img {
+    height: calc(70vh - 70px);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .mainvisual-img {
+    height: calc(50vh - 70px);
+  }
 }
 
 #footer {

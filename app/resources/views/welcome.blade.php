@@ -30,8 +30,16 @@
         <div class="main__inner__welcome">
             <div id="mainvisual">
                 <img class="mainvisual-img" src="img/mainvisual.jpg" alt="">
+                <div class="mainvisual-text">
+                    <p class="mainvisual-text__title">挫折はあなたの弱さじゃない</p>
+                    <p class="mainvisual-text__title-sub">If-Thenプランニングで新しい習慣を手に入れよう</p>
+                </div>
             </div>
             <section class="welcome__content">
+                <div class="mainvisual-link__wrap">
+                    <a class="mainvisual-link__responsive" href="{{ route('register.index') }}">習慣化を始める</a>
+                </div>
+
                 <h2 class="content-title">今日から〜を始めよう</h2>
                 <p class="content__body">
                     If-Thenプランニングという手法をご存じでしょうか<br>
@@ -52,10 +60,18 @@
                     1日30分の勉強を習慣にしようと思っても、人によって障害は様々です（ゲームがやりたい、時間が足りない、集中できない）
                     ぜひ、この世界で自分だけのIf-Thenプランニングを見つけてください。そして、多くの習慣を身につけ、人生を変えて欲しいと思います。
                 </p>
+                <h2 class="content-title">If-Thenプランニングを試してみる</h2>
+                <p class="content__body">
+                    このアプリの世界では、「今日は〜だったから、〇〇できなかった。」は失敗ではありません。
+                    習慣化を妨げる要因（〜〜の部分）を冷静に分析し、対処法を考えることで、明日は出来るようになっているかもしれません。
+                    もちろん、必ずうまくいく保証はありません。しかし、できなかった自分を闇雲に責めるのではなく、冷静に次の一手を考えることができるのは、
+                    前進です。
+                    1日30分の勉強を習慣にしようと思っても、人によって障害は様々です（ゲームがやりたい、時間が足りない、集中できない）
+                    ぜひ、この世界で自分だけのIf-Thenプランニングを見つけてください。そして、多くの習慣を身につけ、人生を変えて欲しいと思います。
+                </p>
             </section>
         </div>
     </main>
-
 
     <footer id="footer">
         <span class="footer_text">If-Thenプランニング</span>
@@ -64,6 +80,23 @@
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="{{ asset('js/app.js')}}"></script>
+<script>
+    $(function(){
+        console.log('fds');
+        const plans = [
+            {'task':'2時間勉強する','plan':'疲れたらその場でスクワットをする'},
+            {'task':'朝に散歩する','plan':'起きたときに面倒に思ったら、ベランダに出てみる'},
+            {'task':'お菓子を食べ過ぎるのはやめたい','plan':'お菓子を食べたくなったら、誰かと分け合う'},
+        ];
+        $('.js-btn').on('click',function(){
+            console.log('押されました');
+            get = plans[Math.floor(Math.random() * plans.length)];
+            console.log(get['task']);
+            $('.js-task').text(get['task']);
+            $('.js-plan').text(get['plan']);
+        })
+    })
+</script>
 {{-- URL（ページ）ごとの追加処理 --}}
 @yield('js')
 @include('components.toastr')

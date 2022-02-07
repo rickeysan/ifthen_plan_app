@@ -156,7 +156,7 @@ a{
         margin:$space_xl auto;
         @include mq(tab) {
             width:100%;
-            margin:$space_s auto;
+            margin:$space_m auto;
         }
         @include mq(sp){
             margin: $space_s auto;
@@ -405,7 +405,72 @@ a{
     width: 30%;
 }
 
-
+// ============================
+// mainvisual
+// ============================
+#mainvisual{
+    position:relative;
+    .mainvisual-text{
+        position: absolute;
+        top: 100px;
+        left: 10%;
+        background: rgba(235,255,250,0.8);
+        box-shadow: 10px 5px 20px 0px rgb(235 255 250 / 50%);
+        z-index: 2;
+        padding:$space_m;
+        color:$primary-text-color;
+        @include mq(tab){
+            left: 50%;
+            transform: translateX(-50%);
+            top:20%;
+        }
+        @include mq(sp){
+            width:80%;
+            top:10%;
+            padding:$space_s;
+        }
+    }
+    .mainvisual-text__title{
+        font-size:24px;
+        @include mq(sp){
+            font-size: $font-size_l;
+        }
+    }
+    .mainvisual-text__title-sub{
+        font-size:20px;
+        @include mq(sp){
+            font-size: $font-size_m;
+        }
+    }
+    .mainvisual-link{
+        display: inline-block;
+        padding: 8px;
+        background: #0dceda;
+        border-bottom: 4px solid $divider-color;
+        &:hover{
+            margin-top:3px;
+            border-bottom: 2px solid $divider-color;
+            opacity: 0.8;
+        }
+    }
+}
+.mainvisual-link__wrap{
+    text-align: center;
+    margin-bottom: 16px;
+    .mainvisual-link__responsive{
+        display: inline-block;
+        padding: 8px;
+        width:90%;
+        background: #0dceda;
+        text-align: center;
+        border-bottom: 4px solid $divider-color;
+        &:hover{
+            margin-top:3px;
+            border-bottom: 2px solid $divider-color;
+            opacity: 0.8;
+        }
+    }
+}
 
 // ============================
 // my-habits__section
@@ -433,18 +498,21 @@ a{
         }
         .my-habits__card{
             width: 440px;
-            height: 160px;
-            padding: 10px 15px;
+            height: 190px;
+            padding: $space_s $space_m;
             border: 2px solid #BDBDBD;
             margin-bottom: 30px;
             box-shadow: 2px 2px 6px #bdbdbd;
-            .my-habits__card-body{
-                height: 80px;
+            .my-habits__card-body__text{
+                height: 55px;
                 overflow: hidden;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                display: -webkit-box;
+
             }
             .my-habits__card-tag{
                 font-size: 14px;
-
             }
             &:hover{
                 opacity: 0.8;
@@ -808,10 +876,18 @@ a{
             }
             .habits-list__card-title{
                 height:80px;
+                overflow: hidden;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                display: -webkit-box;
             }
             .habits-list__card-plan{
                 font-size:$font-size_m;
-                height:80px;
+                overflow: hidden;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                display: -webkit-box;
+                height:70px;
             }
             .habits-list__card-profile{
                 height: 50px;
@@ -1171,7 +1247,13 @@ a{
 .welcome__content{
     width:980px;
     margin:30px auto;
-
+    @include mq(tab){
+        width:100%;
+        padding: 0 $space_l;
+    }
+    @include mq(sp){
+        margin:$space_m auto;
+    }
     .content-title{
         font-size: 24px;
         font-weight: bold;
@@ -1182,6 +1264,12 @@ a{
     width:100%;
     height: calc(100vh - 70px);
     object-fit: cover;
+    @include mq(tab){
+        height: calc(70vh - 70px);
+    }
+    @include mq(sp){
+        height: calc(50vh - 70px);
+    }
 }
 
 // ============================
