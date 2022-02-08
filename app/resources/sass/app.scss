@@ -864,7 +864,7 @@ a{
     .search-section__habits-container{
         display: flex;
         flex-wrap: wrap;
-        gap: 20px 35px;
+        gap: 20px 20px;
         @include mq(tab){
             gap: 30px 20px;
         }
@@ -1268,7 +1268,6 @@ a{
         font-size: 24px;
         font-weight: bold;
     }
-
 }
 .mainvisual-img{
     width:100%;
@@ -1286,7 +1285,6 @@ a{
 // footer
 // ============================
 #footer{
-
     width: 100%;
     height: 30px;
     background: $first-color;
@@ -1294,4 +1292,3 @@ a{
     text-align: center;
     line-height: 30px;
 }
-
