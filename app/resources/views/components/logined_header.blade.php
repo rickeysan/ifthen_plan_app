@@ -6,7 +6,7 @@
         <nav>
             <ul class="header__nav-list">
                 <li class="logined-header__nav-item">
-                    <a href="{{ route('home.index') }}">
+                    <a href="{{ route('profile.show', Auth::id()) }}">
                     <img class="logined-header__nav-item__img" src="{{ asset( Storage::url(Auth::user()->file_path) ) }}" alt="">
                     </a>
                 </li>

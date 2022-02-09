@@ -38,7 +38,7 @@
                 </div>
             </div>
             @if (!empty($msg))
-                <p>{{ $msg }}</p>
+                <p class="login-err__msg">{{ $msg }}</p>
             @endif
             <div class="input-panel-btn__wrap login-panel">
                 <button type="submit" class="submit-btn">ログイン</button>

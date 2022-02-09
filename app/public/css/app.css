@@ -449,6 +449,11 @@ a {
   vertical-align: bottom;
 }
 
+.login-err__msg {
+  font-size: 14px;
+  color: #f38181;
+}
+
 .dashbord-menu__list-nav {
   width: 180px;
   font-size: 16px;
