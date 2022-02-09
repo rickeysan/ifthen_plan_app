@@ -74,16 +74,13 @@
 <script src="{{ asset('js/app.js')}}"></script>
 <script>
     $(function(){
-        console.log('fds');
         const plans = [
             {'task':'2時間勉強する','plan':'疲れたらその場でスクワットをする'},
             {'task':'朝に散歩する','plan':'起きたときに面倒に思ったら、ベランダに出てみる'},
             {'task':'お菓子を食べ過ぎるのはやめたい','plan':'お菓子を食べたくなったら、誰かと分け合う'},
         ];
         $('.js-btn').on('click',function(){
-            console.log('押されました');
             get = plans[Math.floor(Math.random() * plans.length)];
-            console.log(get['task']);
             $('.js-task').text(get['task']);
             $('.js-plan').text(get['plan']);
         })

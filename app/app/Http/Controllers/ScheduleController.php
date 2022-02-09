@@ -31,7 +31,7 @@ class ScheduleController extends Controller
         $param['end_date'] = $param['start_date'];
         $param['habit_id'] = $habit_id;
         $schedule->fill($param)->save();
-        session()->flash('toastr', config('toastr.habit_update'));
+        session()->flash('toastr', config('toastr.schedule_add'));
         return redirect()->route('habit.edit',['habit'=>$habit_id]);
     }
 
@@ -128,7 +128,7 @@ class ScheduleController extends Controller
         $schedule->event_name = $request->input('event_name');
         $schedule->achivement_flg = $request->input('achivement_flg');
         $schedule->save();
-        session()->flash('toastr', config('toastr.habit_edit'));
+        session()->flash('toastr', config('toastr.schedule_edit'));
         return redirect()->route('habit.edit',['habit'=>$habit_id]);
     }
 

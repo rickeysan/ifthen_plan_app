@@ -15,8 +15,16 @@ return [
    ],
    'habit_update' => [
        'type' => 'success',
-       'text' => '編集処理が正常に完了しました',
+       'text' => '`習慣を編集しました',
    ],
+   'schedule_add' => [
+    'type' => 'success',
+    'text' => '記録を登録しました。お疲れ様です。',
+    ],
+   'schedule_edit' => [
+    'type' => 'success',
+    'text' => '記録を編集しました',
+    ],
    'habit_delete' => [
     'type' => 'success',
     'text' => '習慣を削除しました',
