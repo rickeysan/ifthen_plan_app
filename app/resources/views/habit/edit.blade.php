@@ -107,7 +107,8 @@
                 <span id="js-delete-show"><i class="far fa-trash-alt"></i></span>
                 <div id="js-delete-form" class="delete-form">
                     <p class="delete-form__info">一度削除すると<br>元に戻せません。<br>本当に削除しますか？</p>
-                    <form action="{{ route('habit.destroy',$habit['id']) }}" id="delete-form">
+                    <form action="{{ route('habit.destroy',$habit['id']) }}" id="delete-form" method="post">
+                        @csrf
                         @method('DELETE')
                         <button class="delete-btn" type="submit" form="delete-form">削除</button>
                     </form>
