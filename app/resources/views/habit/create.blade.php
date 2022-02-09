@@ -29,7 +29,7 @@
                             <select name="category_id" class="form-item__select">
                                 <option value="" class="form-item__select-item">選択して下さい</option>
                                 @foreach ($categories as $category)
-                                <option value="{{ $category['id'] }}">{{ $category['name'] }}</option>
+                                <option value="{{ $category['id'] }}" {{ old('category_id')==$category['id'] ? 'selected':'' }}>{{ $category['name'] }}</option>
                                 @endforeach
                             </select>
                             @error('category_id')
@@ -42,7 +42,7 @@
                             <p class="form-item__head-text">開始日</p>
                         </div>
                         <div class="form-item__body">
-                            <input type="date" name="start_date" class="form-item__date" value="{{ old('start_date') }}">
+                            <input type="date" name="begin_date" class="form-item__date" value="{{ old('begin_date') }}">
                             @error('begin_date')
                                 <span class="form-item__input-area__msg err-msg">{{ $message }}</span>
                             @enderror

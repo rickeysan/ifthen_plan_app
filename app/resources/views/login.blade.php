@@ -14,7 +14,6 @@
         <form action="{{ route('login.store') }}" method="post">
         @csrf
         <h2 class="panel-title">ログイン</h2>
-
             <div class="form-item">
                 <div class="form-item__head">
                     <p>メールアドレス</p>
@@ -38,18 +37,13 @@
                     @enderror
                 </div>
             </div>
-
             @if (!empty($msg))
                 <p>{{ $msg }}</p>
             @endif
             <div class="input-panel-btn__wrap login-panel">
                 <button type="submit" class="submit-btn">ログイン</button>
-                <div class="login-btn__info">
-                    <input type="checkbox" class="submit-checkbox"><span class="login-btn__info-msg">ログインしたままにする</span>
-                </div>
                 <a href="{{ route('forget-password.index') }}" class="submit-btn__link">パスワードを忘れた方はこちら</a>
             </div>
-
         </form>
     </div>
 </section>

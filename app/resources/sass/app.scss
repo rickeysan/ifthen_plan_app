@@ -261,7 +261,7 @@ a{
 
     .dashbord-menu__list-ul{
         border: 1px solid $divider-color;
-        padding: 15px 10px;
+        padding: $space_m $space_s 0;
         border-radius: 10px;
         .dashbord-menu__list-item{
             margin-bottom:$space_l;
@@ -276,14 +276,20 @@ a{
         }
     }
     .profile-card{
-        padding:$space_s $space_m;
+        padding:$space_s $space_s;
         border:1px solid $divider-color;
+        margin-top: $space_xl;
+        display: flex;
+        &:hover{
+            opacity:0.7;
+        }
         .profile-card__img{
             width: 28px;
             height: 28px;
             border-radius: 14px;
         }
         .profile-card__name{
+            overflow: hidden;
             font-size:$font-size_m;
         }
     }
@@ -361,6 +367,10 @@ a{
 	cursor: pointer;
     width: 50px;
     height:50px;
+    display: none;
+    @include mq(tab){
+        display: inline-block;
+    }
 }
 
 /*×に変化*/

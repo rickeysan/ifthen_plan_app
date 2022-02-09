@@ -464,7 +464,7 @@ a {
 
 .dashbord-menu__list-nav .dashbord-menu__list-ul {
   border: 1px solid #BDBDBD;
-  padding: 15px 10px;
+  padding: 16px 8px 0;
   border-radius: 10px;
 }
 
@@ -481,8 +481,14 @@ a {
 }
 
 .dashbord-menu__list-nav .profile-card {
-  padding: 8px 16px;
+  padding: 8px 8px;
   border: 1px solid #BDBDBD;
+  margin-top: 32px;
+  display: flex;
+}
+
+.dashbord-menu__list-nav .profile-card:hover {
+  opacity: 0.7;
 }
 
 .dashbord-menu__list-nav .profile-card .profile-card__img {
@@ -492,6 +498,7 @@ a {
 }
 
 .dashbord-menu__list-nav .profile-card .profile-card__name {
+  overflow: hidden;
   font-size: 14px;
 }
 
@@ -572,6 +579,13 @@ a {
   cursor: pointer;
   width: 50px;
   height: 50px;
+  display: none;
+}
+
+@media screen and (max-width: 1179px) {
+  .openbtn {
+    display: inline-block;
+  }
 }
 
 /*×に変化*/
