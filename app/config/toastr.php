@@ -57,4 +57,8 @@ return [
         'type'=>'success',
         'text'=>'パスワードを再設定しました',
     ],
+    'withdraw'=>[
+        'type'=>'success',
+        'text'=>'退会処理が完了しました',
+    ],
 ];

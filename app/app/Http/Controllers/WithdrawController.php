@@ -19,6 +19,7 @@ class WithdrawController extends Controller
         logger('WithdrawControllerのdestroyメソッドです');
         $user = User::find($id);
         $user->delete();
-        return redirect('home');
+        session()->flash('toastr', config('toastr.withdraw'));
+        return redirect()->route('register.index');
     }
 }
