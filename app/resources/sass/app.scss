@@ -601,7 +601,8 @@ a{
                 .form-item__textarea{
                     width: 100%;
                     padding: 0 5px;
-                    height: 60px;
+                    min-height: 60px;
+                    // height: 60px;
                     border: 1px solid $divider-color;
                 }
                 .form-item__date{
@@ -718,6 +719,20 @@ a{
         }
         .js-ng-tag{
             background: $msg-color;
+        }
+        .profile-card{
+            width:100%;
+            margin-top:$space_l;
+            padding:$space_s;
+            border:1px solid $divider-color;
+            &__img{
+                width:32px;
+                height: 32px;
+            }
+            &__name{
+                overflow: hidden;
+                width:100%;
+            }
         }
     }
     .fc-view-harness{
@@ -924,6 +939,8 @@ a{
                 .habits-list__card-name{
                     font-size:$font-size_m;
                     margin-left:$space_m;
+                    width: 100%;
+                    overflow: hidden;
                 }
             }
         .habits-list__card-info{
@@ -979,7 +996,8 @@ a{
     }
     .form-item{
         display: flex;
-        height: 60px;
+        min-height: 60px;
+        // height: 60px;
         align-items: top;
         @include mq(sp){
             flex-wrap: wrap;

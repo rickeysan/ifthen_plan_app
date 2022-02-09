@@ -883,7 +883,7 @@ a {
 .main-sections__container .habit-input__container .form-item .form-item__body .form-item__textarea {
   width: 100%;
   padding: 0 5px;
-  height: 60px;
+  min-height: 60px;
   border: 1px solid #BDBDBD;
 }
 
@@ -1027,6 +1027,23 @@ a {
 
 .calendar-section .calendar-info__container .js-ng-tag {
   background: #f38181;
+}
+
+.calendar-section .calendar-info__container .profile-card {
+  width: 100%;
+  margin-top: 24px;
+  padding: 8px;
+  border: 1px solid #BDBDBD;
+}
+
+.calendar-section .calendar-info__container .profile-card__img {
+  width: 32px;
+  height: 32px;
+}
+
+.calendar-section .calendar-info__container .profile-card__name {
+  overflow: hidden;
+  width: 100%;
 }
 
 .calendar-section .fc-view-harness {
@@ -1286,6 +1303,8 @@ a {
 .search__section .search-section__habits-container .habits-list__card .habits-list__card-profile .habits-list__card-name {
   font-size: 14px;
   margin-left: 16px;
+  width: 100%;
+  overflow: hidden;
 }
 
 .search__section .search-section__habits-container .habits-list__card .habits-list__card-info {
@@ -1355,7 +1374,7 @@ a {
 
 .profile-edit__section .form-item {
   display: flex;
-  height: 60px;
+  min-height: 60px;
   align-items: top;
 }
 

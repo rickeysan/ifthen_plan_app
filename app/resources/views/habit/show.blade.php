@@ -85,6 +85,10 @@
             <div class="calendar-input-form">
                 <p style="display: inline-block;vertical-align: middle;" class="calendar-input__date-show"></p><span class="calendar-show__tag js-ok-tag" style='display:none;'>達成</span><span class="calendar-show__tag js-ng-tag" style='display: none;'>例外日</span>
                 <textarea class="calendar-input__textarea js-textarea" type="text" name="title" class="calendar-input-text" placeholder="記録がありません" readonly></textarea>
+                <a href="{{ route('profile.show', $habit->user->id) }}" class="profile-card">
+                    <img src="{{ asset( Storage::url($habit->user->file_path)) }}"   alt="" class="profile-card__img">
+                    <span class="profile-card__name">{{ $habit->user->name }}</span>
+                </a>
             </div>
 
         </div>
