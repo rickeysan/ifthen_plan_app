@@ -1,5 +1,7 @@
 @extends('layouts.layout-1-column')
 
+@section('title', 'ログイン')
+
 @section('header')
     @component('components/not_logined_header')
 

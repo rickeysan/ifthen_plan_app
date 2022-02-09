@@ -1,5 +1,7 @@
 @extends('layouts.layout-2-columns')
 
+@section('title', '習慣の新規登録')
+
 @section('header')
     @component('components/logined_header')
 
