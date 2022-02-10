@@ -19,7 +19,6 @@ jobs:
     steps:
       - checkout
       - run: composer install -n --prefer-dist --working-dir=./app
-      - run: npm ci
       - run: npm run dev
       - run:
           name: php test
