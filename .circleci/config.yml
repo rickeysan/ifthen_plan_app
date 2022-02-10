@@ -1,0 +1,24 @@
+version: 2.1
+jobs:
+  build:
+    docker:
+      - image: circleci/php:7.4-node-browsers
+      - image: circleci/postgres:11.6-alpine
+        environment:
+          POSTGRES_DB: larasns
+          POSTGRES_USER: default
+          POSTGRES_PASSWORD: secret
+    environment:
+      APP_ENV: testing
+      DB_CONNECTION: pgsql
+      DB_HOST: localhost
+      DB_PORT: 5432
+      DB_DATABASE: larasns
+      DB_USERNAME: default
+      DB_PASSWORD: secret
+    steps:
+      - checkout
+      - run: composer install -n --prefer-dist --working-dir=./app
+      - run:
+          name: php test
+          command: app/vendor/bin/phpunit --configuration=./app/phpunit.xml
