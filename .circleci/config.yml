@@ -19,22 +19,9 @@ jobs:
     steps:
       - checkout
       - run: sudo composer self-update --1
-      - restore_cache:
-          key: composer-v1-{{ checksum "composer.lock" }}
       - run: composer install -n --prefer-dist
-      - save_cache:
-          key: composer-v1-{{ checksum "composer.lock" }}
-          paths:
-            - vendor
       - run: npm ci
       - run: npm run dev
-      - run:
-          name: get ready for postgres
-          command: |
-            sudo apt-get update
-            sudo apt-get install libpq-dev
-            sudo docker-php-ext-install pdo_pgsql
-            dockerize -wait tcp://localhost:5432 -timeout 1m
       - run:
           name: php test
           command: vendor/bin/phpunit
