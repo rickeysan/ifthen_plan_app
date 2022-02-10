@@ -18,7 +18,13 @@ jobs:
       DB_PASSWORD: secret
     steps:
       - checkout
+      - restore:
+          key: composer-v1-{{ checksum "composer.lock" }}
       - run: composer install -n --prefer-dist --working-dir=./app
+      - save_cache:
+          key: composer-v1-{{ checksum "composer.lock" }}
+          paths:
+            - vendor
       - run:
           name: php test
           command: app/vendor/bin/phpunit --configuration=./app/phpunit.xml
