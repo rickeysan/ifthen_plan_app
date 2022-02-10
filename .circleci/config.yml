@@ -18,7 +18,7 @@ jobs:
       DB_PASSWORD: secret
     steps:
       - checkout
-      - run: sudo composer self-update --1
+      - run: sudo composer self-update --2
       - run: composer install -n --prefer-dist --working-dir=./app
       - run: npm ci
       - run: npm run dev
