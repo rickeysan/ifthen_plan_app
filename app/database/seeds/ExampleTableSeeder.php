@@ -98,6 +98,18 @@ class ExampleTableSeeder extends Seeder
             'body'=>'頼み事をされたら',
         ];
         $example->fill($param)->save();
+        $example = new Example;
+        $param = [
+            'is_ifcard'=>true,
+            'body'=>'朝起きたら',
+        ];
+        $example->fill($param)->save();
+        $example = new Example;
+        $param = [
+            'is_ifcard'=>true,
+            'body'=>'7時になったら',
+        ];
+        $example->fill($param)->save();
 
         // Thenパート
 
@@ -225,6 +237,12 @@ class ExampleTableSeeder extends Seeder
         $param = [
             'is_ifcard'=>false,
             'body'=>'出来なかったことではなく、出来たことを考える',
+        ];
+        $example->fill($param)->save();
+        $example = new Example;
+        $param = [
+            'is_ifcard'=>false,
+            'body'=>'5分だけ時間を決めて悩んでみる',
         ];
         $example->fill($param)->save();
     }

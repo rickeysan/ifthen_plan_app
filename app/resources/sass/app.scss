@@ -721,6 +721,10 @@ a{
             background: $msg-color;
         }
         .profile-card{
+            display: none;
+            @include mq(tab){
+                display: block;
+            }
             width:100%;
             margin-top:$space_l;
             padding:$space_s;
@@ -824,6 +828,10 @@ a{
 // search-menu__responsive
 // ============================
 .search-menu__responsive{
+    display: none;
+    @include mq(tab){
+        display: block;
+    }
     border: 1px solid $divider-color;
     border-radius: 14px;
     padding: $space_m;
