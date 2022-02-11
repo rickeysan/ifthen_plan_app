@@ -26,7 +26,7 @@ class RegisterTest extends TestCase
         $response = $this->get('/register');
         $response->assertStatus(200);
     }
-    public function test_正しい値を入力すればホーム画面に遷移できる()
+    public function test_正しい値を入力すれば習慣登録画面に遷移できる()
     {
         $response = $this->get('/register');
         $response->assertStatus(200);
@@ -42,7 +42,7 @@ class RegisterTest extends TestCase
         $response->assertSessionHasNoErrors();
 
         $response->assertStatus(302);
-        $response->assertRedirect('/home');
+        $response->assertRedirect('/habit/create');
     }
 
     // 異常系
