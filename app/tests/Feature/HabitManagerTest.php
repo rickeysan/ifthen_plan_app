@@ -26,7 +26,7 @@ class HabitManagementTest extends TestCase
         // $this->habit = factory(Habit::class)->create();
         $habit_info = [
             'category_id'=>'1',
-            'start_date'=>'2020-08-15',
+            'begin_date'=>'2020-08-15',
             'finish_date'=>'2020-09-10',
             'purpose'=>'漢検2級に合格するため',
             'task'=>'毎日感じを勉強する',
@@ -51,7 +51,7 @@ class HabitManagementTest extends TestCase
 
         $habit_info = [
             'category_id'=>'2',
-            'start_date'=>'2021-01-15',
+            'begin_date'=>'2021-01-15',
             'finish_date'=>'2021-02-10',
             'purpose'=>'英検１級に合格するため',
             'task'=>'毎日英語を勉強する',
@@ -79,7 +79,7 @@ class HabitManagementTest extends TestCase
 
         $habit_info = [
             'category_id'=>'2',
-            'start_date'=>'2021-01-10',
+            'begin_date'=>'2021-01-10',
             'finish_date'=>'2021-02-20',
             'purpose'=>'世界遺産検定２級に合格するため',
             'task'=>'毎日教本で勉強する',
@@ -104,7 +104,7 @@ class HabitManagementTest extends TestCase
 
         $habit_info = [
             'category_id'=>'2',
-            'start_date'=>'',
+            'begin_date'=>'',
             'finish_date'=>'2021-02-10',
             'purpose'=>'',
             'task'=>'毎日英語を勉強する',
