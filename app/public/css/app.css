@@ -1030,10 +1030,17 @@ a {
 }
 
 .calendar-section .calendar-info__container .profile-card {
+  display: none;
   width: 100%;
   margin-top: 24px;
   padding: 8px;
   border: 1px solid #BDBDBD;
+}
+
+@media screen and (max-width: 1179px) {
+  .calendar-section .calendar-info__container .profile-card {
+    display: block;
+  }
 }
 
 .calendar-section .calendar-info__container .profile-card__img {
@@ -1145,10 +1152,17 @@ a {
 }
 
 .search-menu__responsive {
+  display: none;
   border: 1px solid #BDBDBD;
   border-radius: 14px;
   padding: 16px;
   margin-bottom: 8px;
+}
+
+@media screen and (max-width: 1179px) {
+  .search-menu__responsive {
+    display: block;
+  }
 }
 
 @media screen and (max-width: 767px) {
