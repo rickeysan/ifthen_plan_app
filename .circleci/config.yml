@@ -3,11 +3,10 @@ jobs:
   build:
     docker:
       - image: circleci/php:7.4-node-browsers
-      - image: mysql:5.7
         environment:
-          POSTGRES_DB: larasns
-          POSTGRES_USER: default
-          POSTGRES_PASSWORD: secret
+          DB_USERNAMNE: 'root'
+          DB_PASSWORD: 'root123'
+      - image: circleci/mysql:5.7.22
     environment:
       APP_ENV: testing
       DB_CONNECTION: pgsql
