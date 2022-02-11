@@ -6,14 +6,13 @@ jobs:
         environment:
           DB_USERNAMNE: 'root'
           DB_PASSWORD: 'root123'
-    environment:
-      APP_ENV: testing
-      DB_CONNECTION: pgsql
-      DB_HOST: localhost
-      DB_PORT: 5432
-      DB_DATABASE: larasns
-      DB_USERNAME: default
-      DB_PASSWORD: secret
+      - image: circleci/mysql:8.0.20-ram
+        command: mysqld --default-authentication-plugin=mysql_native_password
+        environment:
+          MYSQL_USER: forge
+          MYSQL_DATABASE: forge
+          MYSQL_ROOT_PASSWORD: ''
+          MYSQL_PASSWORD: 'forge'
     steps:
       - checkout
       - run: sudo apt update && sudo apt install zlib1g-dev libsqlite3-dev
