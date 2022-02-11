@@ -24,6 +24,6 @@ class RegisterController extends Controller
         $user_id = $user->id;
         Auth::loginUsingId($user_id);
         session()->flash('toastr', config('toastr.user_register'));
-        return redirect('home');
+        return redirect()->route('habit.create');
     }
 }

@@ -30,7 +30,7 @@
     <h2 class="section-title">習慣一覧</h2>
     <div class="search-section__habits-container my-habits-list">
         @foreach ($user->habits as $habit)
-        <a href="" class="habits-list__card">
+        <a href="{{ route('habit.show',$habit['id']) }}" class="habits-list__card">
             <h3 class="habits-list__card-title">{{ $habit['task'] }}</h3>
             <p class="habits-list__card-plan">{{ $habit->plan->plan_text }}</p>
             <div class="habits-list__card-profile">

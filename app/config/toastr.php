@@ -3,7 +3,7 @@
 return [
     'user_register' => [
         'type' => 'success',
-        'text' => '会員登録しました',
+        'text' => '新しい習慣を始めましょう',
     ],
    'logout' => [
        'type' => 'success',
