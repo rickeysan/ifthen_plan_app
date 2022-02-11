@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
       - image: circleci/php:7.4-node-browsers
-      - image: circleci/postgres:11.6-alpine
+      - image: mysql:5.7
         environment:
           POSTGRES_DB: larasns
           POSTGRES_USER: default
