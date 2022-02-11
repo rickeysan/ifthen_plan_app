@@ -130,8 +130,9 @@ a{
         border-radius:5px;
         margin-left:$space_m;
     }
-
-
+    a:hover{
+        opacity: 0.8;
+    }
 }
 
 // ============================
@@ -142,6 +143,9 @@ a{
         width:36px;
         height:36px;
         border-radius: 18px;
+        &:hover{
+            opacity: 0.8;
+        }
     }
 }
 

@@ -92,7 +92,7 @@
         @endforeach
     </div>
     <div class="pagination-wrap">
-        {{ $habits->appends(request()->query())->links('vendor.pagination.simple-default')}}
+        {{ $habits->appends(request()->query())->links()}}
     </div>
 </section>
 @endsection

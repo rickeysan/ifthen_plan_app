@@ -3,7 +3,7 @@
 return [
     'user_register' => [
         'type' => 'success',
-        'text' => '会員登録しました',
+        'text' => '新しい習慣を始めましょう',
     ],
    'logout' => [
        'type' => 'success',
@@ -15,7 +15,7 @@ return [
    ],
    'habit_update' => [
        'type' => 'success',
-       'text' => '`習慣を編集しました',
+       'text' => '習慣を編集しました',
    ],
    'schedule_add' => [
     'type' => 'success',

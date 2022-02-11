@@ -8,8 +8,10 @@ use App\Category;
 
 class SearchController extends Controller
 {
-    public function index(){
-        logger('PostControllerのindexメソッドです');
+    public function index(Request $request){
+        logger('SearchControllerのindexメソッドです');
+        logger($request->input('page'));
+        logger('終了');
         $total_habits_amount = count(Habit::where('is_open',true)->get());
         $habits = Habit::where('is_open',true)->paginate(12);
         $categories = Category::all();
@@ -17,7 +19,7 @@ class SearchController extends Controller
     }
 
     public function show(Request $request){
-        logger('PostControllerのshowメソッドです');
+        logger('SearchControllerのshowメソッドです');
         logger($request);
         $categories = Category::all();
         $key_word = $request->input('key_word');
