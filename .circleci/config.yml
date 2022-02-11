@@ -25,6 +25,8 @@ jobs:
           key: composer-v1-{{ checksum "./app/composer.lock" }}
           paths:
             - vendor
+      - run: touch ./app/storage/testing.sqlite
+      - run: php artisan migrate --env=testing
       - run:
           name: php test
           command: app/vendor/bin/phpunit --configuration=./app/phpunit.xml
