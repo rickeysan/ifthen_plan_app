@@ -26,6 +26,7 @@ jobs:
           paths:
             - vendor
       - run: touch ./app/storage/testing.sqlite
+      - run: cd laradock 
       - run: php artisan migrate --env=testing
       - run:
           name: php test
