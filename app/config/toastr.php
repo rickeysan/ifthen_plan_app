@@ -15,7 +15,7 @@ return [
    ],
    'habit_update' => [
        'type' => 'success',
-       'text' => '`習慣を編集しました',
+       'text' => '習慣を編集しました',
    ],
    'schedule_add' => [
     'type' => 'success',
