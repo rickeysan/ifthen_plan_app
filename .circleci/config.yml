@@ -41,13 +41,8 @@ jobs:
       - run:
           name: deploy
           command: |
-            ssh -o StrictHostKeyChecking=no -p 49231 -t webkatu@${HOST_NAME} "cd ifthen_plan_app && \
-              git pull origin main && \
-              composer install -n --no-dev --prefer-dist && \
-              npm ci && \
-              npm run prod && \
-              php artisan config:cache"
-
+            ssh -p 49231 -i "id_rsa" webukatu@13.231.23.14
+            
 workflows:
   version: 2
   build_deploy:
