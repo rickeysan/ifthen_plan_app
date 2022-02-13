@@ -9,7 +9,6 @@
 @endsection
 
 
-
 @section('main-contents')
 <section class="input-panel__container">
     <div class="input-panel">
