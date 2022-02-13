@@ -41,7 +41,7 @@ jobs:
       - run:
           name: deploy
           command: |
-            ssh -p 49231 -i "id_rsa" webukatu@13.231.23.14
+            ssh -p 49231 webukatu@13.231.23.14
 
 workflows:
   version: 2
