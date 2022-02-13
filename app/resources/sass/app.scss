@@ -997,12 +997,11 @@ a{
 	.form-item{
 		display: flex;
 		min-height: 60px;
-		// height: 60px;
 		align-items: top;
 		@include mq(sp){
+			margin-bottom: $space_s;
 			flex-wrap: wrap;
 			height: auto;
-			margin-bottom: $space_s;
 		}
 		.form-item__input-area{
 			margin-left: auto;
@@ -1318,4 +1317,3 @@ a{
 	text-align: center;
 	line-height: 30px;
 }
-
