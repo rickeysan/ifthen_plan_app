@@ -10,14 +10,15 @@ use Illuminate\Support\Facades\Auth;
 
 class RegisterController extends Controller
 {
-
-    public function index(){
+    public function index()
+    {
         logger('RegisterControllerのindexメソッドです');
         return view('register');
     }
-    public function store(RegisterRequest $request){
+    public function store(RegisterRequest $request)
+    {
         logger('RegisterControllerのstoreメソッドです');
-        $param = $request->only(['email','name','password','password_confirmation']);
+        $param = $request->only(['email', 'name', 'password', 'password_confirmation']);
         $param['password'] = Hash::make($param['password']);
         $user = new User;
         $user->fill($param)->save();
