@@ -42,16 +42,9 @@ jobs:
           name: deploy
           command: |
             ssh -p 49231 -i "id_rsa" webukatu@13.231.23.14
-            
+
 workflows:
   version: 2
   build_deploy:
     jobs:
-      - build
-      - deploy:
-          requires:
-            - build
-          filters:
-            branches:
-              only:
-                - main
+      - deploy
