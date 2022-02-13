@@ -41,7 +41,7 @@ jobs:
       - run:
           name: deploy
           command: |
-            ssh -o StrictHostKeyChecking=no -t webkatu@${HOST_NAME} "cd ifthen_plan_app && \
+            ssh -o StrictHostKeyChecking=no -p 49231 -t webkatu@${HOST_NAME} "cd ifthen_plan_app && \
               git pull origin main && \
               composer install -n --no-dev --prefer-dist && \
               npm ci && \
